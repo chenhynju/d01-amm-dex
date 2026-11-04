@@ -52,7 +52,9 @@ contract Handler is Test {
             ghostB -= out;
         }
         (x, y,) = p.getReserves();
-        if (uint256(x) * y < previousK) kViolated = true;
+        uint256 adjusted0 = uint256(x) * 1000 - (reverse ? 0 : n * 3);
+        uint256 adjusted1 = uint256(y) * 1000 - (reverse ? n * 3 : 0);
+        if (uint256(x) * y < previousK || adjusted0 * adjusted1 < previousK * 1e6) kViolated = true;
         swaps++;
     }
 

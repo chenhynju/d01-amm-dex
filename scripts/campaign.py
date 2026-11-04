@@ -3,6 +3,7 @@
 import subprocess,time,json,os
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
+subprocess.run(["forge","build"],cwd=root,check=True)
 start=time.monotonic();rounds=[]
 while time.monotonic()-start < 1800:
     seed=202611050000+len(rounds)
