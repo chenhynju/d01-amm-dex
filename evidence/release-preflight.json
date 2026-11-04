@@ -1,0 +1,11 @@
+{
+  "status": "BLOCKED",
+  "gates": {
+    "frozen_protocol_source": "PASS",
+    "patched_compiler_known_bug_review": "BLOCKED",
+    "authenticated_dependency_baseline": "BLOCKED",
+    "mainnet_fork_execution": "BLOCKED",
+    "public_network_authorization": "NOT RUN"
+  },
+  "explanation": "See compiler-review.md and dependency-review.md. No transaction is sent."
+}

@@ -23,8 +23,12 @@ contract LocalDemo is Script {
         DemoToken b = new DemoToken("DEMO-B");
         a.approve(address(r), type(uint256).max);
         b.approve(address(r), type(uint256).max);
-        r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, msg.sender, block.timestamp);
-        r.swapExactTokensForTokens(address(a), address(b), 1e16, 9e15, address(0xB0B), block.timestamp);
+        r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, msg.sender, block.timestamp + 1 hours);
+        r.swapExactTokensForTokens(address(a), address(b), 1e16, 9e15, address(0xB0B), block.timestamp + 1 hours);
+        Pair pair = Pair(f.getPair(address(a), address(b)));
+        uint256 lp = pair.balanceOf(msg.sender);
+        pair.approve(address(r), lp);
+        r.removeLiquidity(address(a), address(b), lp, 1, 1, msg.sender, block.timestamp + 1 hours);
         vm.stopBroadcast();
     }
 }

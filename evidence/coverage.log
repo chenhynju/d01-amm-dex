@@ -1,0 +1,100 @@
+Warning: `--ir-minimum` enables `viaIR` with minimum optimization, which can result in inaccurate source mappings.
+Only use this flag as a workaround if you are experiencing "stack too deep" errors.
+Note that `viaIR` is production ready since Solidity 0.8.13 and above.
+See more: https://book.getfoundry.sh/guides/best-practices/stack-too-deep
+Compiling 54 files with Solc 0.8.28
+Solc 0.8.28 finished in 52.94s
+Compiler run successful!
+Analysing contracts...
+Running tests...
+
+Ran 1 test for test/Differential.t.sol:DifferentialTest
+[PASS] testPythonRationalVectors() (gas: 938744)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 25.57ms (24.43ms CPU time)
+
+Ran 33 tests for test/AMM.t.sol:AMMTest
+[PASS] testBurnAllUserLP() (gas: 241872)
+[PASS] testDonationNotOwned() (gas: 150119)
+[PASS] testDustLPExitIsAtomic() (gas: 416816)
+[PASS] testEmptyPoolAndMintBoundaries() (gas: 4777115)
+[PASS] testFactory() (gas: 165555)
+[PASS] testFlashNoRepay() (gas: 1025512)
+[PASS] testFlashRepaymentAndLocks() (gas: 1103128)
+[PASS] testFuzzLPExit(uint96) (runs: 1024, μ: 388392, ~: 387753)
+[PASS] testFuzzQuoteMonotonic(uint112,uint112,uint96) (runs: 1024, μ: 23611, ~: 23372)
+[PASS] testFuzzSwap(uint96,bool) (runs: 1024, μ: 185997, ~: 186480)
+[PASS] testInvalidRecipients() (gas: 181172)
+[PASS] testInvalidRouter() (gas: 148892)
+[PASS] testInvalidSwap() (gas: 336713)
+[PASS] testMaximumReserves() (gas: 4390114)
+[PASS] testNegativeRebaseRecovery() (gas: 152808)
+[PASS] testNoReturnToken() (gas: 4751249)
+[PASS] testOneSidedSyncedPoolRejected() (gas: 5402145)
+[PASS] testPairConstructorValidation() (gas: 1457154)
+[PASS] testPermitReplay() (gas: 162668)
+[PASS] testProportionalDepositAndSlippage() (gas: 237020)
+[PASS] testRemoveTaxedMinimum() (gas: 525149)
+[PASS] testReserveOverflow() (gas: 97620)
+[PASS] testReverseSwap() (gas: 173699)
+[PASS] testRouterAmountBounds() (gas: 124673)
+[PASS] testRouterCreatesPairAndReverseAdd() (gas: 5634698)
+[PASS] testSkimAndSync() (gas: 341460)
+[PASS] testSlippageDeadlineRollback() (gas: 236429)
+[PASS] testSwapAndFee() (gas: 191859)
+[PASS] testTWAPAndTimestampWrap() (gas: 228415)
+[PASS] testTaxedDepositReverts() (gas: 188607)
+[PASS] testTaxedSwapBothDirections() (gas: 295315)
+[PASS] testTokenFailureAtomic() (gas: 137327)
+[PASS] testTokenHookRouterAndReadLocks() (gas: 6058790)
+Suite result: ok. 33 passed; 0 failed; 0 skipped; finished in 4.85s (14.95s CPU time)
+
+Ran 1 test for test/Invariant.t.sol:AMMInvariant
+[PASS]
+AMMInvariant invariants:
+[PASS] invariant_claimsAreSolvent
+[PASS] invariant_feeAdjustedKDoesNotDecreaseOnSwap
+[PASS] invariant_ghostAssetConservation
+[PASS] invariant_lockedLiquidity
+[PASS] invariant_quoteMonotonicAndBounded
+[PASS] invariant_reservesMatchBalances
+[PASS] invariant_supplyEqualsTrackedHolders
+ AMMInvariant invariants (runs: 128, calls: 8192, reverts: 0)
+
+╭----------+----------+-------+---------+----------╮
+| Contract | Selector | Calls | Reverts | Discards |
++==================================================+
+| Handler  | advance  | 1653  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | deposit  | 1686  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | donate   | 1571  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | exit     | 1635  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | swap     | 1647  | 0       | 0        |
+╰----------+----------+-------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 102.99s (102.94s CPU time)
+
+Ran 3 test suites in 103.01s (107.87s CPU time): 35 tests passed, 0 failed, 0 skipped (35 total tests)
+
+╭------------------------+------------------+------------------+-----------------+-----------------╮
+| File                   | % Lines          | % Statements     | % Branches      | % Funcs         |
++==================================================================================================+
+| script/Deploy.s.sol    | 0.00% (0/5)      | 0.00% (0/4)      | N/A (0/0)       | 0.00% (0/1)     |
+|------------------------+------------------+------------------+-----------------+-----------------|
+| script/LocalDemo.s.sol | 0.00% (0/14)     | 0.00% (0/16)     | 0.00% (0/2)     | 0.00% (0/2)     |
+|------------------------+------------------+------------------+-----------------+-----------------|
+| src/Factory.sol        | 100.00% (12/12)  | 100.00% (20/20)  | 100.00% (2/2)   | 100.00% (2/2)   |
+|------------------------+------------------+------------------+-----------------+-----------------|
+| src/Pair.sol           | 97.73% (86/88)   | 98.59% (140/142) | 100.00% (18/18) | 100.00% (12/12) |
+|------------------------+------------------+------------------+-----------------+-----------------|
+| src/Router.sol         | 100.00% (63/63)  | 99.15% (116/117) | 94.12% (16/17)  | 100.00% (9/9)   |
+|------------------------+------------------+------------------+-----------------+-----------------|
+| test/AMM.t.sol         | 95.31% (61/64)   | 96.55% (56/58)   | 50.00% (4/8)    | 94.12% (16/17)  |
+|------------------------+------------------+------------------+-----------------+-----------------|
+| test/Invariant.t.sol   | 100.00% (65/65)  | 96.97% (96/99)   | 66.67% (6/9)    | 100.00% (6/6)   |
+|------------------------+------------------+------------------+-----------------+-----------------|
+| Total                  | 92.28% (287/311) | 93.86% (428/456) | 82.14% (46/56)  | 91.84% (45/49)  |
+╰------------------------+------------------+------------------+-----------------+-----------------╯
+Wrote LCOV report.

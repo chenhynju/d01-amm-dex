@@ -1,0 +1,32 @@
+{
+  "status": "PASS_LOCAL_ONLY",
+  "source_commit": "271b387b90432c72126d0db1f28c36fe83d39126",
+  "files": {
+    "src/Factory.sol": "77a186c4e3d431b8a74d4c904b2a0f16462356af70223704bd9cf3c5760ca931",
+    "src/Pair.sol": "757e690ceb2986244f15da487a8a4cd57e745fa137b573fe0d82cc481b2c02d9",
+    "src/Router.sol": "a76911ae3d2f39757d870ca939b2b2ea741251f3b09c7db4bd096c72faceb648",
+    "test/AMM.t.sol": "109837117b47f14a7b384cb1edf648a0f3f4150c686d303fd25e819badc64824",
+    "test/Differential.t.sol": "bb97bbfa97553dd7a61d482a51f4f9efc072ac3e1abdfdc913de9882231f6538",
+    "test/Invariant.t.sol": "5bf337b42ddadd435780357d5ed6d89b656dacf72c1f433b94d98254c143577f",
+    "test/LPReference.t.sol": "cea30fba9c2a1d71cf22c279a309dfe3ca8d5af03b8f7823c37afbf37a258b98",
+    "test/fork/MainnetFork.t.sol": "d9a52ca20ba3cc68dfbf4300cfe997cb8d293108b8f9754d7e2af1b1136dca8a",
+    "script/Deploy.s.sol": "d4147b54925b05a693ee951e8cd0e8367cfd73f3cf86a4aeba7b483e736626a4",
+    "script/LocalDemo.s.sol": "67ec501dd4969a8ee8b71a1c386160fe1302bd80b53dd72d55a431473710bb9d",
+    "scripts/campaign.py": "070f273b404cbd410168c3c5011baa89208214b1db4055d6b61b22873b765ae4",
+    "scripts/coverage_gate.py": "01f5cf2b69344ed102c4abf56c2019b179f931bb5fd2fef490604bba19312099",
+    "scripts/dependencies.py": "8115274e76466720feaab69032eac2437ef007d9cdd074739173e9844170c649",
+    "scripts/finalize_evidence.py": "13edce7bf7709f01d6c1b3733603e0d9f72968c2138b9601fa7e002b6cc0f432",
+    "scripts/install-ci-tools.sh": "c5450e0fbf530b7f69b146f6592ec75c1639c1fcce25b44c109244d2f00cb76d",
+    "scripts/isolated_checks.py": "856ee3351fe378ad33c3800d17ae7994195d27764a061738abf553302358c97a",
+    "scripts/local_smoke.py": "0c647a65d02d8804a3f45390f18771194750bb7f15b5b6f5db20934daa3065f7",
+    "scripts/lp_reference_model.py": "c6c294d3cb31eb4ce577d82d91a5235ae294aeae1b1a94416285d81ec07f7871",
+    "scripts/mutation_checks.py": "4908b81e91e1d25c07e812370772ec1e314b21320c2cbe77c912b842ee3233d3",
+    "scripts/optimizer_matrix.py": "db9d614e51cba457b59e4d5b1622a7ee7e33dd4c74c1378d58d7ff3c50e07d89",
+    "scripts/reference_model.py": "2f10810d1f4518b1d87e726ca34848f5ae0cc4a47fb57f01482eec2c3d83794d",
+    "scripts/release_preflight.py": "36e43b5c0e6c23d39ba8efbf20ded4ec1a1b4338a75bdcdf2349988b41691061",
+    "scripts/reproducible_build.py": "ecef434b38e34e0deca3f0520053e718efeba7b9834946fc09ee60a4e8d3796c",
+    "scripts/requirements-audit.txt": "8ee768c850b604fcfb882aee5bdea0c2df24cb6d578b8b85d661fdce55bb6716",
+    "scripts/static_review.py": "86de186b1c2ad711711fca03d2f8a7971a9118624e098d4e9defe654c0b495fd",
+    "scripts/verify_docs.py": "a87384e94ce0b6084a48659ab82a5158735d869b6c306bb441924341c3cedf5d"
+  }
+}

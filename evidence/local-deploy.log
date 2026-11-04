@@ -1,0 +1,31 @@
+No files changed, compilation skipped
+Warning: Detected artifacts built from source files that no longer exist. Run `forge clean` to make sure builds are in sync with project files.
+ - /home/chenhy/projects/b2-amm/foundry-pp/DeployHelper54.sol
+ - /home/chenhy/projects/b2-amm/foundry-pp/DeployHelper56.sol
+Script ran successfully.
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 31337
+
+Estimated max fee per gas: 2.000000001 gwei
+Estimated base fee per gas: 1 gwei
+Estimated max priority fee per gas: 0.000000001 gwei
+
+Estimated total gas used for script: 9528387
+
+Estimated amount required: 0.019056774009528387 ETH
+
+==========================
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /home/chenhy/projects/b2-amm/broadcast/LocalDemo.s.sol/31337/run-latest.json
+
+Sensitive values saved to: /home/chenhy/projects/b2-amm/cache/LocalDemo.s.sol/31337/run-latest.json
+

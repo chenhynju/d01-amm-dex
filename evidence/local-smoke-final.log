@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "network": "local ephemeral Anvil",
+  "chainId": 31337,
+  "factory": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+  "router": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512",
+  "pair": "0x1a473AEE239bB0e2B9F140a06bd57ac5033bD3d7",
+  "tokens": [
+    "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+    "0xcf7ed3acca5a467e9e704c703e8d87f634fb0fc9"
+  ],
+  "recipientOutput": "9871580343970612",
+  "reserves": "1010000000000000000 [1.01e18]\n990128419656029388 [9.901e17]\n1793828408 [1.793e9]"
+}

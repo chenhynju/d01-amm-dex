@@ -1,0 +1,8 @@
+Compiling 48 files with Solc 0.8.28
+Solc 0.8.28 finished in 7.29s
+Error: Compiler run failed:
+Error: Compiler error (/solidity/libsolidity/codegen/LValue.cpp:50):Stack too deep. Try compiling with `--via-ir` (cli) or the equivalent `viaIR: true` (standard JSON) while enabling the optimizer. Otherwise, try removing local variables.
+   --> src/Router.sol:112:16:
+    |
+112 |         IERC20(input).safeTransferFrom(msg.sender, address(pair), amountIn);
+    |                ^^^^^

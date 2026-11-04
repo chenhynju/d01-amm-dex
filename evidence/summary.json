@@ -1,0 +1,29 @@
+{
+  "status": "PASS_LOCAL_ONLY",
+  "public_release": "BLOCKED",
+  "final_suite": {
+    "passed": 37,
+    "failed": 0,
+    "skipped_fork": 1
+  },
+  "campaign": {
+    "seconds": 1806.3713270100002,
+    "rounds": 77,
+    "unit_fuzz_cases": 2310000,
+    "handler_calls": 630784,
+    "seed_first": "0x2f2c8f4610",
+    "seed_last": "0x2f2c8f465c"
+  },
+  "ci_profile": {
+    "passed": 36,
+    "failed": 0,
+    "skipped_fork": 1,
+    "runs": 512,
+    "depth": 256,
+    "handler_calls": 131072,
+    "seed": "0xc120261105"
+  },
+  "core_coverage": 97.29729729729729,
+  "mutants_killed": 3,
+  "protocol_commit": "271b387b90432c72126d0db1f28c36fe83d39126"
+}

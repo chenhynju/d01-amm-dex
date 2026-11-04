@@ -1,0 +1,104 @@
+
+Detector: reentrancy-balance
+Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):
+	External call allowing reentrancy:
+	- pair.burn(to) (src/Router.sol#90)
+	Balance read before the call:
+	- beforeB = IERC20(b).balanceOf(to) (src/Router.sol#88)
+	Possible stale balance used after the call in a condition:
+	- amountA < minA || amountB < minB (src/Router.sol#93)
+		- stale variable `amountB`
+Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):
+	External call allowing reentrancy:
+	- pair.burn(to) (src/Router.sol#90)
+	Balance read before the call:
+	- beforeA = IERC20(a).balanceOf(to) (src/Router.sol#87)
+	Possible stale balance used after the call in a condition:
+	- amountA < minA || amountB < minB (src/Router.sol#93)
+		- stale variable `amountA`
+Reentrancy in Router.swapExactTokensForTokens(address,address,uint256,uint256,address,uint256) (src/Router.sol#98-119):
+	External call allowing reentrancy:
+	- pair.swap(0,out,to,) (src/Router.sol#115)
+	Balance read before the call:
+	- beforeOut = IERC20(output).balanceOf(to) (src/Router.sol#111)
+	Possible stale balance used after the call in a condition:
+	- received < minOut (src/Router.sol#118)
+		- stale variable `received`
+Reentrancy in Router.swapExactTokensForTokens(address,address,uint256,uint256,address,uint256) (src/Router.sol#98-119):
+	External call allowing reentrancy:
+	- pair.swap(out,0,to,) (src/Router.sol#116)
+	Balance read before the call:
+	- beforeOut = IERC20(output).balanceOf(to) (src/Router.sol#111)
+	Possible stale balance used after the call in a condition:
+	- received < minOut (src/Router.sol#118)
+		- stale variable `received`
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities
+
+Detector: divide-before-multiply
+Pair.currentCumulativePrices() (src/Pair.sol#64-76) performs a multiplication on the result of a division:
+	- p0 += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#72)
+Pair.currentCumulativePrices() (src/Pair.sol#64-76) performs a multiplication on the result of a division:
+	- p1 += ((uint256(reserve0) << 112) / reserve1) * elapsed (src/Pair.sol#73)
+Pair._updateReserves(uint256,uint256) (src/Pair.sol#164-177) performs a multiplication on the result of a division:
+	- price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#169)
+Pair._updateReserves(uint256,uint256) (src/Pair.sol#164-177) performs a multiplication on the result of a division:
+	- price1CumulativeLast += ((uint256(reserve0) << 112) / reserve1) * elapsed (src/Pair.sol#170)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#divide-before-multiply
+
+Detector: incorrect-equality
+Pair.burn(address) (src/Pair.sol#100-114) uses a dangerous strict equality:
+	- a0 == 0 || a1 == 0 (src/Pair.sol#107)
+Pair.mint(address) (src/Pair.sol#79-97) uses a dangerous strict equality:
+	- supply == 0 (src/Pair.sol#85)
+Pair.mint(address) (src/Pair.sol#79-97) uses a dangerous strict equality:
+	- liquidity == 0 (src/Pair.sol#93)
+Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133) uses a dangerous strict equality:
+	- a0In == 0 && a1In == 0 (src/Pair.sol#127)
+Router.getAmountOut(uint256,uint256,uint256) (src/Router.sol#32-39) uses a dangerous strict equality:
+	- input == 0 || input > type()(uint112).max || rIn == 0 || rOut == 0 || rIn > type()(uint112).max || rOut > type()(uint112).max (src/Router.sol#34-35)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: reentrancy-no-eth
+Reentrancy in Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133):
+	External calls:
+	- IFlashCallee(to).ammCall(msg.sender,a0Out,a1Out,data) (src/Pair.sol#123)
+	State variables written after the call(s):
+	- _updateReserves(b0,b1) (src/Pair.sol#131)
+		- reserve0 = SafeCast.toUint112(b0) (src/Pair.sol#173)
+	Pair.reserve0 (src/Pair.sol#33) can be used in cross function reentrancies:
+	- Pair.currentCumulativePrices() (src/Pair.sol#64-76)
+	- Pair.getReserves() (src/Pair.sol#58-61)
+	- _updateReserves(b0,b1) (src/Pair.sol#131)
+		- reserve1 = SafeCast.toUint112(b1) (src/Pair.sol#174)
+	Pair.reserve1 (src/Pair.sol#34) can be used in cross function reentrancies:
+	- Pair.currentCumulativePrices() (src/Pair.sol#64-76)
+	- Pair.getReserves() (src/Pair.sol#58-61)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-2
+
+Detector: unused-return
+Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94) ignores return value by pair.burn(to) (src/Router.sol#90)
+Router._reserves(Pair,address) (src/Router.sol#127-130) ignores return value by (r0,r1,None) = pair.getReserves() (src/Router.sol#128)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-return
+
+Detector: reentrancy-benign
+Reentrancy in Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133):
+	External calls:
+	- IFlashCallee(to).ammCall(msg.sender,a0Out,a1Out,data) (src/Pair.sol#123)
+	State variables written after the call(s):
+	- _updateReserves(b0,b1) (src/Pair.sol#131)
+		- price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#169)
+	- _updateReserves(b0,b1) (src/Pair.sol#131)
+		- price1CumulativeLast += ((uint256(reserve0) << 112) / reserve1) * elapsed (src/Pair.sol#170)
+	- _updateReserves(b0,b1) (src/Pair.sol#131)
+		- timestampLast = now32 (src/Pair.sol#175)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+
+Detector: timestamp
+Pair._updateReserves(uint256,uint256) (src/Pair.sol#164-177) uses timestamp for comparisons
+	Dangerous comparisons:
+	- elapsed != 0 && reserve0 != 0 && reserve1 != 0 (src/Pair.sol#168)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+. analyzed (29 contracts with 102 detectors), 18 result(s) found
+'forge clean' running (wd: /tmp/b2-checks-cayimju9)
+'forge config --json' running
+'forge build --build-info --deny never --skip ./test/** ./script/** --force' running (wd: /tmp/b2-checks-cayimju9)

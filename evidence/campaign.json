@@ -1,0 +1,468 @@
+{
+  "status": "PASS",
+  "seconds": 1806.3713270100002,
+  "rounds": [
+    {
+      "seed": "0x2f2c8f4610",
+      "exit": 0,
+      "seconds": 31.24936571399985,
+      "log": "campaign-000.log"
+    },
+    {
+      "seed": "0x2f2c8f4611",
+      "exit": 0,
+      "seconds": 24.400949451000088,
+      "log": "campaign-001.log"
+    },
+    {
+      "seed": "0x2f2c8f4612",
+      "exit": 0,
+      "seconds": 30.177621326999997,
+      "log": "campaign-002.log"
+    },
+    {
+      "seed": "0x2f2c8f4613",
+      "exit": 0,
+      "seconds": 29.541319037999983,
+      "log": "campaign-003.log"
+    },
+    {
+      "seed": "0x2f2c8f4614",
+      "exit": 0,
+      "seconds": 25.174649464999902,
+      "log": "campaign-004.log"
+    },
+    {
+      "seed": "0x2f2c8f4615",
+      "exit": 0,
+      "seconds": 25.06535036000014,
+      "log": "campaign-005.log"
+    },
+    {
+      "seed": "0x2f2c8f4616",
+      "exit": 0,
+      "seconds": 25.02949951300002,
+      "log": "campaign-006.log"
+    },
+    {
+      "seed": "0x2f2c8f4617",
+      "exit": 0,
+      "seconds": 23.561822924999888,
+      "log": "campaign-007.log"
+    },
+    {
+      "seed": "0x2f2c8f4618",
+      "exit": 0,
+      "seconds": 21.960443222999857,
+      "log": "campaign-008.log"
+    },
+    {
+      "seed": "0x2f2c8f4619",
+      "exit": 0,
+      "seconds": 25.054944966999983,
+      "log": "campaign-009.log"
+    },
+    {
+      "seed": "0x2f2c8f461a",
+      "exit": 0,
+      "seconds": 26.87019711800008,
+      "log": "campaign-010.log"
+    },
+    {
+      "seed": "0x2f2c8f461b",
+      "exit": 0,
+      "seconds": 23.48056729599989,
+      "log": "campaign-011.log"
+    },
+    {
+      "seed": "0x2f2c8f461c",
+      "exit": 0,
+      "seconds": 20.630017658000043,
+      "log": "campaign-012.log"
+    },
+    {
+      "seed": "0x2f2c8f461d",
+      "exit": 0,
+      "seconds": 21.348058490000085,
+      "log": "campaign-013.log"
+    },
+    {
+      "seed": "0x2f2c8f461e",
+      "exit": 0,
+      "seconds": 20.2650881510001,
+      "log": "campaign-014.log"
+    },
+    {
+      "seed": "0x2f2c8f461f",
+      "exit": 0,
+      "seconds": 24.64287912000009,
+      "log": "campaign-015.log"
+    },
+    {
+      "seed": "0x2f2c8f4620",
+      "exit": 0,
+      "seconds": 28.772664517000067,
+      "log": "campaign-016.log"
+    },
+    {
+      "seed": "0x2f2c8f4621",
+      "exit": 0,
+      "seconds": 26.535552710000047,
+      "log": "campaign-017.log"
+    },
+    {
+      "seed": "0x2f2c8f4622",
+      "exit": 0,
+      "seconds": 24.245391547000054,
+      "log": "campaign-018.log"
+    },
+    {
+      "seed": "0x2f2c8f4623",
+      "exit": 0,
+      "seconds": 23.16697447500019,
+      "log": "campaign-019.log"
+    },
+    {
+      "seed": "0x2f2c8f4624",
+      "exit": 0,
+      "seconds": 21.39319682999985,
+      "log": "campaign-020.log"
+    },
+    {
+      "seed": "0x2f2c8f4625",
+      "exit": 0,
+      "seconds": 21.177372977999767,
+      "log": "campaign-021.log"
+    },
+    {
+      "seed": "0x2f2c8f4626",
+      "exit": 0,
+      "seconds": 22.695915720999892,
+      "log": "campaign-022.log"
+    },
+    {
+      "seed": "0x2f2c8f4627",
+      "exit": 0,
+      "seconds": 23.166114168999684,
+      "log": "campaign-023.log"
+    },
+    {
+      "seed": "0x2f2c8f4628",
+      "exit": 0,
+      "seconds": 20.43887415800009,
+      "log": "campaign-024.log"
+    },
+    {
+      "seed": "0x2f2c8f4629",
+      "exit": 0,
+      "seconds": 23.27178482699992,
+      "log": "campaign-025.log"
+    },
+    {
+      "seed": "0x2f2c8f462a",
+      "exit": 0,
+      "seconds": 21.31406488399989,
+      "log": "campaign-026.log"
+    },
+    {
+      "seed": "0x2f2c8f462b",
+      "exit": 0,
+      "seconds": 30.57368059700002,
+      "log": "campaign-027.log"
+    },
+    {
+      "seed": "0x2f2c8f462c",
+      "exit": 0,
+      "seconds": 25.74510288800002,
+      "log": "campaign-028.log"
+    },
+    {
+      "seed": "0x2f2c8f462d",
+      "exit": 0,
+      "seconds": 20.863222503000088,
+      "log": "campaign-029.log"
+    },
+    {
+      "seed": "0x2f2c8f462e",
+      "exit": 0,
+      "seconds": 21.3916944169996,
+      "log": "campaign-030.log"
+    },
+    {
+      "seed": "0x2f2c8f462f",
+      "exit": 0,
+      "seconds": 26.727679039000122,
+      "log": "campaign-031.log"
+    },
+    {
+      "seed": "0x2f2c8f4630",
+      "exit": 0,
+      "seconds": 23.074644183000146,
+      "log": "campaign-032.log"
+    },
+    {
+      "seed": "0x2f2c8f4631",
+      "exit": 0,
+      "seconds": 27.291292643999896,
+      "log": "campaign-033.log"
+    },
+    {
+      "seed": "0x2f2c8f4632",
+      "exit": 0,
+      "seconds": 26.95604382800002,
+      "log": "campaign-034.log"
+    },
+    {
+      "seed": "0x2f2c8f4633",
+      "exit": 0,
+      "seconds": 22.844153499000186,
+      "log": "campaign-035.log"
+    },
+    {
+      "seed": "0x2f2c8f4634",
+      "exit": 0,
+      "seconds": 21.467615257000034,
+      "log": "campaign-036.log"
+    },
+    {
+      "seed": "0x2f2c8f4635",
+      "exit": 0,
+      "seconds": 26.16272335299982,
+      "log": "campaign-037.log"
+    },
+    {
+      "seed": "0x2f2c8f4636",
+      "exit": 0,
+      "seconds": 22.561684959000104,
+      "log": "campaign-038.log"
+    },
+    {
+      "seed": "0x2f2c8f4637",
+      "exit": 0,
+      "seconds": 26.113288336000096,
+      "log": "campaign-039.log"
+    },
+    {
+      "seed": "0x2f2c8f4638",
+      "exit": 0,
+      "seconds": 21.520925788999648,
+      "log": "campaign-040.log"
+    },
+    {
+      "seed": "0x2f2c8f4639",
+      "exit": 0,
+      "seconds": 27.417483375999836,
+      "log": "campaign-041.log"
+    },
+    {
+      "seed": "0x2f2c8f463a",
+      "exit": 0,
+      "seconds": 20.836963993000154,
+      "log": "campaign-042.log"
+    },
+    {
+      "seed": "0x2f2c8f463b",
+      "exit": 0,
+      "seconds": 22.73506935400019,
+      "log": "campaign-043.log"
+    },
+    {
+      "seed": "0x2f2c8f463c",
+      "exit": 0,
+      "seconds": 24.794586498999706,
+      "log": "campaign-044.log"
+    },
+    {
+      "seed": "0x2f2c8f463d",
+      "exit": 0,
+      "seconds": 35.064163073000145,
+      "log": "campaign-045.log"
+    },
+    {
+      "seed": "0x2f2c8f463e",
+      "exit": 0,
+      "seconds": 25.984267578000072,
+      "log": "campaign-046.log"
+    },
+    {
+      "seed": "0x2f2c8f463f",
+      "exit": 0,
+      "seconds": 22.051503669999875,
+      "log": "campaign-047.log"
+    },
+    {
+      "seed": "0x2f2c8f4640",
+      "exit": 0,
+      "seconds": 25.628036148999854,
+      "log": "campaign-048.log"
+    },
+    {
+      "seed": "0x2f2c8f4641",
+      "exit": 0,
+      "seconds": 27.056671872000152,
+      "log": "campaign-049.log"
+    },
+    {
+      "seed": "0x2f2c8f4642",
+      "exit": 0,
+      "seconds": 28.14215302799994,
+      "log": "campaign-050.log"
+    },
+    {
+      "seed": "0x2f2c8f4643",
+      "exit": 0,
+      "seconds": 31.346153596000022,
+      "log": "campaign-051.log"
+    },
+    {
+      "seed": "0x2f2c8f4644",
+      "exit": 0,
+      "seconds": 26.510992588000136,
+      "log": "campaign-052.log"
+    },
+    {
+      "seed": "0x2f2c8f4645",
+      "exit": 0,
+      "seconds": 25.36560316499981,
+      "log": "campaign-053.log"
+    },
+    {
+      "seed": "0x2f2c8f4646",
+      "exit": 0,
+      "seconds": 23.681931412000267,
+      "log": "campaign-054.log"
+    },
+    {
+      "seed": "0x2f2c8f4647",
+      "exit": 0,
+      "seconds": 25.176312100999894,
+      "log": "campaign-055.log"
+    },
+    {
+      "seed": "0x2f2c8f4648",
+      "exit": 0,
+      "seconds": 26.021945521999896,
+      "log": "campaign-056.log"
+    },
+    {
+      "seed": "0x2f2c8f4649",
+      "exit": 0,
+      "seconds": 31.335911614999986,
+      "log": "campaign-057.log"
+    },
+    {
+      "seed": "0x2f2c8f464a",
+      "exit": 0,
+      "seconds": 27.05470357399963,
+      "log": "campaign-058.log"
+    },
+    {
+      "seed": "0x2f2c8f464b",
+      "exit": 0,
+      "seconds": 29.844661479000024,
+      "log": "campaign-059.log"
+    },
+    {
+      "seed": "0x2f2c8f464c",
+      "exit": 0,
+      "seconds": 28.86219223299986,
+      "log": "campaign-060.log"
+    },
+    {
+      "seed": "0x2f2c8f464d",
+      "exit": 0,
+      "seconds": 20.69798404600033,
+      "log": "campaign-061.log"
+    },
+    {
+      "seed": "0x2f2c8f464e",
+      "exit": 0,
+      "seconds": 20.973109575999842,
+      "log": "campaign-062.log"
+    },
+    {
+      "seed": "0x2f2c8f464f",
+      "exit": 0,
+      "seconds": 20.725977818000047,
+      "log": "campaign-063.log"
+    },
+    {
+      "seed": "0x2f2c8f4650",
+      "exit": 0,
+      "seconds": 24.72039011300012,
+      "log": "campaign-064.log"
+    },
+    {
+      "seed": "0x2f2c8f4651",
+      "exit": 0,
+      "seconds": 19.7283099199999,
+      "log": "campaign-065.log"
+    },
+    {
+      "seed": "0x2f2c8f4652",
+      "exit": 0,
+      "seconds": 17.095696755000063,
+      "log": "campaign-066.log"
+    },
+    {
+      "seed": "0x2f2c8f4653",
+      "exit": 0,
+      "seconds": 18.474489092000113,
+      "log": "campaign-067.log"
+    },
+    {
+      "seed": "0x2f2c8f4654",
+      "exit": 0,
+      "seconds": 15.54280335400017,
+      "log": "campaign-068.log"
+    },
+    {
+      "seed": "0x2f2c8f4655",
+      "exit": 0,
+      "seconds": 14.377212437999788,
+      "log": "campaign-069.log"
+    },
+    {
+      "seed": "0x2f2c8f4656",
+      "exit": 0,
+      "seconds": 10.306883189000018,
+      "log": "campaign-070.log"
+    },
+    {
+      "seed": "0x2f2c8f4657",
+      "exit": 0,
+      "seconds": 15.228037672000028,
+      "log": "campaign-071.log"
+    },
+    {
+      "seed": "0x2f2c8f4658",
+      "exit": 0,
+      "seconds": 14.448139818000072,
+      "log": "campaign-072.log"
+    },
+    {
+      "seed": "0x2f2c8f4659",
+      "exit": 0,
+      "seconds": 13.72838429400008,
+      "log": "campaign-073.log"
+    },
+    {
+      "seed": "0x2f2c8f465a",
+      "exit": 0,
+      "seconds": 12.429477787999986,
+      "log": "campaign-074.log"
+    },
+    {
+      "seed": "0x2f2c8f465b",
+      "exit": 0,
+      "seconds": 12.914186368000173,
+      "log": "campaign-075.log"
+    },
+    {
+      "seed": "0x2f2c8f465c",
+      "exit": 0,
+      "seconds": 21.982095168000342,
+      "log": "campaign-076.log"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/fork/MainnetFork.t.sol:MainnetForkTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider ethereum-rpc.publicnode.com; failed to retrieve chain ID from fork endpoint; MPP HTTP request to https://ethereum-rpc.publicnode.com/ failed: HTTP request failed: error sending request: error sending request: client error (Connect): Connection reset by peer (os error 104)] testForkRealWETHUSDC() (gas: 4445)
+Traces:
+  [4445] MainnetForkTest::testForkRealWETHUSDC()
+    ├─ [0] VM::envOr("MAINNET_RPC_URL", "") [staticcall]
+    │   └─ ← [Return] <env var value>
+    ├─ [0] VM::createSelectFork("<rpc url>", 21000000 [2.1e7])
+    │   └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider ethereum-rpc.publicnode.com; failed to retrieve chain ID from fork endpoint; MPP HTTP request to https://ethereum-rpc.publicnode.com/ failed: HTTP request failed: error sending request: error sending request: client error (Connect): Connection reset by peer (os error 104)
+    └─ ← [Revert] vm.createSelectFork: could not instantiate forked environment with provider ethereum-rpc.publicnode.com; failed to retrieve chain ID from fork endpoint; MPP HTTP request to https://ethereum-rpc.publicnode.com/ failed: HTTP request failed: error sending request: error sending request: client error (Connect): Connection reset by peer (os error 104)
+
+Backtrace:
+  at VM.createSelectFork
+  at MainnetForkTest.testForkRealWETHUSDC
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 343.90ms (342.83ms CPU time)
+
+Ran 1 test suite in 349.37ms (343.90ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/fork/MainnetFork.t.sol:MainnetForkTest
+[FAIL: vm.createSelectFork: could not instantiate forked environment with provider ethereum-rpc.publicnode.com; failed to retrieve chain ID from fork endpoint; MPP HTTP request to https://ethereum-rpc.publicnode.com/ failed: HTTP request failed: error sending request: error sending request: client error (Connect): Connection reset by peer (os error 104)] testForkRealWETHUSDC() (gas: 4445)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Tip: Run `forge test --debug --match-test <TEST_NAME>` to inspect one failing test in the debugger

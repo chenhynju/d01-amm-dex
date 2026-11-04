@@ -1,0 +1,8 @@
+{
+  "source": "transcribed from actual exec result, not a reconstructed raw log",
+  "command": "curl -fLsS --max-time 20 https://binaries.soliditylang.org/linux-amd64/list.json -o /tmp/b2-solc-list.json",
+  "exit": 35,
+  "error": "curl: (35) Recv failure: Connection reset by peer",
+  "required_patched_version": "0.8.38",
+  "status": "BLOCKED"
+}

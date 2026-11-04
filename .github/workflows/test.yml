@@ -1,0 +1,49 @@
+name: B2 AMM verification
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
+      - name: Install exact recorded tools and verify binary hashes
+        run: bash scripts/install-ci-tools.sh
+      - name: Format and compiler configuration
+        run: |
+          forge --version
+          forge fmt --check
+          forge config
+          forge build --sizes
+      - name: Vendored integrity and independent reference
+        run: |
+          python3 scripts/dependencies.py
+          python3 scripts/reference_model.py --check
+      - name: Unit integration fuzz and stateful invariant campaign
+        env:
+          FOUNDRY_PROFILE: ci
+        run: forge test -vv
+      - name: Core coverage gate
+        run: |
+          forge coverage --ir-minimum --report summary --report lcov
+          python3 scripts/coverage_gate.py lcov.info
+      - name: Gas regression under recorded default profile
+        run: forge snapshot --match-contract AMMTest --check
+      - name: Complete static finding baseline gate
+        run: python3 scripts/static_review.py
+      - name: Actual local transaction smoke
+        run: python3 scripts/local_smoke.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: verification-evidence
+          path: |
+            evidence/
+            lcov.info
+            .gas-snapshot

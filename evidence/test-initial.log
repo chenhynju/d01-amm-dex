@@ -1,0 +1,37 @@
+Compiling 49 files with Solc 0.8.28
+Solc 0.8.28 finished in 90.14s
+Compiler run successful with warnings:
+Warning (2018): Function state mutability can be restricted to view
+   --> test/AMM.t.sol:222:5:
+    |
+222 |     function testFuzzQuoteMonotonic(uint112 x,uint112 y,uint96 n) public {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 24 tests for test/AMM.t.sol:AMMTest
+[PASS] testBurnAllUserLP() (gas: 183120)
+[PASS] testDonationNotOwned() (gas: 125886)
+[PASS] testFactory() (gas: 142124)
+[PASS] testFlashNoRepay() (gas: 498338)
+[PASS] testFlashRepaymentAndLocks() (gas: 555083)
+[PASS] testFuzzLPExit(uint96) (runs: 1024, μ: 288806, ~: 288792)
+[PASS] testFuzzQuoteMonotonic(uint112,uint112,uint96) (runs: 1024, μ: 11009, ~: 10979)
+[PASS] testFuzzSwap(uint96,bool) (runs: 1024, μ: 130261, ~: 130366)
+[PASS] testInvalidRouter() (gas: 127402)
+[PASS] testInvalidSwap() (gas: 286850)
+[PASS] testNegativeRebaseRecovery() (gas: 131671)
+[PASS] testNoReturnToken() (gas: 2461704)
+[PASS] testPermitReplay() (gas: 141488)
+[PASS] testProportionalDepositAndSlippage() (gas: 178335)
+[PASS] testRemoveTaxedMinimum() (gas: 414201)
+[PASS] testReserveOverflow() (gas: 87611)
+[PASS] testReverseSwap() (gas: 122422)
+[PASS] testSkimAndSync() (gas: 278122)
+[PASS] testSlippageDeadlineRollback() (gas: 184638)
+[PASS] testSwapAndFee() (gas: 135564)
+[PASS] testTWAPAndTimestampWrap() (gas: 186394)
+[PASS] testTaxedDepositReverts() (gas: 155527)
+[PASS] testTaxedSwapBothDirections() (gas: 234616)
+[PASS] testTokenFailureAtomic() (gas: 120110)
+Suite result: ok. 24 passed; 0 failed; 0 skipped; finished in 1.22s (3.51s CPU time)
+{"timestamp":1793827177,"event":"failure","invariant":"invariant_claimsAreSolvent","target":"test/Invariant.t.sol:AMMInvariant","reason":"custom error 0xbb55fd27"}

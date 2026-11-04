@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "comparison": "full init/runtime bytes including metadata across two Linux paths",
+  "contracts": {
+    "Factory": {
+      "bytecode": {
+        "bytes": 11409,
+        "sha256": "dea57efd21bac3b6096354a01143052d0a6bb6959f78646a380c4cd637164346"
+      },
+      "deployedBytecode": {
+        "bytes": 11383,
+        "sha256": "9030010b4959dafc83f605820096fbe51a772355d0ae25107bf182e2ca1fdfab"
+      }
+    },
+    "Pair": {
+      "bytecode": {
+        "bytes": 10270,
+        "sha256": "11c216d54988dc20aa725bc7041aae0a48d9208edea1a90859f74bfd39e42728"
+      },
+      "deployedBytecode": {
+        "bytes": 8183,
+        "sha256": "1a6cda0ad5cd66582b306a8092e8e9889867cefda5d5863408ad039399c639e3"
+      }
+    },
+    "Router": {
+      "bytecode": {
+        "bytes": 4863,
+        "sha256": "c6749e50e747bd1692f75d8f8be2e0cee5a5a132e0e7bbb28c10652ff7052fb1"
+      },
+      "deployedBytecode": {
+        "bytes": 4719,
+        "sha256": "ed5e7a3444ab0c8b3b559c743d41563f454aa4c686213bb4d80be582660c064e"
+      }
+    }
+  }
+}

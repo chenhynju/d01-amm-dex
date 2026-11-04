@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "files": {
+    "src/Factory.sol": {
+      "LF": 12,
+      "LH": 12,
+      "FNF": 2,
+      "FNH": 2,
+      "BRF": 2,
+      "BRH": 2
+    },
+    "src/Pair.sol": {
+      "LF": 88,
+      "LH": 86,
+      "FNF": 12,
+      "FNH": 12,
+      "BRF": 18,
+      "BRH": 18
+    },
+    "src/Router.sol": {
+      "LF": 63,
+      "LH": 63,
+      "FNF": 9,
+      "FNH": 9,
+      "BRF": 17,
+      "BRH": 16
+    }
+  },
+  "total": {
+    "LF": 163,
+    "LH": 161,
+    "FNF": 23,
+    "FNH": 23,
+    "BRF": 37,
+    "BRH": 36
+  },
+  "branch_percent": 97.29729729729729
+}

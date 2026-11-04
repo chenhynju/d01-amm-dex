@@ -85,6 +85,10 @@ contract FlashActor is IFlashCallee {
     function ammCall(address, uint256 n, uint256, bytes calldata) external {
         require(msg.sender == address(pair));
         if (mode == 1) return;
+        if (mode == 2) {
+            token.transfer(address(pair), n);
+            return;
+        }
         (bool ok,) = address(pair).staticcall(abi.encodeCall(pair.getReserves, ()));
         readBlocked = !ok;
         (ok,) = address(pair).call(abi.encodeCall(pair.sync, ()));
@@ -216,6 +220,13 @@ contract AMMTest is AMMFixture {
         actor.run(1e15, 0);
         assertTrue(actor.readBlocked());
         assertTrue(actor.writeBlocked());
+    }
+
+    function testFlashPrincipalOnlyRepaymentRejected() public {
+        FlashActor actor = new FlashActor(p, a);
+        a.mint(address(actor), 1e18);
+        vm.expectRevert(Pair.InvariantViolation.selector);
+        actor.run(1e15, 2);
     }
 
     function testFlashNoRepay() public {

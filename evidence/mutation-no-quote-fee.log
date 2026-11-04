@@ -1,0 +1,117 @@
+Compiling 48 files with Solc 0.8.28
+Solc 0.8.28 finished in 64.38s
+Compiler run successful!
+
+Ran 1 test for test/AMM.t.sol:AMMTest
+[FAIL: InvariantViolation()] testSwapAndFee() (gas: 124664)
+Traces:
+  [7529428] AMMTest::setUp()
+    ├─ [2499800] → new Factory@0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+    │   └─ ← [Return] 11383 bytes of code
+    ├─ [1093979] → new Router@0x2e234DAe75C793f67A35089C9d99245E1C58470b
+    │   └─ ← [Return] 4719 bytes of code
+    ├─ [694275] → new MockToken@0xF62849F9A0B5Bf2913b396098F7c7019b51A820a
+    │   └─ ← [Return] 2703 bytes of code
+    ├─ [694275] → new MockToken@0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9
+    │   └─ ← [Return] 2703 bytes of code
+    ├─ [1863967] Factory::createPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a])
+    │   ├─ [1707721] → new Pair@0x7512533fE5096525f8cf90b8F185A1C6DF063d56
+    │   │   └─ ← [Return] 8183 bytes of code
+    │   ├─ emit PairCreated(token0: MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], token1: MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], pair: Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], index: 1)
+    │   └─ ← [Return] Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]
+    ├─ [70445] MockToken::mint(AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1000000000000000000000000000000 [1e30])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount: 1000000000000000000000000000000 [1e30])
+    │   └─ ← [Stop]
+    ├─ [70445] MockToken::mint(AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1000000000000000000000000000000 [1e30])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount: 1000000000000000000000000000000 [1e30])
+    │   └─ ← [Stop]
+    ├─ [46269] MockToken::approve(Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   ├─ emit Approval(owner: AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   └─ ← [Return] true
+    ├─ [46269] MockToken::approve(Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   ├─ emit Approval(owner: AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], spender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   └─ ← [Return] true
+    ├─ [218227] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 1000000000000000000 [1e18], 1000000000000000000 [1e18], 1000000000000000000 [1e18], 1000000000000000000 [1e18], AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1)
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 0, 0, 0
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   └─ ← [Return] 0
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   └─ ← [Return] 0
+    │   ├─ [32204] MockToken::transferFrom(AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], 1000000000000000000 [1e18])
+    │   │   ├─ emit Transfer(from: AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], amount: 1000000000000000000 [1e18])
+    │   │   └─ ← [Return] true
+    │   ├─ [32204] MockToken::transferFrom(AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], 1000000000000000000 [1e18])
+    │   │   ├─ emit Transfer(from: AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], amount: 1000000000000000000 [1e18])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   └─ ← [Return] 1000000000000000000 [1e18]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   └─ ← [Return] 1000000000000000000 [1e18]
+    │   ├─ [101791] Pair::mint(AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   │   └─ ← [Return] 1000000000000000000 [1e18]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   │   └─ ← [Return] 1000000000000000000 [1e18]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: ECRecover: [0x0000000000000000000000000000000000000001], amount: 1000)
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount: 999999999999999000 [9.999e17])
+    │   │   ├─ emit Sync(reserve0: 1000000000000000000 [1e18], reserve1: 1000000000000000000 [1e18])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 1000000000000000000 [1e18], amount1: 1000000000000000000 [1e18], to: AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496])
+    │   │   └─ ← [Return] 999999999999999000 [9.999e17]
+    │   └─ ← [Return] 1000000000000000000 [1e18], 1000000000000000000 [1e18], 999999999999999000 [9.999e17]
+    └─ ← [Return]
+
+  [124664] AMMTest::testSwapAndFee()
+    ├─ [716] Router::getAmountOut(10000000000000000 [1e16], 1000000000000000000 [1e18], 1000000000000000000 [1e18]) [staticcall]
+    │   └─ ← [Return] 9900990099009900 [9.9e15]
+    ├─ [109137] Router::swapExactTokensForTokens(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 10000000000000000 [1e16], 9900990099009900 [9.9e15], 0x0000000000000000000000000000000000000B0b, 1)
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 1000000000000000000 [1e18], 1000000000000000000 [1e18], 1
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   └─ ← [Return] 1000000000000000000 [1e18]
+    │   ├─ [2559] MockToken::balanceOf(0x0000000000000000000000000000000000000B0b) [staticcall]
+    │   │   └─ ← [Return] 0
+    │   ├─ [15104] MockToken::transferFrom(AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], 10000000000000000 [1e16])
+    │   │   ├─ emit Transfer(from: AMMTest: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], to: Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], amount: 10000000000000000 [1e16])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   └─ ← [Return] 1010000000000000000 [1.01e18]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [37640] Pair::swap(0, 9900990099009900 [9.9e15], 0x0000000000000000000000000000000000000B0b, 0x)
+    │   │   ├─ [30011] MockToken::transfer(0x0000000000000000000000000000000000000B0b, 9900990099009900 [9.9e15])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], to: 0x0000000000000000000000000000000000000B0b, amount: 9900990099009900 [9.9e15])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   │   └─ ← [Return] 1010000000000000000 [1.01e18]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   │   └─ ← [Return] 990099009900990100 [9.9e17]
+    │   │   └─ ← [Revert] InvariantViolation()
+    │   └─ ← [Revert] InvariantViolation()
+    └─ ← [Revert] InvariantViolation()
+
+Backtrace:
+  at Pair.swap
+  at Router.swapExactTokensForTokens
+  at AMMTest.testSwapAndFee
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 5.30ms (648.40µs CPU time)
+
+Ran 1 test suite in 108.85ms (5.30ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/AMM.t.sol:AMMTest
+[FAIL: InvariantViolation()] testSwapAndFee() (gas: 124664)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Tip: Run `forge test --debug --match-test <TEST_NAME>` to inspect one failing test in the debugger

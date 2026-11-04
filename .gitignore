@@ -10,3 +10,5 @@ broadcast/
 *mnemonic*
 *.log.tmp
 __pycache__/
+.ci-tools/
+.audit-venv/

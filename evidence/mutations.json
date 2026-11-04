@@ -1,0 +1,23 @@
+[
+  {
+    "mutation": "remove-flash-fee",
+    "status": "KILLED",
+    "exit": 1,
+    "test": "testFlashPrincipalOnlyRepaymentRejected",
+    "log": "mutation-remove-flash-fee.log"
+  },
+  {
+    "mutation": "remove-swap-lock",
+    "status": "KILLED",
+    "exit": 1,
+    "test": "testFlashRepaymentAndLocks",
+    "log": "mutation-remove-swap-lock.log"
+  },
+  {
+    "mutation": "no-quote-fee",
+    "status": "KILLED",
+    "exit": 1,
+    "test": "testSwapAndFee",
+    "log": "mutation-no-quote-fee.log"
+  }
+]

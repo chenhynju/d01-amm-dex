@@ -1,0 +1,71 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/Differential.t.sol:DifferentialTest
+[PASS] testPythonRationalVectors() (gas: 506178)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 4.02ms (3.16ms CPU time)
+
+Ran 33 tests for test/AMM.t.sol:AMMTest
+[PASS] testBurnAllUserLP() (gas: 183244)
+[PASS] testDonationNotOwned() (gas: 125952)
+[PASS] testDustLPExitIsAtomic() (gas: 331243)
+[PASS] testEmptyPoolAndMintBoundaries() (gas: 2538879)
+[PASS] testFactory() (gas: 142189)
+[PASS] testFlashNoRepay() (gas: 498514)
+[PASS] testFlashRepaymentAndLocks() (gas: 555241)
+[PASS] testFuzzLPExit(uint96) (runs: 10000, μ: 289084, ~: 289066)
+[PASS] testFuzzQuoteMonotonic(uint112,uint112,uint96) (runs: 10000, μ: 11054, ~: 11023)
+[PASS] testFuzzSwap(uint96,bool) (runs: 10000, μ: 130603, ~: 130700)
+[PASS] testInvalidRecipients() (gas: 160578)
+[PASS] testInvalidRouter() (gas: 127430)
+[PASS] testInvalidSwap() (gas: 287048)
+[PASS] testMaximumReserves() (gas: 2208463)
+[PASS] testNegativeRebaseRecovery() (gas: 131851)
+[PASS] testNoReturnToken() (gas: 2473486)
+[PASS] testOneSidedSyncedPoolRejected() (gas: 2863273)
+[PASS] testPairConstructorValidation() (gas: 933000)
+[PASS] testPermitReplay() (gas: 141531)
+[PASS] testProportionalDepositAndSlippage() (gas: 178493)
+[PASS] testRemoveTaxedMinimum() (gas: 414582)
+[PASS] testReserveOverflow() (gas: 87633)
+[PASS] testReverseSwap() (gas: 122756)
+[PASS] testRouterAmountBounds() (gas: 100081)
+[PASS] testRouterCreatesPairAndReverseAdd() (gas: 3018721)
+[PASS] testSkimAndSync() (gas: 278456)
+[PASS] testSlippageDeadlineRollback() (gas: 184818)
+[PASS] testSwapAndFee() (gas: 135788)
+[PASS] testTWAPAndTimestampWrap() (gas: 186862)
+[PASS] testTaxedDepositReverts() (gas: 155659)
+[PASS] testTaxedSwapBothDirections() (gas: 234840)
+[PASS] testTokenFailureAtomic() (gas: 120132)
+[PASS] testTokenHookRouterAndReadLocks() (gas: 3322699)
+Suite result: ok. 33 passed; 0 failed; 0 skipped; finished in 7.56s (13.87s CPU time)
+
+Ran 1 test for test/Invariant.t.sol:AMMInvariant
+[PASS]
+AMMInvariant invariants:
+[PASS] invariant_claimsAreSolvent
+[PASS] invariant_feeAdjustedKDoesNotDecreaseOnSwap
+[PASS] invariant_ghostAssetConservation
+[PASS] invariant_lockedLiquidity
+[PASS] invariant_quoteMonotonicAndBounded
+[PASS] invariant_reservesMatchBalances
+[PASS] invariant_supplyEqualsTrackedHolders
+ AMMInvariant invariants (runs: 128, calls: 8192, reverts: 0)
+
+╭----------+----------+-------+---------+----------╮
+| Contract | Selector | Calls | Reverts | Discards |
++==================================================+
+| Handler  | advance  | 1656  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | deposit  | 1622  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | donate   | 1681  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | exit     | 1628  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | swap     | 1605  | 0       | 0        |
+╰----------+----------+-------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 21.41s (21.39s CPU time)
+
+Ran 3 test suites in 21.42s (28.98s CPU time): 35 tests passed, 0 failed, 0 skipped (35 total tests)

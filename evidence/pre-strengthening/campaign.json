@@ -1,0 +1,24 @@
+{
+  "status": "RUNNING",
+  "seconds": 83.76817869699994,
+  "rounds": [
+    {
+      "seed": "0x2f2c8f4610",
+      "exit": 0,
+      "seconds": 30.07570911499988,
+      "log": "campaign-000.log"
+    },
+    {
+      "seed": "0x2f2c8f4611",
+      "exit": 0,
+      "seconds": 27.52351292000003,
+      "log": "campaign-001.log"
+    },
+    {
+      "seed": "0x2f2c8f4612",
+      "exit": 0,
+      "seconds": 26.165709161999985,
+      "log": "campaign-002.log"
+    }
+  ]
+}

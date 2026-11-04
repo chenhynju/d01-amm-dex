@@ -1,0 +1,78 @@
+Compiling 3 files with Solc 0.8.28
+Solc 0.8.28 finished in 84.55s
+Compiler run successful!
+
+Ran 1 test for test/fork/MainnetFork.t.sol:MainnetForkTest
+[SKIP] testForkRealWETHUSDC() (gas: 0)
+Suite result: ok. 0 passed; 0 failed; 1 skipped; finished in 938.10µs (142.70µs CPU time)
+
+Ran 1 test for test/Differential.t.sol:DifferentialTest
+[PASS] testPythonRationalVectors() (gas: 506178)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 4.80ms (3.85ms CPU time)
+
+Ran 34 tests for test/AMM.t.sol:AMMTest
+[PASS] testBurnAllUserLP() (gas: 183244)
+[PASS] testDonationNotOwned() (gas: 125952)
+[PASS] testDustLPExitIsAtomic() (gas: 331243)
+[PASS] testEmptyPoolAndMintBoundaries() (gas: 2538879)
+[PASS] testFactory() (gas: 142189)
+[PASS] testFlashNoRepay() (gas: 517043)
+[PASS] testFlashPrincipalOnlyRepaymentRejected() (gas: 562972)
+[PASS] testFlashRepaymentAndLocks() (gas: 573991)
+[PASS] testFuzzLPExit(uint96) (runs: 10000, μ: 289084, ~: 289066)
+[PASS] testFuzzQuoteMonotonic(uint112,uint112,uint96) (runs: 10000, μ: 11054, ~: 11023)
+[PASS] testFuzzSwap(uint96,bool) (runs: 10000, μ: 130603, ~: 130700)
+[PASS] testInvalidRecipients() (gas: 160578)
+[PASS] testInvalidRouter() (gas: 127430)
+[PASS] testInvalidSwap() (gas: 287076)
+[PASS] testMaximumReserves() (gas: 2208463)
+[PASS] testNegativeRebaseRecovery() (gas: 131851)
+[PASS] testNoReturnToken() (gas: 2473486)
+[PASS] testOneSidedSyncedPoolRejected() (gas: 2863261)
+[PASS] testPairConstructorValidation() (gas: 933000)
+[PASS] testPermitReplay() (gas: 141531)
+[PASS] testProportionalDepositAndSlippage() (gas: 178493)
+[PASS] testRemoveTaxedMinimum() (gas: 414582)
+[PASS] testReserveOverflow() (gas: 87633)
+[PASS] testReverseSwap() (gas: 122778)
+[PASS] testRouterAmountBounds() (gas: 100081)
+[PASS] testRouterCreatesPairAndReverseAdd() (gas: 3018709)
+[PASS] testSkimAndSync() (gas: 278456)
+[PASS] testSlippageDeadlineRollback() (gas: 184818)
+[PASS] testSwapAndFee() (gas: 135788)
+[PASS] testTWAPAndTimestampWrap() (gas: 186884)
+[PASS] testTaxedDepositReverts() (gas: 155659)
+[PASS] testTaxedSwapBothDirections() (gas: 234840)
+[PASS] testTokenFailureAtomic() (gas: 120132)
+[PASS] testTokenHookRouterAndReadLocks() (gas: 3322733)
+Suite result: ok. 34 passed; 0 failed; 0 skipped; finished in 9.44s (27.23s CPU time)
+
+Ran 1 test for test/Invariant.t.sol:AMMInvariant
+[PASS]
+AMMInvariant invariants:
+[PASS] invariant_claimsAreSolvent
+[PASS] invariant_feeAdjustedKDoesNotDecreaseOnSwap
+[PASS] invariant_ghostAssetConservation
+[PASS] invariant_lockedLiquidity
+[PASS] invariant_quoteMonotonicAndBounded
+[PASS] invariant_reservesMatchBalances
+[PASS] invariant_supplyEqualsTrackedHolders
+ AMMInvariant invariants (runs: 512, calls: 131072, reverts: 0)
+
+╭----------+----------+-------+---------+----------╮
+| Contract | Selector | Calls | Reverts | Discards |
++==================================================+
+| Handler  | advance  | 25904 | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | deposit  | 26303 | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | donate   | 26322 | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | exit     | 26189 | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | swap     | 26354 | 0       | 0        |
+╰----------+----------+-------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 373.03s (373.01s CPU time)
+
+Ran 4 test suites in 373.03s (382.47s CPU time): 36 tests passed, 0 failed, 1 skipped (37 total tests)

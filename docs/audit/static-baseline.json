@@ -1,0 +1,131 @@
+{
+  "slither": {
+    "reentrancy-balance|High": 4,
+    "divide-before-multiply|Medium": 4,
+    "incorrect-equality|Medium": 5,
+    "reentrancy-no-eth|Medium": 1,
+    "unused-return|Medium": 2,
+    "reentrancy-benign|Low": 1,
+    "timestamp|Low": 1
+  },
+  "aderyn": {
+    "large-numeric-literal": 1,
+    "literal-instead-of-constant": 8,
+    "state-change-without-event": 4,
+    "unchecked-return": 1
+  },
+  "slither_fingerprints": [
+    "divide-before-multiply|Medium|Pair._updateReserves(uint256,uint256) (src/Pair.sol#164-177) performs a multiplication on the result of a division:\n\t- price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#169)\n",
+    "divide-before-multiply|Medium|Pair._updateReserves(uint256,uint256) (src/Pair.sol#164-177) performs a multiplication on the result of a division:\n\t- price1CumulativeLast += ((uint256(reserve0) << 112) / reserve1) * elapsed (src/Pair.sol#170)\n",
+    "divide-before-multiply|Medium|Pair.currentCumulativePrices() (src/Pair.sol#64-76) performs a multiplication on the result of a division:\n\t- p0 += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#72)\n",
+    "divide-before-multiply|Medium|Pair.currentCumulativePrices() (src/Pair.sol#64-76) performs a multiplication on the result of a division:\n\t- p1 += ((uint256(reserve0) << 112) / reserve1) * elapsed (src/Pair.sol#73)\n",
+    "incorrect-equality|Medium|Pair.burn(address) (src/Pair.sol#100-114) uses a dangerous strict equality:\n\t- a0 == 0 || a1 == 0 (src/Pair.sol#107)\n",
+    "incorrect-equality|Medium|Pair.mint(address) (src/Pair.sol#79-97) uses a dangerous strict equality:\n\t- liquidity == 0 (src/Pair.sol#93)\n",
+    "incorrect-equality|Medium|Pair.mint(address) (src/Pair.sol#79-97) uses a dangerous strict equality:\n\t- supply == 0 (src/Pair.sol#85)\n",
+    "incorrect-equality|Medium|Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133) uses a dangerous strict equality:\n\t- a0In == 0 && a1In == 0 (src/Pair.sol#127)\n",
+    "incorrect-equality|Medium|Router.getAmountOut(uint256,uint256,uint256) (src/Router.sol#32-39) uses a dangerous strict equality:\n\t- input == 0 || input > type()(uint112).max || rIn == 0 || rOut == 0 || rIn > type()(uint112).max || rOut > type()(uint112).max (src/Router.sol#34-35)\n",
+    "reentrancy-balance|High|Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):\n\tExternal call allowing reentrancy:\n\t- pair.burn(to) (src/Router.sol#90)\n\tBalance read before the call:\n\t- beforeA = IERC20(a).balanceOf(to) (src/Router.sol#87)\n\tPossible stale balance used after the call in a condition:\n\t- amountA < minA || amountB < minB (src/Router.sol#93)\n\t\t- stale variable `amountA`\n",
+    "reentrancy-balance|High|Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):\n\tExternal call allowing reentrancy:\n\t- pair.burn(to) (src/Router.sol#90)\n\tBalance read before the call:\n\t- beforeB = IERC20(b).balanceOf(to) (src/Router.sol#88)\n\tPossible stale balance used after the call in a condition:\n\t- amountA < minA || amountB < minB (src/Router.sol#93)\n\t\t- stale variable `amountB`\n",
+    "reentrancy-balance|High|Reentrancy in Router.swapExactTokensForTokens(address,address,uint256,uint256,address,uint256) (src/Router.sol#98-119):\n\tExternal call allowing reentrancy:\n\t- pair.swap(0,out,to,) (src/Router.sol#115)\n\tBalance read before the call:\n\t- beforeOut = IERC20(output).balanceOf(to) (src/Router.sol#111)\n\tPossible stale balance used after the call in a condition:\n\t- received < minOut (src/Router.sol#118)\n\t\t- stale variable `received`\n",
+    "reentrancy-balance|High|Reentrancy in Router.swapExactTokensForTokens(address,address,uint256,uint256,address,uint256) (src/Router.sol#98-119):\n\tExternal call allowing reentrancy:\n\t- pair.swap(out,0,to,) (src/Router.sol#116)\n\tBalance read before the call:\n\t- beforeOut = IERC20(output).balanceOf(to) (src/Router.sol#111)\n\tPossible stale balance used after the call in a condition:\n\t- received < minOut (src/Router.sol#118)\n\t\t- stale variable `received`\n",
+    "reentrancy-benign|Low|Reentrancy in Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133):\n\tExternal calls:\n\t- IFlashCallee(to).ammCall(msg.sender,a0Out,a1Out,data) (src/Pair.sol#123)\n\tState variables written after the call(s):\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#169)\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- price1CumulativeLast += ((uint256(reserve0) << 112) / reserve1) * elapsed (src/Pair.sol#170)\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- timestampLast = now32 (src/Pair.sol#175)\n",
+    "reentrancy-no-eth|Medium|Reentrancy in Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133):\n\tExternal calls:\n\t- IFlashCallee(to).ammCall(msg.sender,a0Out,a1Out,data) (src/Pair.sol#123)\n\tState variables written after the call(s):\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- reserve0 = SafeCast.toUint112(b0) (src/Pair.sol#173)\n\tPair.reserve0 (src/Pair.sol#33) can be used in cross function reentrancies:\n\t- Pair.currentCumulativePrices() (src/Pair.sol#64-76)\n\t- Pair.getReserves() (src/Pair.sol#58-61)\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- reserve1 = SafeCast.toUint112(b1) (src/Pair.sol#174)\n\tPair.reserve1 (src/Pair.sol#34) can be used in cross function reentrancies:\n\t- Pair.currentCumulativePrices() (src/Pair.sol#64-76)\n\t- Pair.getReserves() (src/Pair.sol#58-61)\n",
+    "timestamp|Low|Pair._updateReserves(uint256,uint256) (src/Pair.sol#164-177) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- elapsed != 0 && reserve0 != 0 && reserve1 != 0 (src/Pair.sol#168)\n",
+    "unused-return|Medium|Router._reserves(Pair,address) (src/Router.sol#127-130) ignores return value by (r0,r1,None) = pair.getReserves() (src/Router.sol#128)\n",
+    "unused-return|Medium|Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94) ignores return value by pair.burn(to) (src/Router.sol#90)\n"
+  ],
+  "aderyn_instances": {
+    "large-numeric-literal": [
+      {
+        "contract_path": "src/Pair.sol",
+        "line_no": 130,
+        "src": "5896:9",
+        "src_char": "5896:9"
+      }
+    ],
+    "literal-instead-of-constant": [
+      {
+        "contract_path": "src/Pair.sol",
+        "line_no": 72,
+        "src": "3059:3",
+        "src_char": "3059:3"
+      },
+      {
+        "contract_path": "src/Pair.sol",
+        "line_no": 73,
+        "src": "3132:3",
+        "src_char": "3132:3"
+      },
+      {
+        "contract_path": "src/Pair.sol",
+        "line_no": 128,
+        "src": "5762:4",
+        "src_char": "5762:4"
+      },
+      {
+        "contract_path": "src/Pair.sol",
+        "line_no": 128,
+        "src": "5776:1",
+        "src_char": "5776:1"
+      },
+      {
+        "contract_path": "src/Pair.sol",
+        "line_no": 129,
+        "src": "5812:4",
+        "src_char": "5812:4"
+      },
+      {
+        "contract_path": "src/Pair.sol",
+        "line_no": 129,
+        "src": "5826:1",
+        "src_char": "5826:1"
+      },
+      {
+        "contract_path": "src/Pair.sol",
+        "line_no": 169,
+        "src": "7553:3",
+        "src_char": "7553:3"
+      },
+      {
+        "contract_path": "src/Pair.sol",
+        "line_no": 170,
+        "src": "7644:3",
+        "src_char": "7644:3"
+      }
+    ],
+    "state-change-without-event": [
+      {
+        "contract_path": "src/Pair.sol",
+        "line_no": 136,
+        "src": "6147:4",
+        "src_char": "6147:4"
+      },
+      {
+        "contract_path": "src/Router.sol",
+        "line_no": 42,
+        "src": "1595:12",
+        "src_char": "1595:12"
+      },
+      {
+        "contract_path": "src/Router.sol",
+        "line_no": 76,
+        "src": "3102:15",
+        "src_char": "3102:15"
+      },
+      {
+        "contract_path": "src/Router.sol",
+        "line_no": 98,
+        "src": "4015:24",
+        "src_char": "4015:24"
+      }
+    ],
+    "unchecked-return": [
+      {
+        "contract_path": "src/Router.sol",
+        "line_no": 90,
+        "src": "3616:13",
+        "src_char": "3616:13"
+      }
+    ]
+  }
+}

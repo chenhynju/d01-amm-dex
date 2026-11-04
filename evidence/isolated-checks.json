@@ -1,0 +1,22 @@
+{
+  "slither-final": {
+    "exit": 255,
+    "expected": 255,
+    "log": "slither-final.log"
+  },
+  "aderyn-final": {
+    "exit": 0,
+    "expected": 0,
+    "log": "aderyn-final.log"
+  },
+  "coverage": {
+    "exit": 0,
+    "expected": 0,
+    "log": "coverage.log"
+  },
+  "local-smoke-runner": {
+    "exit": 1,
+    "expected": 0,
+    "log": "local-smoke-runner.log"
+  }
+}

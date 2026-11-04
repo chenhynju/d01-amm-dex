@@ -13,23 +13,28 @@ with (root/"evidence/anvil.log").open("w") as log:
     anvil=subprocess.Popen(["anvil","--port","18545","--chain-id","31337","--silent"],stdout=log,stderr=log)
     try:
         for _ in range(100):
+            if anvil.poll() is not None:raise RuntimeError("Owned Anvil exited before ready; port may be busy")
             try:
                 assert rpc("eth_chainId",[])=="0x7a69";break
             except Exception:time.sleep(.1)
         with (root/"evidence/local-deploy.log").open("w") as out:
-            subprocess.run(["forge","script","script/LocalDemo.s.sol:LocalDemo","--rpc-url",url,"--broadcast","--unlocked","--sender","0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"],cwd=root,stdout=out,stderr=subprocess.STDOUT,check=True)
+            subprocess.run(["forge","script","script/LocalDemo.s.sol:LocalDemo","--rpc-url",url,"--broadcast","--slow","--unlocked","--sender","0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"],cwd=root,stdout=out,stderr=subprocess.STDOUT,check=True)
         run=json.loads((root/"broadcast/LocalDemo.s.sol/31337/run-latest.json").read_text())
         txs=run["transactions"]
         factory=next(t["contractAddress"] for t in txs if t.get("contractName")=="Factory")
         router=next(t["contractAddress"] for t in txs if t.get("contractName")=="Router")
-        tokens=[t["contractAddress"] for t in txs if t.get("contractName")=="DemoToken"]
+        tokens=[t["contractAddress"] for t in txs if t.get("contractName")=="DemoToken" and t.get("transactionType")=="CREATE"]
         pair=call(factory,"getPair(address,address)(address)",*tokens)
         out=int(call(tokens[1],"balanceOf(address)(uint256)","0x0000000000000000000000000000000000000b0b").split()[0])
         assert out>=9*10**15
         assert len(rpc("eth_getCode",[pair,"latest"]))>2
+        remainingSupply=int(call(pair,"totalSupply()(uint256)").split()[0])
+        assert remainingSupply==1000
+        userLP=int(call(pair,"balanceOf(address)(uint256)","0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266").split()[0])
+        assert userLP==0
         receipts=[rpc("eth_getTransactionReceipt",[t["hash"]]) for t in txs]
         assert all(v["status"]=="0x1" for v in receipts)
-        report={"status":"PASS","network":"local ephemeral Anvil","chainId":31337,"factory":factory,"router":router,"pair":pair,"tokens":tokens,"recipientOutput":str(out),"reserves":call(pair,"getReserves()(uint112,uint112,uint32)"),"receipts":receipts}
+        report={"status":"PASS","network":"local ephemeral Anvil","chainId":31337,"factory":factory,"router":router,"pair":pair,"tokens":tokens,"recipientOutput":str(out),"remainingLockedSupply":remainingSupply,"userLP":userLP,"reserves":call(pair,"getReserves()(uint112,uint112,uint32)"),"transactions":[{k:t.get(k) for k in ["hash","transactionType","contractName","contractAddress","function"]} for t in txs],"receipts":receipts}
         (root/"evidence/local-deployment.json").write_text(json.dumps(report,indent=2))
-        print(json.dumps({k:v for k,v in report.items() if k!="receipts"},indent=2))
+        print(json.dumps({k:v for k,v in report.items() if k not in ["receipts","transactions"]},indent=2))
     finally:anvil.terminate();anvil.wait(timeout=10)

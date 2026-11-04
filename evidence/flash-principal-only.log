@@ -1,0 +1,36 @@
+Compiling 6 files with Solc 0.8.28
+Solc 0.8.28 finished in 73.99s
+Compiler run successful!
+
+Ran 1 test for test/AMM.t.sol:AMMTest
+[PASS] testFlashPrincipalOnlyRepaymentRejected() (gas: 562972)
+Traces:
+  [562972] AMMTest::testFlashPrincipalOnlyRepaymentRejected()
+    ├─ [375839] → new FlashActor@0x15cF58144EF33af1e14b5208015d11F9143E27b9
+    │   └─ ← [Return] 1278 bytes of code
+    ├─ [53297] MockToken::mint(FlashActor: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 1000000000000000000 [1e18])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: FlashActor: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1000000000000000000 [1e18])
+    │   └─ ← [Stop]
+    ├─ [0] VM::expectRevert(InvariantViolation())
+    │   └─ ← [Return]
+    ├─ [89447] FlashActor::run(1000000000000000 [1e15], 2)
+    │   ├─ [40692] Pair::swap(1000000000000000 [1e15], 0, FlashActor: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x01)
+    │   │   ├─ [14911] MockToken::transfer(FlashActor: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 1000000000000000 [1e15])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], to: FlashActor: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1000000000000000 [1e15])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [6574] FlashActor::ammCall(FlashActor: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 1000000000000000 [1e15], 0, 0x01)
+    │   │   │   ├─ [3311] MockToken::transfer(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], 1000000000000000 [1e15])
+    │   │   │   │   ├─ emit Transfer(from: FlashActor: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56], amount: 1000000000000000 [1e15])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   └─ ← [Stop]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   │   └─ ← [Return] 1000000000000000000 [1e18]
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x7512533fE5096525f8cf90b8F185A1C6DF063d56]) [staticcall]
+    │   │   │   └─ ← [Return] 1000000000000000000 [1e18]
+    │   │   └─ ← [Revert] InvariantViolation()
+    │   └─ ← [Revert] InvariantViolation()
+    └─ ← [Return]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 13.54ms (9.19ms CPU time)
+
+Ran 1 test suite in 57.40ms (13.54ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

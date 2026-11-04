@@ -1,0 +1,2262 @@
+Compiling 4 files with Solc 0.8.28
+Solc 0.8.28 finished in 46.05s
+Compiler run successful!
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+   ╭▸ src/Pair.sol:31:30
+   │
+31 │     address public immutable token0;
+   │                              ━━━━━━ help: consider using: `TOKEN0`
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+   ╭▸ src/Router.sol:20:30
+   │
+20 │     Factory public immutable factory;
+   │                              ━━━━━━━ help: consider using: `FACTORY`
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/screaming-snake-case-immutable
+
+note[low-level-calls]: Low-level calls should be avoided
+   ╭▸ test/AMM.t.sol:88:22
+   │
+88 │         (bool ok,) = address(pair).staticcall(abi.encodeCall(pair.getReserves, ()));
+   │                      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/low-level-calls
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/fork/MainnetFork.t.sol:25:36
+   │
+25 │         r.addLiquidity(weth, usdc, 10e18, 30000e6, 10e18, 30000e6, address(this), block.timestamp);
+   │                                    ━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+   ╭▸ src/Pair.sol:32:30
+   │
+32 │     address public immutable token1;
+   │                              ━━━━━━ help: consider using: `TOKEN1`
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/screaming-snake-case-immutable
+
+note[inline-assembly]: inline assembly used; review for memory safety and side effects
+   ╭▸ test/Differential.t.sol:17:13
+   │
+17 │             assembly {
+   │             ━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/inline-assembly
+
+note[unused-import]: unused imports should be removed
+  ╭▸ script/LocalDemo.s.sol:7:9
+  │
+7 │ import {Pair} from "../src/Pair.sol";
+  │         ━━━━
+  │
+  ╰ help: https://getfoundry.sh/forge/linting/unused-import
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+   ╭▸ test/Invariant.t.sol:10:10
+   │
+10 │ contract Handler is Test {
+   │          ━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+   ╭▸ script/LocalDemo.s.sol:10:10
+   │
+10 │ contract DemoToken is ERC20 {
+   │          ━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+   ╭▸ script/LocalDemo.s.sol:16:10
+   │
+16 │ contract LocalDemo is Script {
+   │          ━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+    ╭▸ test/Invariant.t.sol:112:10
+    │
+112 │ contract AMMInvariant is StdInvariant, AMMFixture {
+    │          ━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/fork/MainnetFork.t.sol:25:43
+   │
+25 │         r.addLiquidity(weth, usdc, 10e18, 30000e6, 10e18, 30000e6, address(this), block.timestamp);
+   │                                           ━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/fork/MainnetFork.t.sol:25:52
+   │
+25 │         r.addLiquidity(weth, usdc, 10e18, 30000e6, 10e18, 30000e6, address(this), block.timestamp);
+   │                                                    ━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Invariant.t.sol:40:41
+   │
+40 │         uint256 n = bound(uint256(raw), 1e6, 1e20);
+   │                                         ━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[low-level-calls]: Low-level calls should be avoided
+   ╭▸ test/AMM.t.sol:90:17
+   │
+90 │         (ok,) = address(pair).call(abi.encodeCall(pair.sync, ()));
+   │                 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/low-level-calls
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Differential.t.sol:12:29
+   │
+12 │         for (uint256 i; i < 128; i++) {
+   │                             ━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Invariant.t.sol:40:46
+   │
+40 │         uint256 n = bound(uint256(raw), 1e6, 1e20);
+   │                                              ━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[low-level-calls]: Low-level calls should be avoided
+    ╭▸ test/AMM.t.sol:112:26
+    │
+112 │               (bool ok,) = routerTarget.call(
+    │ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+113 │ ┃                 abi.encodeWithSelector(
+114 │ ┃                     Router.swapExactTokensForTokens.selector, address(this), address(this), 1, 0, to, block.timestamp
+115 │ ┃                 )
+116 │ ┃             );
+    │ ┗━━━━━━━━━━━━━┛
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/low-level-calls
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Differential.t.sol:18:45
+   │
+18 │                 let ptr := add(add(encoded, 32), mul(i, 128))
+   │                                             ━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+   ╭▸ src/Pair.sol:12:11
+   │
+12 │ interface IFlashCallee {
+   │           ━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Invariant.t.sol:55:42
+   │
+55 │         uint256 adjusted0 = uint256(x) * 1000 - (reverse ? 0 : n * 3);
+   │                                          ━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[low-level-calls]: Low-level calls should be avoided
+    ╭▸ test/AMM.t.sol:118:21
+    │
+118 │             (ok,) = pool.staticcall(abi.encodeWithSelector(Pair.getReserves.selector));
+    │                     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/low-level-calls
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Differential.t.sol:18:57
+   │
+18 │                 let ptr := add(add(encoded, 32), mul(i, 128))
+   │                                                         ━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Differential.t.sol:20:37
+   │
+20 │                 x := mload(add(ptr, 32))
+   │                                     ━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+   ╭▸ src/Pair.sol:19:10
+   │
+19 │ contract Pair is ERC20, ERC20Permit, ReentrancyGuard {
+   │          ━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+warning[block-timestamp]: usage of `block.timestamp` in a comparison may be manipulated by validators
+   ╭▸ src/Router.sol:27:13
+   │
+27 │         if (block.timestamp > deadline) revert Expired();
+   │             ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/block-timestamp
+
+note[unwrapped-modifier-logic]: wrap modifier logic to reduce code size
+   ╭▸ src/Router.sol:26:5
+   │
+26 │ ┏     modifier timely(uint256 deadline) {
+27 │ ┃         if (block.timestamp > deadline) revert Expired();
+28 │ ┃         _;
+29 │ ┃     }
+   │ ┗━━━━━┛
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unwrapped-modifier-logic
+help: wrap modifier logic to reduce code size
+   ╭╴
+26 ±     modifier timely(uint256 deadline) {
+27 +         _timely(deadline);
+28 +         _;
+29 +     }
+30 + 
+31 +     function _timely(uint256 deadline) internal {
+32 +         if (block.timestamp > deadline) revert Expired();
+33 +     }
+   ╰╴
+
+note[unused-import]: unused imports should be removed
+  ╭▸ test/AMM.t.sol:4:9
+  │
+4 │ import {StdInvariant} from "forge-std/StdInvariant.sol";
+  │         ━━━━━━━━━━━━
+  │
+  ╰ help: https://getfoundry.sh/forge/linting/unused-import
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+   ╭▸ test/AMM.t.sol:10:10
+   │
+10 │ contract MockToken is ERC20 {
+   │          ━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+   ╭▸ test/AMM.t.sol:44:10
+   │
+44 │ contract NoReturnToken {
+   │          ━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+   ╭▸ test/AMM.t.sol:68:10
+   │
+68 │ contract FlashActor is IFlashCallee {
+   │          ━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ script/LocalDemo.s.sol:26:48
+   │
+26 │         r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, msg.sender, block.timestamp);
+   │                                                ━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+   ╭▸ test/AMM.t.sol:97:10
+   │
+97 │ contract HookToken is MockToken {
+   │          ━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+    ╭▸ test/AMM.t.sol:124:19
+    │
+124 │ abstract contract AMMFixture is Test {
+    │                   ━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[multi-contract-file]: prefer having only one contract, interface or library per file
+    ╭▸ test/AMM.t.sol:147:10
+    │
+147 │ contract AMMTest is AMMFixture {
+    │          ━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/multi-contract-file
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ script/LocalDemo.s.sol:26:54
+   │
+26 │         r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, msg.sender, block.timestamp);
+   │                                                      ━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+   ╭▸ src/Router.sol:54:40
+   │
+54 │         if (pair == address(0)) pair = factory.createPair(a, b);
+   │                                        ━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ src/Pair.sol:128:34
+    │
+128 │         uint256 adjusted0 = b0 * 1000 - a0In * 3;
+    │                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ script/LocalDemo.s.sol:26:60
+   │
+26 │         r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, msg.sender, block.timestamp);
+   │                                                            ━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/fork/MainnetFork.t.sol:25:59
+   │
+25 │         r.addLiquidity(weth, usdc, 10e18, 30000e6, 10e18, 30000e6, address(this), block.timestamp);
+   │                                                           ━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+   ╭▸ src/Router.sol:72:21
+   │
+72 │         liquidity = Pair(pair).mint(to);
+   │                     ━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ script/LocalDemo.s.sol:26:66
+   │
+26 │         r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, msg.sender, block.timestamp);
+   │                                                                  ━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ script/LocalDemo.s.sol:24:9
+   │
+24 │         a.approve(address(r), type(uint256).max);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ src/Pair.sol:128:48
+    │
+128 │         uint256 adjusted0 = b0 * 1000 - a0In * 3;
+    │                                                ━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ script/LocalDemo.s.sol:25:9
+   │
+25 │         b.approve(address(r), type(uint256).max);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ src/Pair.sol:129:34
+    │
+129 │         uint256 adjusted1 = b1 * 1000 - a1In * 3;
+    │                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Invariant.t.sol:55:68
+   │
+55 │         uint256 adjusted0 = uint256(x) * 1000 - (reverse ? 0 : n * 3);
+   │                                                                    ━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ script/LocalDemo.s.sol:26:9
+   │
+26 │         r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, msg.sender, block.timestamp);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ src/Pair.sol:129:48
+    │
+129 │         uint256 adjusted1 = b1 * 1000 - a1In * 3;
+    │                                                ━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Invariant.t.sol:56:42
+   │
+56 │         uint256 adjusted1 = uint256(y) * 1000 - (reverse ? n * 3 : 0);
+   │                                          ━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ script/LocalDemo.s.sol:27:9
+   │
+27 │         r.swapExactTokensForTokens(address(a), address(b), 1e16, 9e15, address(0xB0B), block.timestamp);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[uninitialized-local]: local variable is read before being initialized
+   ╭▸ test/Differential.t.sol:12:25
+   │
+12 │         for (uint256 i; i < 128; i++) {
+   │                         ━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/uninitialized-local
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Invariant.t.sol:56:64
+   │
+56 │         uint256 adjusted1 = uint256(y) * 1000 - (reverse ? n * 3 : 0);
+   │                                                                ━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[incorrect-strict-equality]: dangerous strict equality check on an externally-influenced value
+   ╭▸ src/Router.sol:69:13
+   │
+69 │         if (IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB) {
+   │             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/incorrect-strict-equality
+
+warning[incorrect-strict-equality]: dangerous strict equality check on an externally-influenced value
+   ╭▸ src/Router.sol:69:63
+   │
+69 │         if (IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB) {
+   │                                                               ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/incorrect-strict-equality
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+   ╭▸ src/Router.sol:90:9
+   │
+90 │         pair.burn(to);
+   │         ━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/fork/MainnetFork.t.sol:16:9
+   │
+16 │         vm.createSelectFork(rpc, 21_000_000);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[divide-before-multiply]: multiplication should occur before division to avoid loss of precision
+   ╭▸ src/Pair.sol:72:23
+   │
+72 │                 p0 += ((uint256(reserve1) << 112) / reserve0) * elapsed;
+   │                       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/divide-before-multiply
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/fork/MainnetFork.t.sol:23:9
+   │
+23 │         IERC20(weth).approve(address(r), type(uint256).max);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ src/Router.sol:90:9
+   │
+90 │         pair.burn(to);
+   │         ━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[reentrancy-events]: event emitted after an external call; reentrancy can reorder or fabricate logs that off-chain consumers rely on
+   ╭▸ src/Factory.sol:25:9
+   │
+25 │         emit PairCreated(t0, t1, pair, allPairs.length);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-events
+
+warning[divide-before-multiply]: multiplication should occur before division to avoid loss of precision
+   ╭▸ src/Pair.sol:73:23
+   │
+73 │                 p1 += ((uint256(reserve0) << 112) / reserve1) * elapsed;
+   │                       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/divide-before-multiply
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/fork/MainnetFork.t.sol:24:9
+   │
+24 │         IERC20(usdc).approve(address(r), type(uint256).max);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/fork/MainnetFork.t.sol:25:9
+   │
+25 │         r.addLiquidity(weth, usdc, 10e18, 30000e6, 10e18, 30000e6, address(this), block.timestamp);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+    ╭▸ src/Router.sol:115:37
+    │
+115 │         if (input == pair.token0()) pair.swap(0, out, to, "");
+    │                                     ━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/fork/MainnetFork.t.sol:29:9
+   │
+29 │         pair.approve(address(r), pair.balanceOf(address(this)));
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+    ╭▸ src/Router.sol:116:14
+    │
+116 │         else pair.swap(out, 0, to, "");
+    │              ━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/fork/MainnetFork.t.sol:30:9
+   │
+30 │         r.removeLiquidity(weth, usdc, pair.balanceOf(address(this)), 1, 1, address(this), block.timestamp);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ src/Router.sol:128:37
+    │
+128 │         (uint112 r0, uint112 r1,) = pair.getReserves();
+    │                                     ━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[calls-loop]: external call inside a loop
+   ╭▸ test/Differential.t.sol:24:22
+   │
+24 │             assertEq(r.getAmountOut(n, x, y), expected);
+   │                      ━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/calls-loop
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Invariant.t.sol:57:79
+   │
+57 │         if (uint256(x) * y < previousK || adjusted0 * adjusted1 < previousK * 1e6) kViolated = true;
+   │                                                                               ━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Invariant.t.sol:62:41
+   │
+62 │         uint256 n = bound(uint256(raw), 1e6, 1e20);
+   │                                         ━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+   ╭▸ test/Invariant.t.sol:62:46
+   │
+62 │         uint256 n = bound(uint256(raw), 1e6, 1e20);
+   │                                              ━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unsafe-typecast]: typecasts that can truncate values should be checked
+   ╭▸ src/Pair.sol:68:17
+   │
+68 │         now32 = uint32(block.timestamp);
+   │                 ━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ├ note: consider disabling this lint if you're certain the cast is safe
+   │       
+   │       // casting to 'uint32' is safe because [explain why]
+   │       // forge-lint: disable-next-line(unsafe-typecast)
+   │       
+   │       
+   ╰ help: https://getfoundry.sh/forge/linting/unsafe-typecast
+
+warning[reentrancy-no-eth]: external call can be reentered before `reserve0` is updated
+    ╭▸ src/Pair.sol:123:31
+    │
+123 │         if (data.length != 0) IFlashCallee(to).ammCall(msg.sender, a0Out, a1Out, data);
+    │                               ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[reentrancy-events]: event emitted after an external call; reentrancy can reorder or fabricate logs that off-chain consumers rely on
+    ╭▸ src/Pair.sol:176:9
+    │
+176 │         emit Sync(reserve0, reserve1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-events
+
+warning[reentrancy-events]: event emitted after an external call; reentrancy can reorder or fabricate logs that off-chain consumers rely on
+    ╭▸ src/Pair.sol:132:9
+    │
+132 │         emit Swap(msg.sender, a0In, a1In, a0Out, a1Out, to);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-events
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/Invariant.t.sol:32:9
+   │
+32 │         a.approve(address(r), type(uint256).max);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/Invariant.t.sol:33:9
+   │
+33 │         b.approve(address(r), type(uint256).max);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/Invariant.t.sol:34:9
+   │
+34 │         p.approve(address(r), type(uint256).max);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+   ╭▸ test/AMM.t.sol:93:9
+   │
+93 │         token.transfer(address(pair), (n * 1000 + 996) / 997);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/Invariant.t.sol:38:35
+   │
+38 │         (uint112 x, uint112 y,) = p.getReserves();
+   │                                   ━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/Invariant.t.sol:46:9
+   │
+46 │         r.swapExactTokensForTokens(address(input), address(output), n, out, address(this), block.timestamp);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/Invariant.t.sol:54:9
+   │
+54 │         (x, y,) = p.getReserves();
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[missing-zero-check]: address parameter is used in a state write or value transfer without a zero-address check
+    ╭▸ test/AMM.t.sol:104:36
+    │
+104 │     function configure(address rr, address pp) external {
+    │                                    ━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/missing-zero-check
+
+warning[missing-zero-check]: address parameter is used in a state write or value transfer without a zero-address check
+    ╭▸ test/AMM.t.sol:104:24
+    │
+104 │     function configure(address rr, address pp) external {
+    │                        ━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/missing-zero-check
+
+warning[divide-before-multiply]: multiplication should occur before division to avoid loss of precision
+   ╭▸ test/Invariant.t.sol:67:61
+   │
+67 │         if (chosenB == 0 || n * p.totalSupply() / x == 0 || chosenB * p.totalSupply() / y == 0) return;
+   │                                                             ━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/divide-before-multiply
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/Invariant.t.sol:63:35
+   │
+63 │         (uint112 x, uint112 y,) = p.getReserves();
+   │                                   ━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:139:31
+    │
+139 │         a.mint(address(this), 1e30);
+    │                               ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/Invariant.t.sol:70:37
+   │
+70 │           (uint256 aa, uint256 bb,) = r.addLiquidity(
+   │ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+71 │ ┃             address(a), address(b), n, m, 0, 0, raw % 2 == 0 ? address(this) : SECONDARY, block.timestamp
+72 │ ┃         );
+   │ ┗━━━━━━━━━┛
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:140:31
+    │
+140 │         b.mint(address(this), 1e30);
+    │                               ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:143:48
+    │
+143 │         r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, address(this), block.timestamp);
+    │                                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:143:54
+    │
+143 │         r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, address(this), block.timestamp);
+    │                                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:143:60
+    │
+143 │         r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, address(this), block.timestamp);
+    │                                                            ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:143:66
+    │
+143 │         r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, address(this), block.timestamp);
+    │                                                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/Invariant.t.sol:83:35
+   │
+83 │         (uint112 x, uint112 y,) = p.getReserves();
+   │                                   ━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+   ╭▸ test/Invariant.t.sol:86:9
+   │
+86 │         p.approve(address(r), lp);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:141:9
+    │
+141 │         a.approve(address(r), type(uint256).max);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:142:9
+    │
+142 │         b.approve(address(r), type(uint256).max);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:143:9
+    │
+143 │         r.addLiquidity(address(a), address(b), 1e18, 1e18, 1e18, 1e18, address(this), block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/Invariant.t.sol:151:43
+    │
+151 │         assertEq(p.balanceOf(address(1)), 1000);
+    │                                           ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/Invariant.t.sol:152:35
+    │
+152 │         assertGe(p.totalSupply(), 1000);
+    │                                   ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/Invariant.t.sol:165:61
+    │
+165 │         assertLe(r.getAmountOut(1e12, x, y), r.getAmountOut(2e12, x, y));
+    │                                                             ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/Invariant.t.sol:166:33
+    │
+166 │         assertLt(r.getAmountOut(2e12, x, y), y);
+    │                                 ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[named-struct-fields]: prefer initializing structs with named fields
+    ╭▸ test/Invariant.t.sol:125:24
+    │
+125 │         targetSelector(FuzzSelector(address(h), selectors));
+    │                        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ help: consider using named fields: `FuzzSelector({ addr: address(h), selectors: selectors })`
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/named-struct-fields
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/Invariant.t.sol:138:35
+    │
+138 │         (uint112 x, uint112 y,) = p.getReserves();
+    │                                   ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/Invariant.t.sol:156:35
+    │
+156 │         (uint112 x, uint112 y,) = p.getReserves();
+    │                                   ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/Invariant.t.sol:164:35
+    │
+164 │         (uint112 x, uint112 y,) = p.getReserves();
+    │                                   ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:159:30
+    │
+159 │         f.createPair(address(42), address(a));
+    │                              ━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:163:38
+    │
+163 │         uint256 out = r.getAmountOut(1e16, 1e18, 1e18);
+    │                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:163:44
+    │
+163 │         uint256 out = r.getAmountOut(1e16, 1e18, 1e18);
+    │                                            ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:163:50
+    │
+163 │         uint256 out = r.getAmountOut(1e16, 1e18, 1e18);
+    │                                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[divide-before-multiply]: multiplication should occur before division to avoid loss of precision
+    ╭▸ src/Pair.sol:169:41
+    │
+169 │                 price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed;
+    │                                         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/divide-before-multiply
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:164:74
+    │
+164 │         uint256 got = r.swapExactTokensForTokens(address(a), address(b), 1e16, out, bob, block.timestamp);
+    │                                                                          ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[divide-before-multiply]: multiplication should occur before division to avoid loss of precision
+    ╭▸ src/Pair.sol:170:41
+    │
+170 │                 price1CumulativeLast += ((uint256(reserve0) << 112) / reserve1) * elapsed;
+    │                                         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/divide-before-multiply
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:168:34
+    │
+168 │         assertGe(uint256(x) * y, 1e36);
+    │                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:169:32
+    │
+169 │         assertGe((uint256(x) * 1000 - 1e16 * 3) * uint256(y) * 1000, 1e42);
+    │                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:169:39
+    │
+169 │         assertGe((uint256(x) * 1000 - 1e16 * 3) * uint256(y) * 1000, 1e42);
+    │                                       ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:169:64
+    │
+169 │         assertGe((uint256(x) * 1000 - 1e16 * 3) * uint256(y) * 1000, 1e42);
+    │                                                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:173:38
+    │
+173 │         uint256 out = r.getAmountOut(1e16, 1e18, 1e18);
+    │                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:173:44
+    │
+173 │         uint256 out = r.getAmountOut(1e16, 1e18, 1e18);
+    │                                            ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:173:50
+    │
+173 │         uint256 out = r.getAmountOut(1e16, 1e18, 1e18);
+    │                                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:174:69
+    │
+174 │         assertEq(r.swapExactTokensForTokens(address(b), address(a), 1e16, out, bob, block.timestamp), out);
+    │                                                                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unsafe-typecast]: typecasts that can truncate values should be checked
+    ╭▸ src/Pair.sol:165:24
+    │
+165 │         uint32 now32 = uint32(block.timestamp);
+    │                        ━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ├ note: consider disabling this lint if you're certain the cast is safe
+    │       
+    │       // casting to 'uint32' is safe because [explain why]
+    │       // forge-lint: disable-next-line(unsafe-typecast)
+    │       
+    │       
+    ╰ help: https://getfoundry.sh/forge/linting/unsafe-typecast
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:181:21
+    │
+181 │         assertEq(x, 1e18 - 1000);
+    │                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:181:28
+    │
+181 │         assertEq(x, 1e18 - 1000);
+    │                            ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:182:21
+    │
+182 │         assertEq(y, 1e18 - 1000);
+    │                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:182:28
+    │
+182 │         assertEq(y, 1e18 - 1000);
+    │                            ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:183:35
+    │
+183 │         assertEq(p.totalSupply(), 1000);
+    │                                   ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:184:43
+    │
+184 │         assertEq(p.balanceOf(address(1)), 1000);
+    │                                           ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:188:32
+    │
+188 │         a.transfer(address(p), 100);
+    │                                ━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:190:36
+    │
+190 │         assertEq(a.balanceOf(bob), 100);
+    │                                    ━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:191:32
+    │
+191 │         a.transfer(address(p), 200);
+    │                                ━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:194:21
+    │
+194 │         assertEq(x, 1e18 + 200);
+    │                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:194:28
+    │
+194 │         assertEq(x, 1e18 + 200);
+    │                            ━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/Invariant.t.sol:177:39
+    │
+177 │             (uint112 x, uint112 y,) = p.getReserves();
+    │                                       ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:196:36
+    │
+196 │         assertEq(a.balanceOf(bob), 100);
+    │                                    ━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:201:35
+    │
+201 │         vm.warp(block.timestamp + 20);
+    │                                   ━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/Invariant.t.sol:180:13
+    │
+180 │             p.approve(address(r), lp);
+    │             ━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:203:47
+    │
+203 │         assertEq(q1 - q0, uint256(1 << 112) * 20);
+    │                                               ━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/Invariant.t.sol:183:13
+    │
+183 │             r.removeLiquidity(address(a), address(b), lp, 0, 0, actor, block.timestamp);
+    │             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:215:32
+    │
+215 │         a.mint(address(actor), 1e18);
+    │                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:216:19
+    │
+216 │         actor.run(1e15, 0);
+    │                   ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:224:19
+    │
+224 │         actor.run(1e15, 1);
+    │                   ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:230:43
+    │
+230 │         uint256 expected = r.getAmountOut(1e16 - 1e14, 1e18, 1e18);
+    │                                           ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:230:56
+    │
+230 │         uint256 expected = r.getAmountOut(1e16 - 1e14, 1e18, 1e18);
+    │                                                        ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:230:62
+    │
+230 │         uint256 expected = r.getAmountOut(1e16 - 1e14, 1e18, 1e18);
+    │                                                              ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:231:32
+    │
+231 │         expected -= expected / 100;
+    │                                ━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:232:69
+    │
+232 │         assertEq(r.swapExactTokensForTokens(address(a), address(b), 1e16, expected, bob, block.timestamp), expected);
+    │                                                                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:238:48
+    │
+238 │         r.addLiquidity(address(a), address(b), 1e16, 1e16, 0, 0, bob, block.timestamp);
+    │                                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:238:54
+    │
+238 │         r.addLiquidity(address(a), address(b), 1e16, 1e16, 0, 0, bob, block.timestamp);
+    │                                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:242:31
+    │
+242 │         p.approve(address(r), 1e16);
+    │                               ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:245:51
+    │
+245 │         r.removeLiquidity(address(a), address(b), 1e16, 1e16, 0, bob, block.timestamp);
+    │                                                   ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:245:57
+    │
+245 │         r.removeLiquidity(address(a), address(b), 1e16, 1e16, 0, bob, block.timestamp);
+    │                                                         ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:246:66
+    │
+246 │         (uint256 x,) = r.removeLiquidity(address(a), address(b), 1e16, 99e14, 0, bob, block.timestamp);
+    │                                                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:246:72
+    │
+246 │         (uint256 x,) = r.removeLiquidity(address(a), address(b), 1e16, 99e14, 0, bob, block.timestamp);
+    │                                                                        ━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:247:21
+    │
+247 │         assertEq(x, 99e14);
+    │                     ━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:252:31
+    │
+252 │         t.mint(address(this), 1e20);
+    │                               ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:253:31
+    │
+253 │         t.approve(address(r), 1e20);
+    │                               ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:254:48
+    │
+254 │         r.addLiquidity(address(t), address(b), 1e18, 1e18, 0, 0, address(this), block.timestamp);
+    │                                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:254:54
+    │
+254 │         r.addLiquidity(address(t), address(b), 1e18, 1e18, 0, 0, address(this), block.timestamp);
+    │                                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:255:69
+    │
+255 │         assertGt(r.swapExactTokensForTokens(address(t), address(b), 1e16, 1, bob, block.timestamp), 0);
+    │                                                                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:260:60
+    │
+260 │         r.swapExactTokensForTokens(address(a), address(b), 1e16, 1e18, bob, block.timestamp);
+    │                                                            ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:260:66
+    │
+260 │         r.swapExactTokensForTokens(address(a), address(b), 1e16, 1e18, bob, block.timestamp);
+    │                                                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:268:34
+    │
+268 │         a.confiscate(address(p), 1e17);
+    │                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:286:16
+    │
+286 │         p.swap(1e18, 0, bob, "");
+    │                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:293:19
+    │
+293 │         p.swap(0, 1e17, bob, "");
+    │                   ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:310:60
+    │
+310 │         r.swapExactTokensForTokens(address(a), address(b), 1e16, 0, bob, block.timestamp);
+    │                                                            ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:314:32
+    │
+314 │         a.transfer(address(p), 1e16);
+    │                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:316:36
+    │
+316 │         assertEq(a.balanceOf(bob), 1e16);
+    │                                    ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:321:52
+    │
+321 │             r.addLiquidity(address(a), address(b), 2e16, 1e16, 1e16, 1e16, bob, block.timestamp);
+    │                                                    ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:321:58
+    │
+321 │             r.addLiquidity(address(a), address(b), 2e16, 1e16, 1e16, 1e16, bob, block.timestamp);
+    │                                                          ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:321:64
+    │
+321 │             r.addLiquidity(address(a), address(b), 2e16, 1e16, 1e16, 1e16, bob, block.timestamp);
+    │                                                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:321:70
+    │
+321 │             r.addLiquidity(address(a), address(b), 2e16, 1e16, 1e16, 1e16, bob, block.timestamp);
+    │                                                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:322:21
+    │
+322 │         assertEq(x, 1e16);
+    │                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:323:21
+    │
+323 │         assertEq(y, 1e16);
+    │                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:324:22
+    │
+324 │         assertEq(lp, 1e16);
+    │                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:326:48
+    │
+326 │         r.addLiquidity(address(a), address(b), 1e16, 2e16, 1e16, 2e16, bob, block.timestamp);
+    │                                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:326:54
+    │
+326 │         r.addLiquidity(address(a), address(b), 1e16, 2e16, 1e16, 2e16, bob, block.timestamp);
+    │                                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:326:60
+    │
+326 │         r.addLiquidity(address(a), address(b), 1e16, 2e16, 1e16, 2e16, bob, block.timestamp);
+    │                                                            ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:326:66
+    │
+326 │         r.addLiquidity(address(a), address(b), 1e16, 2e16, 1e16, 2e16, bob, block.timestamp);
+    │                                                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:334:46
+    │
+334 │         uint256 deadline = block.timestamp + 100;
+    │                                              ━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:337:101
+    │
+337 │                 hex"1901", p.DOMAIN_SEPARATOR(), keccak256(abi.encode(typehash, signer, address(r), 1e18, 0, deadline))
+    │                                                                                                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:341:38
+    │
+341 │         p.permit(signer, address(r), 1e18, deadline, v, rr, s);
+    │                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:342:51
+    │
+342 │         assertEq(p.allowance(signer, address(r)), 1e18);
+    │                                                   ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:344:38
+    │
+344 │         p.permit(signer, address(r), 1e18, deadline, v, rr, s);
+    │                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:349:31
+    │
+349 │         t.mint(address(this), 1e20);
+    │                               ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:351:48
+    │
+351 │         r.addLiquidity(address(a), address(t), 1e18, 1e18, 0, 0, address(this), block.timestamp);
+    │                                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:351:54
+    │
+351 │         r.addLiquidity(address(a), address(t), 1e18, 1e18, 0, 0, address(this), block.timestamp);
+    │                                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:353:60
+    │
+353 │         r.swapExactTokensForTokens(address(a), address(t), 1e16, 1, bob, block.timestamp);
+    │                                                            ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:359:60
+    │
+359 │         r.swapExactTokensForTokens(address(a), address(b), 1e20, 0, bob, block.timestamp);
+    │                                                            ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:378:36
+    │
+378 │         a.transfer(address(empty), 1000);
+    │                                    ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:379:36
+    │
+379 │         b.transfer(address(empty), 1000);
+    │                                    ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:399:26
+    │
+399 │         new Pair(address(42), address(a));
+    │                          ━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:419:31
+    │
+419 │         t.mint(address(this), 1e20);
+    │                               ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:421:48
+    │
+421 │         r.addLiquidity(address(t), address(a), 1e18, 1e18, 0, 0, bob, block.timestamp);
+    │                                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:421:54
+    │
+421 │         r.addLiquidity(address(t), address(a), 1e18, 1e18, 0, 0, bob, block.timestamp);
+    │                                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:423:74
+    │
+423 │         (uint256 x, uint256 y,) = r.addLiquidity(address(b), address(a), 1e16, 2e16, 0, 0, bob, block.timestamp);
+    │                                                                          ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:423:80
+    │
+423 │         (uint256 x, uint256 y,) = r.addLiquidity(address(b), address(a), 1e16, 2e16, 0, 0, bob, block.timestamp);
+    │                                                                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:424:21
+    │
+424 │         assertEq(x, 1e16);
+    │                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:425:21
+    │
+425 │         assertEq(y, 1e16);
+    │                     ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:431:34
+    │
+431 │         a.transfer(address(one), 1e18);
+    │                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:433:31
+    │
+433 │         t.mint(address(this), 1e20);
+    │                               ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:436:48
+    │
+436 │         r.addLiquidity(address(a), address(t), 1e18, 1e18, 0, 0, bob, block.timestamp);
+    │                                                ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:436:54
+    │
+436 │         r.addLiquidity(address(a), address(t), 1e18, 1e18, 0, 0, bob, block.timestamp);
+    │                                                      ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:464:46
+    │
+464 │         uint256 n = bound(uint256(raw), 1e6, 1e23);
+    │                                              ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:466:41
+    │
+466 │         uint256 out = r.getAmountOut(n, 1e18, 1e18);
+    │                                         ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:466:47
+    │
+466 │         uint256 out = r.getAmountOut(n, 1e18, 1e18);
+    │                                               ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:469:34
+    │
+469 │         assertGe(uint256(x) * y, 1e36);
+    │                                  ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:479:24
+    │
+479 │         assertGe((ri * 1000 + input * 997) * (ro - out), ri * ro * 1000);
+    │                        ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:479:68
+    │
+479 │         assertGe((ri * 1000 + input * 997) * (ro - out), ri * ro * 1000);
+    │                                                                    ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+note[literal-instead-of-constant]: this literal appears multiple times in the contract; declare a named constant for it
+    ╭▸ test/AMM.t.sol:483:47
+    │
+483 │         uint256 n = bound(uint256(raw), 1001, 1e23);
+    │                                               ━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/literal-instead-of-constant
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:153:9
+    │
+153 │         f.createPair(address(b), address(a));
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:155:9
+    │
+155 │         f.createPair(address(a), address(a));
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:157:9
+    │
+157 │         f.createPair(address(0), address(a));
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:159:9
+    │
+159 │         f.createPair(address(42), address(a));
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:167:35
+    │
+167 │         (uint112 x, uint112 y,) = p.getReserves();
+    │                                   ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:179:9
+    │
+179 │         p.approve(address(r), lp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ test/AMM.t.sol:188:9
+    │
+188 │         a.transfer(address(p), 100);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ test/AMM.t.sol:191:9
+    │
+191 │         a.transfer(address(p), 200);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:193:25
+    │
+193 │         (uint112 x,,) = p.getReserves();
+    │                         ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:200:35
+    │
+200 │         (uint256 q0,, uint32 t) = p.currentCumulativePrices();
+    │                                   ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:202:26
+    │
+202 │         (uint256 q1,,) = p.currentCumulativePrices();
+    │                          ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:208:26
+    │
+208 │         (,, uint32 t2) = p.getReserves();
+    │                          ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:238:9
+    │
+238 │         r.addLiquidity(address(a), address(b), 1e16, 1e16, 0, 0, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:242:9
+    │
+242 │         p.approve(address(r), 1e16);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:245:9
+    │
+245 │         r.removeLiquidity(address(a), address(b), 1e16, 1e16, 0, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:246:24
+    │
+246 │         (uint256 x,) = r.removeLiquidity(address(a), address(b), 1e16, 99e14, 0, bob, block.timestamp);
+    │                        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:254:9
+    │
+254 │         r.addLiquidity(address(t), address(b), 1e18, 1e18, 0, 0, address(this), block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:260:9
+    │
+260 │         r.swapExactTokensForTokens(address(a), address(b), 1e16, 1e18, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:261:35
+    │
+261 │         (uint112 x, uint112 y,) = p.getReserves();
+    │                                   ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:264:9
+    │
+264 │         r.swapExactTokensForTokens(address(a), address(b), 1, 0, bob, block.timestamp - 1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:272:25
+    │
+272 │         (uint112 x,,) = p.getReserves();
+    │                         ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ test/AMM.t.sol:291:9
+    │
+291 │         a.transfer(address(p), 1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:298:9
+    │
+298 │         r.swapExactTokensForTokens(address(a), address(b), 1, 0, address(r), block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:300:9
+    │
+300 │         r.swapExactTokensForTokens(address(a), address(77), 1, 0, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:302:9
+    │
+302 │         r.getAmountOut(0, 1, 1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:304:9
+    │
+304 │         r.swapExactTokensForTokens(address(a), address(b), 1, 0, address(p), block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:310:9
+    │
+310 │         r.swapExactTokensForTokens(address(a), address(b), 1e16, 0, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ test/AMM.t.sol:314:9
+    │
+314 │         a.transfer(address(p), 1e16);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:326:9
+    │
+326 │         r.addLiquidity(address(a), address(b), 1e16, 2e16, 1e16, 2e16, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:350:9
+    │
+350 │         t.approve(address(r), type(uint256).max);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:351:9
+    │
+351 │         r.addLiquidity(address(a), address(t), 1e18, 1e18, 0, 0, address(this), block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:353:9
+    │
+353 │         r.swapExactTokensForTokens(address(a), address(t), 1e16, 1, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:359:9
+    │
+359 │         r.swapExactTokensForTokens(address(a), address(b), 1e20, 0, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ test/AMM.t.sol:360:9
+    │
+360 │         p.transfer(bob, 1);
+    │         ━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:362:9
+    │
+362 │         p.approve(address(r), 1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:365:9
+    │
+365 │         r.removeLiquidity(address(a), address(b), 1, 0, 0, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:372:37
+    │
+372 │         (uint256 q0, uint256 q1,) = empty.currentCumulativePrices();
+    │                                     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:377:9
+    │
+377 │         empty.mint(bob);
+    │         ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ test/AMM.t.sol:378:9
+    │
+378 │         a.transfer(address(empty), 1000);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ test/AMM.t.sol:379:9
+    │
+379 │         b.transfer(address(empty), 1000);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:381:9
+    │
+381 │         empty.mint(bob);
+    │         ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ test/AMM.t.sol:382:9
+    │
+382 │         a.transfer(address(empty), 1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ test/AMM.t.sol:383:9
+    │
+383 │         b.transfer(address(empty), 1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:386:9
+    │
+386 │         empty.mint(bob);
+    │         ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:388:9
+    │
+388 │         empty.burn(bob);
+    │         ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:390:9
+    │
+390 │         empty.mint(address(0));
+    │         ━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:404:9
+    │
+404 │         r.getAmountOut(uint256(type(uint112).max) + 1, 1, 1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:406:9
+    │
+406 │         r.getAmountOut(1, 0, 1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:408:9
+    │
+408 │         r.getAmountOut(1, 1, 0);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:410:9
+    │
+410 │         r.getAmountOut(1, uint256(type(uint112).max) + 1, 1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:412:9
+    │
+412 │         r.getAmountOut(1, 1, uint256(type(uint112).max) + 1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:414:9
+    │
+414 │         r.addLiquidity(address(a), address(b), 0, 0, 0, 0, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:420:9
+    │
+420 │         t.approve(address(r), type(uint256).max);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:421:9
+    │
+421 │         r.addLiquidity(address(t), address(a), 1e18, 1e18, 0, 0, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:423:35
+    │
+423 │         (uint256 x, uint256 y,) = r.addLiquidity(address(b), address(a), 1e16, 2e16, 0, 0, bob, block.timestamp);
+    │                                   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ test/AMM.t.sol:431:9
+    │
+431 │         a.transfer(address(one), 1e18);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/erc20-unchecked-transfer
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:434:9
+    │
+434 │         t.approve(address(r), type(uint256).max);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:436:9
+    │
+436 │         r.addLiquidity(address(a), address(t), 1e18, 1e18, 0, 0, bob, block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:443:9
+    │
+443 │         other.mint(bob);
+    │         ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:444:35
+    │
+444 │         (uint112 x, uint112 y,) = other.getReserves();
+    │                                   ━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:454:9
+    │
+454 │         p.burn(address(1));
+    │         ━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:458:9
+    │
+458 │         r.addLiquidity(address(a), address(b), 1, 1, 0, 0, address(0), block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:460:9
+    │
+460 │         r.removeLiquidity(address(a), address(b), 1, 0, 0, address(1), block.timestamp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:468:35
+    │
+468 │         (uint112 x, uint112 y,) = p.getReserves();
+    │                                   ━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:484:27
+    │
+484 │         (,, uint256 lp) = r.addLiquidity(address(a), address(b), n, n, n, n, bob, block.timestamp);
+    │                           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[unused-return]: Return value of an external call is not used
+    ╭▸ test/AMM.t.sol:486:9
+    │
+486 │         p.approve(address(r), lp);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+{"status": "PASS", "seconds": 1806.3713270100002, "rounds": [{"seed": "0x2f2c8f4610", "exit": 0, "seconds": 31.24936571399985, "log": "campaign-000.log"}, {"seed": "0x2f2c8f4611", "exit": 0, "seconds": 24.400949451000088, "log": "campaign-001.log"}, {"seed": "0x2f2c8f4612", "exit": 0, "seconds": 30.177621326999997, "log": "campaign-002.log"}, {"seed": "0x2f2c8f4613", "exit": 0, "seconds": 29.541319037999983, "log": "campaign-003.log"}, {"seed": "0x2f2c8f4614", "exit": 0, "seconds": 25.174649464999902, "log": "campaign-004.log"}, {"seed": "0x2f2c8f4615", "exit": 0, "seconds": 25.06535036000014, "log": "campaign-005.log"}, {"seed": "0x2f2c8f4616", "exit": 0, "seconds": 25.02949951300002, "log": "campaign-006.log"}, {"seed": "0x2f2c8f4617", "exit": 0, "seconds": 23.561822924999888, "log": "campaign-007.log"}, {"seed": "0x2f2c8f4618", "exit": 0, "seconds": 21.960443222999857, "log": "campaign-008.log"}, {"seed": "0x2f2c8f4619", "exit": 0, "seconds": 25.054944966999983, "log": "campaign-009.log"}, {"seed": "0x2f2c8f461a", "exit": 0, "seconds": 26.87019711800008, "log": "campaign-010.log"}, {"seed": "0x2f2c8f461b", "exit": 0, "seconds": 23.48056729599989, "log": "campaign-011.log"}, {"seed": "0x2f2c8f461c", "exit": 0, "seconds": 20.630017658000043, "log": "campaign-012.log"}, {"seed": "0x2f2c8f461d", "exit": 0, "seconds": 21.348058490000085, "log": "campaign-013.log"}, {"seed": "0x2f2c8f461e", "exit": 0, "seconds": 20.2650881510001, "log": "campaign-014.log"}, {"seed": "0x2f2c8f461f", "exit": 0, "seconds": 24.64287912000009, "log": "campaign-015.log"}, {"seed": "0x2f2c8f4620", "exit": 0, "seconds": 28.772664517000067, "log": "campaign-016.log"}, {"seed": "0x2f2c8f4621", "exit": 0, "seconds": 26.535552710000047, "log": "campaign-017.log"}, {"seed": "0x2f2c8f4622", "exit": 0, "seconds": 24.245391547000054, "log": "campaign-018.log"}, {"seed": "0x2f2c8f4623", "exit": 0, "seconds": 23.16697447500019, "log": "campaign-019.log"}, {"seed": "0x2f2c8f4624", "exit": 0, "seconds": 21.39319682999985, "log": "campaign-020.log"}, {"seed": "0x2f2c8f4625", "exit": 0, "seconds": 21.177372977999767, "log": "campaign-021.log"}, {"seed": "0x2f2c8f4626", "exit": 0, "seconds": 22.695915720999892, "log": "campaign-022.log"}, {"seed": "0x2f2c8f4627", "exit": 0, "seconds": 23.166114168999684, "log": "campaign-023.log"}, {"seed": "0x2f2c8f4628", "exit": 0, "seconds": 20.43887415800009, "log": "campaign-024.log"}, {"seed": "0x2f2c8f4629", "exit": 0, "seconds": 23.27178482699992, "log": "campaign-025.log"}, {"seed": "0x2f2c8f462a", "exit": 0, "seconds": 21.31406488399989, "log": "campaign-026.log"}, {"seed": "0x2f2c8f462b", "exit": 0, "seconds": 30.57368059700002, "log": "campaign-027.log"}, {"seed": "0x2f2c8f462c", "exit": 0, "seconds": 25.74510288800002, "log": "campaign-028.log"}, {"seed": "0x2f2c8f462d", "exit": 0, "seconds": 20.863222503000088, "log": "campaign-029.log"}, {"seed": "0x2f2c8f462e", "exit": 0, "seconds": 21.3916944169996, "log": "campaign-030.log"}, {"seed": "0x2f2c8f462f", "exit": 0, "seconds": 26.727679039000122, "log": "campaign-031.log"}, {"seed": "0x2f2c8f4630", "exit": 0, "seconds": 23.074644183000146, "log": "campaign-032.log"}, {"seed": "0x2f2c8f4631", "exit": 0, "seconds": 27.291292643999896, "log": "campaign-033.log"}, {"seed": "0x2f2c8f4632", "exit": 0, "seconds": 26.95604382800002, "log": "campaign-034.log"}, {"seed": "0x2f2c8f4633", "exit": 0, "seconds": 22.844153499000186, "log": "campaign-035.log"}, {"seed": "0x2f2c8f4634", "exit": 0, "seconds": 21.467615257000034, "log": "campaign-036.log"}, {"seed": "0x2f2c8f4635", "exit": 0, "seconds": 26.16272335299982, "log": "campaign-037.log"}, {"seed": "0x2f2c8f4636", "exit": 0, "seconds": 22.561684959000104, "log": "campaign-038.log"}, {"seed": "0x2f2c8f4637", "exit": 0, "seconds": 26.113288336000096, "log": "campaign-039.log"}, {"seed": "0x2f2c8f4638", "exit": 0, "seconds": 21.520925788999648, "log": "campaign-040.log"}, {"seed": "0x2f2c8f4639", "exit": 0, "seconds": 27.417483375999836, "log": "campaign-041.log"}, {"seed": "0x2f2c8f463a", "exit": 0, "seconds": 20.836963993000154, "log": "campaign-042.log"}, {"seed": "0x2f2c8f463b", "exit": 0, "seconds": 22.73506935400019, "log": "campaign-043.log"}, {"seed": "0x2f2c8f463c", "exit": 0, "seconds": 24.794586498999706, "log": "campaign-044.log"}, {"seed": "0x2f2c8f463d", "exit": 0, "seconds": 35.064163073000145, "log": "campaign-045.log"}, {"seed": "0x2f2c8f463e", "exit": 0, "seconds": 25.984267578000072, "log": "campaign-046.log"}, {"seed": "0x2f2c8f463f", "exit": 0, "seconds": 22.051503669999875, "log": "campaign-047.log"}, {"seed": "0x2f2c8f4640", "exit": 0, "seconds": 25.628036148999854, "log": "campaign-048.log"}, {"seed": "0x2f2c8f4641", "exit": 0, "seconds": 27.056671872000152, "log": "campaign-049.log"}, {"seed": "0x2f2c8f4642", "exit": 0, "seconds": 28.14215302799994, "log": "campaign-050.log"}, {"seed": "0x2f2c8f4643", "exit": 0, "seconds": 31.346153596000022, "log": "campaign-051.log"}, {"seed": "0x2f2c8f4644", "exit": 0, "seconds": 26.510992588000136, "log": "campaign-052.log"}, {"seed": "0x2f2c8f4645", "exit": 0, "seconds": 25.36560316499981, "log": "campaign-053.log"}, {"seed": "0x2f2c8f4646", "exit": 0, "seconds": 23.681931412000267, "log": "campaign-054.log"}, {"seed": "0x2f2c8f4647", "exit": 0, "seconds": 25.176312100999894, "log": "campaign-055.log"}, {"seed": "0x2f2c8f4648", "exit": 0, "seconds": 26.021945521999896, "log": "campaign-056.log"}, {"seed": "0x2f2c8f4649", "exit": 0, "seconds": 31.335911614999986, "log": "campaign-057.log"}, {"seed": "0x2f2c8f464a", "exit": 0, "seconds": 27.05470357399963, "log": "campaign-058.log"}, {"seed": "0x2f2c8f464b", "exit": 0, "seconds": 29.844661479000024, "log": "campaign-059.log"}, {"seed": "0x2f2c8f464c", "exit": 0, "seconds": 28.86219223299986, "log": "campaign-060.log"}, {"seed": "0x2f2c8f464d", "exit": 0, "seconds": 20.69798404600033, "log": "campaign-061.log"}, {"seed": "0x2f2c8f464e", "exit": 0, "seconds": 20.973109575999842, "log": "campaign-062.log"}, {"seed": "0x2f2c8f464f", "exit": 0, "seconds": 20.725977818000047, "log": "campaign-063.log"}, {"seed": "0x2f2c8f4650", "exit": 0, "seconds": 24.72039011300012, "log": "campaign-064.log"}, {"seed": "0x2f2c8f4651", "exit": 0, "seconds": 19.7283099199999, "log": "campaign-065.log"}, {"seed": "0x2f2c8f4652", "exit": 0, "seconds": 17.095696755000063, "log": "campaign-066.log"}, {"seed": "0x2f2c8f4653", "exit": 0, "seconds": 18.474489092000113, "log": "campaign-067.log"}, {"seed": "0x2f2c8f4654", "exit": 0, "seconds": 15.54280335400017, "log": "campaign-068.log"}, {"seed": "0x2f2c8f4655", "exit": 0, "seconds": 14.377212437999788, "log": "campaign-069.log"}, {"seed": "0x2f2c8f4656", "exit": 0, "seconds": 10.306883189000018, "log": "campaign-070.log"}, {"seed": "0x2f2c8f4657", "exit": 0, "seconds": 15.228037672000028, "log": "campaign-071.log"}, {"seed": "0x2f2c8f4658", "exit": 0, "seconds": 14.448139818000072, "log": "campaign-072.log"}, {"seed": "0x2f2c8f4659", "exit": 0, "seconds": 13.72838429400008, "log": "campaign-073.log"}, {"seed": "0x2f2c8f465a", "exit": 0, "seconds": 12.429477787999986, "log": "campaign-074.log"}, {"seed": "0x2f2c8f465b", "exit": 0, "seconds": 12.914186368000173, "log": "campaign-075.log"}, {"seed": "0x2f2c8f465c", "exit": 0, "seconds": 21.982095168000342, "log": "campaign-076.log"}]}

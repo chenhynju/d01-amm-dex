@@ -1,0 +1,1867 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/Invariant.t.sol:AMMInvariant
+[PASS] invariant_claimsAreSolvent() (runs: 128, calls: 8192, reverts: 0)
+
+╭----------+----------+-------+---------+----------╮
+| Contract | Selector | Calls | Reverts | Discards |
++==================================================+
+| Handler  | advance  | 1711  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | deposit  | 1724  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | donate   | 1608  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | exit     | 1530  | 0       | 0        |
+|----------+----------+-------+---------+----------|
+| Handler  | swap     | 1619  | 0       | 0        |
+╰----------+----------+-------+---------+----------╯
+
+Traces:
+  [254184] Handler::swap(372934451537927234108121 [3.729e23], true)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 1000000000000000000 [1e18], 1000000000000000000 [1e18], 1
+    ├─ [53333] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 34451537930963104392 [3.445e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 34451537930963104392 [3.445e19])
+    │   └─ ← [Stop]
+    ├─ [716] Router::getAmountOut(34451537930963104392 [3.445e19], 1000000000000000000 [1e18], 1000000000000000000 [1e18]) [staticcall]
+    │   └─ ← [Return] 971710002999948948 [9.717e17]
+    ├─ [107500] Router::swapExactTokensForTokens(MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], 34451537930963104392 [3.445e19], 971710002999948948 [9.717e17], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 1)
+    │   ├─ [2633] Factory::getPair(MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 1000000000000000000 [1e18], 1000000000000000000 [1e18], 1
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 1000000000000000000 [1e18]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 0
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 34451537930963104392 [3.445e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 34451537930963104392 [3.445e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35451537930963104392 [3.545e19]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [44833] Pair::swap(971710002999948948 [9.717e17], 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x)
+    │   │   ├─ [30011] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 971710002999948948 [9.717e17])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 971710002999948948 [9.717e17])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 28289997000051052 [2.828e16]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 35451537930963104392 [3.545e19]
+    │   │   ├─ emit Sync(reserve0: 28289997000051052 [2.828e16], reserve1: 35451537930963104392 [3.545e19])
+    │   │   ├─ emit Swap(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0In: 0, amount1In: 34451537930963104392 [3.445e19], amount0Out: 971710002999948948 [9.717e17], amount1Out: 0, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 971710002999948948 [9.717e17]
+    │   └─ ← [Return] 971710002999948948 [9.717e17]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 28289997000051052 [2.828e16], 35451537930963104392 [3.545e19], 1
+    └─ ← [Return]
+
+  [8189] Handler::exit(18350 [1.835e4])
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 0
+    └─ ← [Return]
+
+  [94423] Handler::advance(2055)
+    ├─ [0] VM::warp(2056)
+    │   └─ ← [Return]
+    ├─ [86121] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 28289997000051052 [2.828e16]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35451537930963104392 [3.545e19]
+    │   ├─ emit Sync(reserve0: 28289997000051052 [2.828e16], reserve1: 35451537930963104392 [3.545e19])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [273510] Handler::deposit(11737 [1.173e4])
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 28289997000051052 [2.828e16], 35451537930963104392 [3.545e19], 2056
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 99999999999999011738 [9.999e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 99999999999999011738 [9.999e19])
+    │   └─ ← [Stop]
+    ├─ [53345] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 125314746165928467061024 [1.253e23])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 125314746165928467061024 [1.253e23])
+    │   └─ ← [Stop]
+    ├─ [124970] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 99999999999999011738 [9.999e19], 125314746165928467061024 [1.253e23], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 2056)
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 28289997000051052 [2.828e16], 35451537930963104392 [3.545e19], 2056
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 28289997000051052 [2.828e16]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35451537930963104392 [3.545e19]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 99999999999999011738 [9.999e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 99999999999999011738 [9.999e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 125314746165928467061023 [1.253e23])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 125314746165928467061023 [1.253e23])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 100028289996999062790 [1e20]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 125350197703859430165415 [1.253e23]
+    │   ├─ [42528] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 100028289996999062790 [1e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 125350197703859430165415 [1.253e23]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 3534818331716986473788 [3.534e21])
+    │   │   ├─ emit Sync(reserve0: 100028289996999062790 [1e20], reserve1: 125350197703859430165415 [1.253e23])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 99999999999999011738 [9.999e19], amount1: 125314746165928467061023 [1.253e23], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 3534818331716986473788 [3.534e21]
+    │   └─ ← [Return] 99999999999999011738 [9.999e19], 125314746165928467061023 [1.253e23], 3534818331716986473788 [3.534e21]
+    └─ ← [Return]
+
+  [222234] Handler::deposit(52748 [5.274e4])
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 100028289996999062790 [1e20], 125350197703859430165415 [1.253e23], 2056
+    ├─ [36233] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 99999999999999052749 [9.999e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 99999999999999052749 [9.999e19])
+    │   └─ ← [Stop]
+    ├─ [36245] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 125314746165928518453854 [1.253e23])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 125314746165928518453854 [1.253e23])
+    │   └─ ← [Stop]
+    ├─ [107882] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 99999999999999052749 [9.999e19], 125314746165928518453854 [1.253e23], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 2056)
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 100028289996999062790 [1e20], 125350197703859430165415 [1.253e23], 2056
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 100028289996999062790 [1e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 125350197703859430165415 [1.253e23]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 99999999999999052749 [9.999e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 99999999999999052749 [9.999e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 125314746165928518453853 [1.253e23])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 125314746165928518453853 [1.253e23])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 200028289996998115539 [2e20]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 250664943869787948619268 [2.506e23]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 200028289996998115539 [2e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 250664943869787948619268 [2.506e23]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 3534818331716987923452 [3.534e21])
+    │   │   ├─ emit Sync(reserve0: 200028289996998115539 [2e20], reserve1: 250664943869787948619268 [2.506e23])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 99999999999999052749 [9.999e19], amount1: 125314746165928518453853 [1.253e23], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 3534818331716987923452 [3.534e21]
+    │   └─ ← [Return] 99999999999999052749 [9.999e19], 125314746165928518453853 [1.253e23], 3534818331716987923452 [3.534e21]
+    └─ ← [Return]
+
+  [222232] Handler::deposit(79228162514264337593543950335 [7.922e28])
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 200028289996998115539 [2e20], 250664943869787948619268 [2.506e23], 2056
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 14265129874376668710 [1.426e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 14265129874376668710 [1.426e19])
+    │   └─ ← [Stop]
+    ├─ [36245] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 17876311292315329466807 [1.787e22])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 17876311292315329466807 [1.787e22])
+    │   └─ ← [Stop]
+    ├─ [107870] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 14265129874376668710 [1.426e19], 17876311292315329466807 [1.787e22], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 2056)
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 200028289996998115539 [2e20], 250664943869787948619268 [2.506e23], 2056
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 200028289996998115539 [2e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 250664943869787948619268 [2.506e23]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 14265129874376668710 [1.426e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 14265129874376668710 [1.426e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 17876311292315329466806 [1.787e22])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 17876311292315329466806 [1.787e22])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 214293419871374784249 [2.142e20]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 268541255162103278086074 [2.685e23]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 214293419871374784249 [2.142e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 268541255162103278086074 [2.685e23]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 504246425842707792491 [5.042e20])
+    │   │   ├─ emit Sync(reserve0: 214293419871374784249 [2.142e20], reserve1: 268541255162103278086074 [2.685e23])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 14265129874376668710 [1.426e19], amount1: 17876311292315329466806 [1.787e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 504246425842707792491 [5.042e20]
+    │   └─ ← [Return] 14265129874376668710 [1.426e19], 17876311292315329466806 [1.787e22], 504246425842707792491 [5.042e20]
+    └─ ← [Return]
+
+  [179250] Handler::exit(79228162514264337593543950335 [7.922e28])
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 7573883089276682189731 [7.573e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 214293419871374784249 [2.142e20], 268541255162103278086074 [2.685e23], 2056
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 7574883089276682189731 [7.574e21]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 7574883089276682189731 [7.574e21]
+    ├─ [110404] Router::removeLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 5812852301828013929980 [5.812e21], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 2056)
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 971710002999948948 [9.717e17]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 3
+    │   ├─ [31977] Pair::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 5812852301828013929980 [5.812e21])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 5812852301828013929980 [5.812e21])
+    │   │   └─ ← [Return] true
+    │   ├─ [53292] Pair::burn(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 214293419871374784249 [2.142e20]
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 268541255162103278086074 [2.685e23]
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: 0x0000000000000000000000000000000000000000, amount: 5812852301828013929980 [5.812e21])
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 164445574180454366330 [1.644e20])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 164445574180454366330 [1.644e20])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 206074553865342027757269 [2.06e23])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 206074553865342027757269 [2.06e23])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 49847845690920417919 [4.984e19]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 62466701296761250328805 [6.246e22]
+    │   │   ├─ emit Sync(reserve0: 49847845690920417919 [4.984e19], reserve1: 62466701296761250328805 [6.246e22])
+    │   │   ├─ emit Burn(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 164445574180454366330 [1.644e20], amount1: 206074553865342027757269 [2.06e23], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 164445574180454366330 [1.644e20], 206074553865342027757269 [2.06e23]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 165417284183454315278 [1.654e20]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 206074553865342027757272 [2.06e23]
+    │   └─ ← [Return] 164445574180454366330 [1.644e20], 206074553865342027757269 [2.06e23]
+    └─ ← [Return]
+
+  [60223] Handler::advance(31338 [3.133e4])
+    ├─ [0] VM::warp(33394 [3.339e4])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 49847845690920417919 [4.984e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 62466701296761250328805 [6.246e22]
+    │   ├─ emit Sync(reserve0: 49847845690920417919 [4.984e19], reserve1: 62466701296761250328805 [6.246e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [160331] Handler::exit(115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 1761030787448668259751 [1.761e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 49847845690920417919 [4.984e19], 62466701296761250328805 [6.246e22], 33394 [3.339e4]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 1762030787448668259751 [1.762e21]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 1762030787448668259751 [1.762e21]
+    ├─ [108714] Router::removeLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 1761030787448668259751 [1.761e21], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 33394 [3.339e4])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 165417284183454315278 [1.654e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 206074553865342027757272 [2.06e23]
+    │   ├─ [31977] Pair::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 1761030787448668259751 [1.761e21])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 1761030787448668259751 [1.761e21])
+    │   │   └─ ← [Return] true
+    │   ├─ [53292] Pair::burn(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 49847845690920417919 [4.984e19]
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 62466701296761250328805 [6.246e22]
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: 0x0000000000000000000000000000000000000000, amount: 1761030787448668259751 [1.761e21])
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 49819555693920366866 [4.981e19])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 49819555693920366866 [4.981e19])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 62431249758830287224412 [6.243e22])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 62431249758830287224412 [6.243e22])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 28289997000051053 [2.828e16]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 35451537930963104393 [3.545e19]
+    │   │   ├─ emit Sync(reserve0: 28289997000051053 [2.828e16], reserve1: 35451537930963104393 [3.545e19])
+    │   │   ├─ emit Burn(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 49819555693920366866 [4.981e19], amount1: 62431249758830287224412 [6.243e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 49819555693920366866 [4.981e19], 62431249758830287224412 [6.243e22]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 215236839877374682144 [2.152e20]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 268505803624172314981684 [2.685e23]
+    │   └─ ← [Return] 49819555693920366866 [4.981e19], 62431249758830287224412 [6.243e22]
+    └─ ← [Return]
+
+  [128618] Handler::donate(393, false)
+    ├─ [36149] MockToken::mint(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 393)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 393)
+    │   └─ ← [Stop]
+    ├─ [59098] Pair::skim(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 28289997000051446 [2.828e16]
+    │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 393)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 393)
+    │   │   └─ ← [Return] true
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35451537930963104393 [3.545e19]
+    │   ├─ [7311] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 0)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [8189] Handler::exit(42)
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 0
+    └─ ← [Return]
+
+  [239332] Handler::deposit(79228162514264337593543950334 [7.922e28])
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 28289997000051053 [2.828e16], 35451537930963104393 [3.545e19], 33394 [3.339e4]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 14265129874376668709 [1.426e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 14265129874376668709 [1.426e19])
+    │   └─ ← [Stop]
+    ├─ [36245] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 17876311292315328834163 [1.787e22])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 17876311292315328834163 [1.787e22])
+    │   └─ ← [Stop]
+    ├─ [124970] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 14265129874376668709 [1.426e19], 17876311292315328834163 [1.787e22], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 33394 [3.339e4])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 28289997000051053 [2.828e16], 35451537930963104393 [3.545e19], 33394 [3.339e4]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 28289997000051053 [2.828e16]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35451537930963104393 [3.545e19]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 14265129874376668709 [1.426e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 14265129874376668709 [1.426e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 17876311292315328834162 [1.787e22])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 17876311292315328834162 [1.787e22])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 14293419871376719762 [1.429e19]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 17911762830246291938555 [1.791e22]
+    │   ├─ [42528] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 14293419871376719762 [1.429e19]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 17911762830246291938555 [1.791e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 504246425842707774632 [5.042e20])
+    │   │   ├─ emit Sync(reserve0: 14293419871376719762 [1.429e19], reserve1: 17911762830246291938555 [1.791e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 14265129874376668709 [1.426e19], amount1: 17876311292315328834162 [1.787e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 504246425842707774632 [5.042e20]
+    │   └─ ← [Return] 14265129874376668709 [1.426e19], 17876311292315328834162 [1.787e22], 504246425842707774632 [5.042e20]
+    └─ ← [Return]
+
+  [161714] Handler::exit(1000)
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 504246425842707774632 [5.042e20]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 14293419871376719762 [1.429e19], 17911762830246291938555 [1.791e22], 33394 [3.339e4]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 505246425842707774632 [5.052e20]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 505246425842707774632 [5.052e20]
+    ├─ [110308] Router::removeLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 1000, 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 33394 [3.339e4])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 215236839877374682537 [2.152e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 268505803624172314981685 [2.685e23]
+    │   ├─ [31977] Pair::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 1000)
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 1000)
+    │   │   └─ ← [Return] true
+    │   ├─ [53292] Pair::burn(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 14293419871376719762 [1.429e19]
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 17911762830246291938555 [1.791e22]
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: 0x0000000000000000000000000000000000000000, amount: 1000)
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 28)
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 28)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 35451 [3.545e4])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 35451 [3.545e4])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 14293419871376719734 [1.429e19]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 17911762830246291903104 [1.791e22]
+    │   │   ├─ emit Sync(reserve0: 14293419871376719734 [1.429e19], reserve1: 17911762830246291903104 [1.791e22])
+    │   │   ├─ emit Burn(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 28, amount1: 35451 [3.545e4], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 28, 35451 [3.545e4]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 215236839877374682565 [2.152e20]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 268505803624172315017136 [2.685e23]
+    │   └─ ← [Return] 28, 35451 [3.545e4]
+    └─ ← [Return]
+
+  [111506] Handler::donate(6, false)
+    ├─ [36137] MockToken::mint(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 6)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 6)
+    │   └─ ← [Stop]
+    ├─ [59098] Pair::skim(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 14293419871376719740 [1.429e19]
+    │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 6)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 6)
+    │   │   └─ ← [Return] true
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 17911762830246291903104 [1.791e22]
+    │   ├─ [7311] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 0)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [222232] Handler::deposit(79228162514264337593543950334 [7.922e28])
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 14293419871376719734 [1.429e19], 17911762830246291903104 [1.791e22], 33394 [3.339e4]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 14265129874376668709 [1.426e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 14265129874376668709 [1.426e19])
+    │   └─ ← [Stop]
+    ├─ [36245] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 17876311292315328833800 [1.787e22])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 17876311292315328833800 [1.787e22])
+    │   └─ ← [Stop]
+    ├─ [107870] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 14265129874376668709 [1.426e19], 17876311292315328833800 [1.787e22], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 33394 [3.339e4])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 14293419871376719734 [1.429e19], 17911762830246291903104 [1.791e22], 33394 [3.339e4]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 14293419871376719734 [1.429e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 17911762830246291903104 [1.791e22]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 14265129874376668709 [1.426e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 14265129874376668709 [1.426e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 17876311292315328833799 [1.787e22])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 17876311292315328833799 [1.787e22])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 28558549745753388443 [2.855e19]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35788074122561620736903 [3.578e22]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 28558549745753388443 [2.855e19]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 35788074122561620736903 [3.578e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 504246425842707774621 [5.042e20])
+    │   │   ├─ emit Sync(reserve0: 28558549745753388443 [2.855e19], reserve1: 35788074122561620736903 [3.578e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 14265129874376668709 [1.426e19], amount1: 17876311292315328833799 [1.787e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 504246425842707774621 [5.042e20]
+    │   └─ ← [Return] 14265129874376668709 [1.426e19], 17876311292315328833799 [1.787e22], 504246425842707774621 [5.042e20]
+    └─ ← [Return]
+
+  [222256] Handler::deposit(1041909175959666089972 [1.041e21])
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 28558549745753388443 [2.855e19], 35788074122561620736903 [3.578e22], 33394 [3.339e4]
+    ├─ [36233] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 41909175959676089962 [4.19e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 41909175959676089962 [4.19e19])
+    │   └─ ← [Stop]
+    ├─ [36245] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 52518377474100924949562 [5.251e22])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 52518377474100924949562 [5.251e22])
+    │   └─ ← [Stop]
+    ├─ [107882] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 41909175959676089962 [4.19e19], 52518377474100924949562 [5.251e22], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 33394 [3.339e4])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 28558549745753388443 [2.855e19], 35788074122561620736903 [3.578e22], 33394 [3.339e4]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 28558549745753388443 [2.855e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35788074122561620736903 [3.578e22]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 41909175959676089962 [4.19e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 41909175959676089962 [4.19e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 52518377474100924949561 [5.251e22])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 52518377474100924949561 [5.251e22])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 70467725705429478405 [7.046e19]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88306451596662545686464 [8.83e22]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 70467725705429478405 [7.046e19]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 88306451596662545686464 [8.83e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1481413234494173306955 [1.481e21])
+    │   │   ├─ emit Sync(reserve0: 70467725705429478405 [7.046e19], reserve1: 88306451596662545686464 [8.83e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 41909175959676089962 [4.19e19], amount1: 52518377474100924949561 [5.251e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 1481413234494173306955 [1.481e21]
+    │   └─ ← [Return] 41909175959676089962 [4.19e19], 52518377474100924949561 [5.251e22], 1481413234494173306955 [1.481e21]
+    └─ ← [Return]
+
+  [190550] Handler::swap(887, true)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 70467725705429478405 [7.046e19], 88306451596662545686464 [8.83e22], 33394 [3.339e4]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 99999999999999000888 [9.999e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 99999999999999000888 [9.999e19])
+    │   └─ ← [Stop]
+    ├─ [716] Router::getAmountOut(99999999999999000888 [9.999e19], 88306451596662545686464 [8.83e22], 70467725705429478405 [7.046e19]) [staticcall]
+    │   └─ ← [Return] 79469947802777970 [7.946e16]
+    ├─ [95200] Router::swapExactTokensForTokens(MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], 99999999999999000888 [9.999e19], 79469947802777970 [7.946e16], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 33394 [3.339e4])
+    │   ├─ [2633] Factory::getPair(MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 70467725705429478405 [7.046e19], 88306451596662545686464 [8.83e22], 33394 [3.339e4]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88306451596662545686464 [8.83e22]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 215236839877374682571 [2.152e20]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 99999999999999000888 [9.999e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 99999999999999000888 [9.999e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88406451596662544687352 [8.84e22]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [27733] Pair::swap(79469947802777970 [7.946e16], 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x)
+    │   │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 79469947802777970 [7.946e16])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 79469947802777970 [7.946e16])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 70388255757626700435 [7.038e19]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 88406451596662544687352 [8.84e22]
+    │   │   ├─ emit Sync(reserve0: 70388255757626700435 [7.038e19], reserve1: 88406451596662544687352 [8.84e22])
+    │   │   ├─ emit Swap(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0In: 0, amount1In: 99999999999999000888 [9.999e19], amount0Out: 79469947802777970 [7.946e16], amount1Out: 0, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 215316309825177460541 [2.153e20]
+    │   └─ ← [Return] 79469947802777970 [7.946e16]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 70388255757626700435 [7.038e19], 88406451596662544687352 [8.84e22], 33394 [3.339e4]
+    └─ ← [Return]
+
+  [111506] Handler::donate(4, false)
+    ├─ [36137] MockToken::mint(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 4)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 4)
+    │   └─ ← [Stop]
+    ├─ [59098] Pair::skim(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 70388255757626700439 [7.038e19]
+    │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 4)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 4)
+    │   │   └─ ← [Return] true
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88406451596662544687352 [8.84e22]
+    │   ├─ [7311] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 0)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [60465] Handler::advance(20514419 [2.051e7])
+    ├─ [0] VM::warp(71013 [7.101e4])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 70388255757626700435 [7.038e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88406451596662544687352 [8.84e22]
+    │   ├─ emit Sync(reserve0: 70388255757626700435 [7.038e19], reserve1: 88406451596662544687352 [8.84e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [99115] Handler::donate(3121992 [3.121e6], true)
+    ├─ [36161] MockToken::mint(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 3121992 [3.121e6])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 3121992 [3.121e6])
+    │   └─ ← [Stop]
+    ├─ [41644] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 70388255757629822427 [7.038e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88406451596662544687352 [8.84e22]
+    │   ├─ emit Sync(reserve0: 70388255757629822427 [7.038e19], reserve1: 88406451596662544687352 [8.84e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [99115] Handler::donate(1000000 [1e6], true)
+    ├─ [36161] MockToken::mint(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 1000000 [1e6])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 1000000 [1e6])
+    │   └─ ← [Stop]
+    ├─ [41644] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 70388255757630822427 [7.038e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88406451596662544687352 [8.84e22]
+    │   ├─ emit Sync(reserve0: 70388255757630822427 [7.038e19], reserve1: 88406451596662544687352 [8.84e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [60223] Handler::advance(7124)
+    ├─ [0] VM::warp(78137 [7.813e4])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 70388255757630822427 [7.038e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88406451596662544687352 [8.84e22]
+    │   ├─ emit Sync(reserve0: 70388255757630822427 [7.038e19], reserve1: 88406451596662544687352 [8.84e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [221810] Handler::deposit(1)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 70388255757630822427 [7.038e19], 88406451596662544687352 [8.84e22], 78137 [7.813e4]
+    ├─ [36161] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 1000001 [1e6])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1000001 [1e6])
+    │   └─ ← [Stop]
+    ├─ [36173] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 1255984242 [1.255e9])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1255984242 [1.255e9])
+    │   └─ ← [Stop]
+    ├─ [107750] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 1000001 [1e6], 1255984242 [1.255e9], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 78137 [7.813e4])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 70388255757630822427 [7.038e19], 88406451596662544687352 [8.84e22], 78137 [7.813e4]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 70388255757630822427 [7.038e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88406451596662544687352 [8.84e22]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 1000001 [1e6])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 1000001 [1e6])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 1255984241 [1.255e9])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 1255984241 [1.255e9])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 70388255757631822428 [7.038e19]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88406451596663800671593 [8.84e22]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 70388255757631822428 [7.038e19]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 88406451596663800671593 [8.84e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 35388127 [3.538e7])
+    │   │   ├─ emit Sync(reserve0: 70388255757631822428 [7.038e19], reserve1: 88406451596663800671593 [8.84e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 1000001 [1e6], amount1: 1255984241 [1.255e9], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 35388127 [3.538e7]
+    │   └─ ← [Return] 1000001 [1e6], 1255984241 [1.255e9], 35388127 [3.538e7]
+    └─ ← [Return]
+
+  [60223] Handler::advance(10)
+    ├─ [0] VM::warp(78147 [7.814e4])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 70388255757631822428 [7.038e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 88406451596663800671593 [8.84e22]
+    │   ├─ emit Sync(reserve0: 70388255757631822428 [7.038e19], reserve1: 88406451596663800671593 [8.84e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [190625] Handler::swap(887, false)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 70388255757631822428 [7.038e19], 88406451596663800671593 [8.84e22], 78147 [7.814e4]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 99999999999999000888 [9.999e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 99999999999999000888 [9.999e19])
+    │   └─ ← [Stop]
+    ├─ [716] Router::getAmountOut(99999999999999000888 [9.999e19], 70388255757631822428 [7.038e19], 88406451596663800671593 [8.84e22]) [staticcall]
+    │   └─ ← [Return] 51820880782898243833255 [5.182e22]
+    ├─ [95209] Router::swapExactTokensForTokens(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 99999999999999000888 [9.999e19], 51820880782898243833255 [5.182e22], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 78147 [7.814e4])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 70388255757631822428 [7.038e19], 88406451596663800671593 [8.84e22], 78147 [7.814e4]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 70388255757631822428 [7.038e19]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 268505803624172315017139 [2.685e23]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 99999999999999000888 [9.999e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 99999999999999000888 [9.999e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 170388255757630823316 [1.703e20]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [27735] Pair::swap(0, 51820880782898243833255 [5.182e22], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x)
+    │   │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 51820880782898243833255 [5.182e22])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 51820880782898243833255 [5.182e22])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 170388255757630823316 [1.703e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 36585570813765556838338 [3.658e22]
+    │   │   ├─ emit Sync(reserve0: 170388255757630823316 [1.703e20], reserve1: 36585570813765556838338 [3.658e22])
+    │   │   ├─ emit Swap(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0In: 99999999999999000888 [9.999e19], amount1In: 0, amount0Out: 0, amount1Out: 51820880782898243833255 [5.182e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 320326684407070558850394 [3.203e23]
+    │   └─ ← [Return] 51820880782898243833255 [5.182e22]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 170388255757630823316 [1.703e20], 36585570813765556838338 [3.658e22], 78147 [7.814e4]
+    └─ ← [Return]
+
+  [21426] Handler::exit(2)
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 2489906086179624243335 [2.489e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 170388255757630823316 [1.703e20], 36585570813765556838338 [3.658e22], 78147 [7.814e4]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2490906086179624243335 [2.49e21]
+    └─ ← [Return]
+
+  [190285] Handler::swap(0, false)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 170388255757630823316 [1.703e20], 36585570813765556838338 [3.658e22], 78147 [7.814e4]
+    ├─ [36161] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 1000000 [1e6])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1000000 [1e6])
+    │   └─ ← [Stop]
+    ├─ [716] Router::getAmountOut(1000000 [1e6], 170388255757630823316 [1.703e20], 36585570813765556838338 [3.658e22]) [staticcall]
+    │   └─ ← [Return] 214074696 [2.14e8]
+    ├─ [95077] Router::swapExactTokensForTokens(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 1000000 [1e6], 214074696 [2.14e8], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 78147 [7.814e4])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 170388255757630823316 [1.703e20], 36585570813765556838338 [3.658e22], 78147 [7.814e4]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 170388255757630823316 [1.703e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 320326684407070558850394 [3.203e23]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 1000000 [1e6])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 1000000 [1e6])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 170388255757631823316 [1.703e20]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [27735] Pair::swap(0, 214074696 [2.14e8], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x)
+    │   │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 214074696 [2.14e8])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 214074696 [2.14e8])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 170388255757631823316 [1.703e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 36585570813765342763642 [3.658e22]
+    │   │   ├─ emit Sync(reserve0: 170388255757631823316 [1.703e20], reserve1: 36585570813765342763642 [3.658e22])
+    │   │   ├─ emit Swap(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0In: 1000000 [1e6], amount1In: 0, amount0Out: 0, amount1Out: 214074696 [2.14e8], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 320326684407070772925090 [3.203e23]
+    │   └─ ← [Return] 214074696 [2.14e8]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 170388255757631823316 [1.703e20], 36585570813765342763642 [3.658e22], 78147 [7.814e4]
+    └─ ← [Return]
+
+  [60465] Handler::advance(4294967295 [4.294e9])
+    ├─ [0] VM::warp(101442 [1.014e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 170388255757631823316 [1.703e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 36585570813765342763642 [3.658e22]
+    │   ├─ emit Sync(reserve0: 170388255757631823316 [1.703e20], reserve1: 36585570813765342763642 [3.658e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [60223] Handler::advance(4156)
+    ├─ [0] VM::warp(105598 [1.055e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 170388255757631823316 [1.703e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 36585570813765342763642 [3.658e22]
+    │   ├─ emit Sync(reserve0: 170388255757631823316 [1.703e20], reserve1: 36585570813765342763642 [3.658e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [60223] Handler::advance(2)
+    ├─ [0] VM::warp(105600 [1.056e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 170388255757631823316 [1.703e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 36585570813765342763642 [3.658e22]
+    │   ├─ emit Sync(reserve0: 170388255757631823316 [1.703e20], reserve1: 36585570813765342763642 [3.658e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [161762] Handler::exit(100000000000000 [1e14])
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 2489906086179624243335 [2.489e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 170388255757631823316 [1.703e20], 36585570813765342763642 [3.658e22], 105600 [1.056e5]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2490906086179624243335 [2.49e21]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2490906086179624243335 [2.49e21]
+    ├─ [110356] Router::removeLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 100000000000000 [1e14], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 105600 [1.056e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 215316309825177460545 [2.153e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 320326684407070772925090 [3.203e23]
+    │   ├─ [31977] Pair::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 100000000000000 [1e14])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 100000000000000 [1e14])
+    │   │   └─ ← [Return] true
+    │   ├─ [53292] Pair::burn(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 170388255757631823316 [1.703e20]
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 36585570813765342763642 [3.658e22]
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: 0x0000000000000000000000000000000000000000, amount: 100000000000000 [1e14])
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 6840412679667 [6.84e12])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 6840412679667 [6.84e12])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 1468765563533457 [1.468e15])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1468765563533457 [1.468e15])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 170388248917219143649 [1.703e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 36585569344999779230185 [3.658e22]
+    │   │   ├─ emit Sync(reserve0: 170388248917219143649 [1.703e20], reserve1: 36585569344999779230185 [3.658e22])
+    │   │   ├─ emit Burn(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 6840412679667 [6.84e12], amount1: 1468765563533457 [1.468e15], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 6840412679667 [6.84e12], 1468765563533457 [1.468e15]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 215316316665590140212 [2.153e20]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 320326685875836336458547 [3.203e23]
+    │   └─ ← [Return] 6840412679667 [6.84e12], 1468765563533457 [1.468e15]
+    └─ ← [Return]
+
+  [222220] Handler::deposit(79228162514264337593543950335 [7.922e28])
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 170388248917219143649 [1.703e20], 36585569344999779230185 [3.658e22], 105600 [1.056e5]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 14265129874376668710 [1.426e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 14265129874376668710 [1.426e19])
+    │   └─ ← [Stop]
+    ├─ [36233] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 3062992322246311304378 [3.062e21])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 3062992322246311304378 [3.062e21])
+    │   └─ ← [Stop]
+    ├─ [107870] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 14265129874376668710 [1.426e19], 3062992322246311304378 [3.062e21], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 105600 [1.056e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 170388248917219143649 [1.703e20], 36585569344999779230185 [3.658e22], 105600 [1.056e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 170388248917219143649 [1.703e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 36585569344999779230185 [3.658e22]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 14265129874376668710 [1.426e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 14265129874376668710 [1.426e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 3062992322246311304377 [3.062e21])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 3062992322246311304377 [3.062e21])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 184653378791595812359 [1.846e20]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 39648561667246090534562 [3.964e22]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 184653378791595812359 [1.846e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 39648561667246090534562 [3.964e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 208541948306411179412 [2.085e20])
+    │   │   ├─ emit Sync(reserve0: 184653378791595812359 [1.846e20], reserve1: 39648561667246090534562 [3.964e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 14265129874376668710 [1.426e19], amount1: 3062992322246311304377 [3.062e21], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 208541948306411179412 [2.085e20]
+    │   └─ ← [Return] 14265129874376668710 [1.426e19], 3062992322246311304377 [3.062e21], 208541948306411179412 [2.085e20]
+    └─ ← [Return]
+
+  [60465] Handler::advance(599290588 [5.992e8])
+    ├─ [0] VM::warp(125788 [1.257e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 184653378791595812359 [1.846e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 39648561667246090534562 [3.964e22]
+    │   ├─ emit Sync(reserve0: 184653378791595812359 [1.846e20], reserve1: 39648561667246090534562 [3.964e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [222220] Handler::deposit(79228162514264337593543950335 [7.922e28])
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 184653378791595812359 [1.846e20], 39648561667246090534562 [3.964e22], 125788 [1.257e5]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 14265129874376668710 [1.426e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 14265129874376668710 [1.426e19])
+    │   └─ ← [Stop]
+    ├─ [36233] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 3062992322246311304378 [3.062e21])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 3062992322246311304378 [3.062e21])
+    │   └─ ← [Stop]
+    ├─ [107870] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 14265129874376668710 [1.426e19], 3062992322246311304378 [3.062e21], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 125788 [1.257e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 184653378791595812359 [1.846e20], 39648561667246090534562 [3.964e22], 125788 [1.257e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 184653378791595812359 [1.846e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 39648561667246090534562 [3.964e22]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 14265129874376668710 [1.426e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 14265129874376668710 [1.426e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 3062992322246311304377 [3.062e21])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 3062992322246311304377 [3.062e21])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 198918508665972481069 [1.989e20]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 42711553989492401838939 [4.271e22]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 198918508665972481069 [1.989e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 42711553989492401838939 [4.271e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 208541948306411179412 [2.085e20])
+    │   │   ├─ emit Sync(reserve0: 198918508665972481069 [1.989e20], reserve1: 42711553989492401838939 [4.271e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 14265129874376668710 [1.426e19], amount1: 3062992322246311304377 [3.062e21], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 208541948306411179412 [2.085e20]
+    │   └─ ← [Return] 14265129874376668710 [1.426e19], 3062992322246311304377 [3.062e21], 208541948306411179412 [2.085e20]
+    └─ ← [Return]
+
+  [21529] Handler::exit(0)
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 2906989882792446602159 [2.906e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 198918508665972481069 [1.989e20], 42711553989492401838939 [4.271e22], 125788 [1.257e5]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2907989882792446602159 [2.907e21]
+    └─ ← [Return]
+
+  [162150] Handler::exit(79228162514264337593543950334 [7.922e28])
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 2906989882792446602159 [2.906e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 198918508665972481069 [1.989e20], 42711553989492401838939 [4.271e22], 125788 [1.257e5]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2907989882792446602159 [2.907e21]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2907989882792446602159 [2.907e21]
+    ├─ [110404] Router::removeLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 2104321661447739378458 [2.104e21], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 125788 [1.257e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 215316316665590140212 [2.153e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 320326685875836336458549 [3.203e23]
+    │   ├─ [31977] Pair::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 2104321661447739378458 [2.104e21])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 2104321661447739378458 [2.104e21])
+    │   │   └─ ← [Return] true
+    │   ├─ [53292] Pair::burn(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 198918508665972481069 [1.989e20]
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 42711553989492401838939 [4.271e22]
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: 0x0000000000000000000000000000000000000000, amount: 2104321661447739378458 [2.104e21])
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 143944285750653651976 [1.439e20])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 143944285750653651976 [1.439e20])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 30907551909319500077006 [3.09e22])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 30907551909319500077006 [3.09e22])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 54974222915318829093 [5.497e19]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 11804002080172901761933 [1.18e22]
+    │   │   ├─ emit Sync(reserve0: 54974222915318829093 [5.497e19], reserve1: 11804002080172901761933 [1.18e22])
+    │   │   ├─ emit Burn(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 143944285750653651976 [1.439e20], amount1: 30907551909319500077006 [3.09e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 143944285750653651976 [1.439e20], 30907551909319500077006 [3.09e22]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 359260602416243792188 [3.592e20]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 351234237785155836535555 [3.512e23]
+    │   └─ ← [Return] 143944285750653651976 [1.439e20], 30907551909319500077006 [3.09e22]
+    └─ ← [Return]
+
+  [222220] Handler::deposit(79228162514264337593543950334 [7.922e28])
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 54974222915318829093 [5.497e19], 11804002080172901761933 [1.18e22], 125788 [1.257e5]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 14265129874376668709 [1.426e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 14265129874376668709 [1.426e19])
+    │   └─ ← [Stop]
+    ├─ [36233] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 3062992322246311304136 [3.062e21])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 3062992322246311304136 [3.062e21])
+    │   └─ ← [Stop]
+    ├─ [107870] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 14265129874376668709 [1.426e19], 3062992322246311304136 [3.062e21], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 125788 [1.257e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 54974222915318829093 [5.497e19], 11804002080172901761933 [1.18e22], 125788 [1.257e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 54974222915318829093 [5.497e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 11804002080172901761933 [1.18e22]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 14265129874376668709 [1.426e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 14265129874376668709 [1.426e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 3062992322246311304135 [3.062e21])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 3062992322246311304135 [3.062e21])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 69239352789695497802 [6.923e19]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 14866994402419213066068 [1.486e22]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 69239352789695497802 [6.923e19]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 14866994402419213066068 [1.486e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 208541948306411179396 [2.085e20])
+    │   │   ├─ emit Sync(reserve0: 69239352789695497802 [6.923e19], reserve1: 14866994402419213066068 [1.486e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 14265129874376668709 [1.426e19], amount1: 3062992322246311304135 [3.062e21], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 208541948306411179396 [2.085e20]
+    │   └─ ← [Return] 14265129874376668709 [1.426e19], 3062992322246311304135 [3.062e21], 208541948306411179396 [2.085e20]
+    └─ ← [Return]
+
+  [60223] Handler::advance(10)
+    ├─ [0] VM::warp(125798 [1.257e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 69239352789695497802 [6.923e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 14866994402419213066068 [1.486e22]
+    │   ├─ emit Sync(reserve0: 69239352789695497802 [6.923e19], reserve1: 14866994402419213066068 [1.486e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [60223] Handler::advance(730)
+    ├─ [0] VM::warp(126528 [1.265e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 69239352789695497802 [6.923e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 14866994402419213066068 [1.486e22]
+    │   ├─ emit Sync(reserve0: 69239352789695497802 [6.923e19], reserve1: 14866994402419213066068 [1.486e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [222222] Handler::deposit(7747)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 69239352789695497802 [6.923e19], 14866994402419213066068 [1.486e22], 126528 [1.265e5]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 99999999999999007748 [9.999e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 99999999999999007748 [9.999e19])
+    │   └─ ← [Stop]
+    ├─ [36245] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 21471885284045630823784 [2.147e22])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 21471885284045630823784 [2.147e22])
+    │   └─ ← [Stop]
+    ├─ [107882] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 99999999999999007748 [9.999e19], 21471885284045630823784 [2.147e22], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 126528 [1.265e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 69239352789695497802 [6.923e19], 14866994402419213066068 [1.486e22], 126528 [1.265e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 69239352789695497802 [6.923e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 14866994402419213066068 [1.486e22]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 99999999999999007748 [9.999e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 99999999999999007748 [9.999e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 21471885284045630823783 [2.147e22])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 21471885284045630823783 [2.147e22])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 169239352789694505550 [1.692e20]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 36338879686464843889851 [3.633e22]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 169239352789694505550 [1.692e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 36338879686464843889851 [3.633e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1461900102858485828673 [1.461e21])
+    │   │   ├─ emit Sync(reserve0: 169239352789694505550 [1.692e20], reserve1: 36338879686464843889851 [3.633e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 99999999999999007748 [9.999e19], amount1: 21471885284045630823783 [2.147e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 1461900102858485828673 [1.461e21]
+    │   └─ ← [Return] 99999999999999007748 [9.999e19], 21471885284045630823783 [2.147e22], 1461900102858485828673 [1.461e21]
+    └─ ← [Return]
+
+  [190671] Handler::swap(676839537735291850544 [6.768e20], false)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 169239352789694505550 [1.692e20], 36338879686464843889851 [3.633e22], 126528 [1.265e5]
+    ├─ [36233] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 76839537735297850538 [7.683e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 76839537735297850538 [7.683e19])
+    │   └─ ← [Stop]
+    ├─ [716] Router::getAmountOut(76839537735297850538 [7.683e19], 169239352789694505550 [1.692e20], 36338879686464843889851 [3.633e22]) [staticcall]
+    │   └─ ← [Return] 11323589036313317745623 [1.132e22]
+    ├─ [95221] Router::swapExactTokensForTokens(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 76839537735297850538 [7.683e19], 11323589036313317745623 [1.132e22], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 126528 [1.265e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 169239352789694505550 [1.692e20], 36338879686464843889851 [3.633e22], 126528 [1.265e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 169239352789694505550 [1.692e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 351234237785155836535557 [3.512e23]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 76839537735297850538 [7.683e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 76839537735297850538 [7.683e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 246078890524992356088 [2.46e20]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [27735] Pair::swap(0, 11323589036313317745623 [1.132e22], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x)
+    │   │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 11323589036313317745623 [1.132e22])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 11323589036313317745623 [1.132e22])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 246078890524992356088 [2.46e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 25015290650151526144228 [2.501e22]
+    │   │   ├─ emit Sync(reserve0: 246078890524992356088 [2.46e20], reserve1: 25015290650151526144228 [2.501e22])
+    │   │   ├─ emit Swap(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0In: 76839537735297850538 [7.683e19], amount1In: 0, amount0Out: 0, amount1Out: 11323589036313317745623 [1.132e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 362557826821469154281180 [3.625e23]
+    │   └─ ← [Return] 11323589036313317745623 [1.132e22]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 246078890524992356088 [2.46e20], 25015290650151526144228 [2.501e22], 126528 [1.265e5]
+    └─ ← [Return]
+
+  [60223] Handler::advance(15513 [1.551e4])
+    ├─ [0] VM::warp(142041 [1.42e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 246078890524992356088 [2.46e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25015290650151526144228 [2.501e22]
+    │   ├─ emit Sync(reserve0: 246078890524992356088 [2.46e20], reserve1: 25015290650151526144228 [2.501e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [60465] Handler::advance(892742772 [8.927e8])
+    ├─ [0] VM::warp(200013 [2e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 246078890524992356088 [2.46e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25015290650151526144228 [2.501e22]
+    │   ├─ emit Sync(reserve0: 246078890524992356088 [2.46e20], reserve1: 25015290650151526144228 [2.501e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [190584] Handler::swap(79228162514264337593543950334 [7.922e28], true)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 246078890524992356088 [2.46e20], 25015290650151526144228 [2.501e22], 200013 [2e5]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 14265129874376668709 [1.426e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 14265129874376668709 [1.426e19])
+    │   └─ ← [Stop]
+    ├─ [716] Router::getAmountOut(14265129874376668709 [1.426e19], 25015290650151526144228 [2.501e22], 246078890524992356088 [2.46e20]) [staticcall]
+    │   └─ ← [Return] 139827582455629939 [1.398e17]
+    ├─ [95212] Router::swapExactTokensForTokens(MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], 14265129874376668709 [1.426e19], 139827582455629939 [1.398e17], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 200013 [2e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 246078890524992356088 [2.46e20], 25015290650151526144228 [2.501e22], 200013 [2e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25015290650151526144228 [2.501e22]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 359260602416243792188 [3.592e20]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 14265129874376668709 [1.426e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 14265129874376668709 [1.426e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25029555780025902812937 [2.502e22]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [27733] Pair::swap(139827582455629939 [1.398e17], 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x)
+    │   │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 139827582455629939 [1.398e17])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 139827582455629939 [1.398e17])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 245939062942536726149 [2.459e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 25029555780025902812937 [2.502e22]
+    │   │   ├─ emit Sync(reserve0: 245939062942536726149 [2.459e20], reserve1: 25029555780025902812937 [2.502e22])
+    │   │   ├─ emit Swap(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0In: 0, amount1In: 14265129874376668709 [1.426e19], amount0Out: 139827582455629939 [1.398e17], amount1Out: 0, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 359400429998699422127 [3.594e20]
+    │   └─ ← [Return] 139827582455629939 [1.398e17]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 245939062942536726149 [2.459e20], 25029555780025902812937 [2.502e22], 200013 [2e5]
+    └─ ← [Return]
+
+  [60465] Handler::advance(1926052771 [1.926e9])
+    ├─ [0] VM::warp(223984 [2.239e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 245939062942536726149 [2.459e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25029555780025902812937 [2.502e22]
+    │   ├─ emit Sync(reserve0: 245939062942536726149 [2.459e20], reserve1: 25029555780025902812937 [2.502e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [99333] Handler::donate(1000000000000000200 [1e18], true)
+    ├─ [36137] MockToken::mint(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 200)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 200)
+    │   └─ ← [Stop]
+    ├─ [41644] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 245939062942536726349 [2.459e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25029555780025902812937 [2.502e22]
+    │   ├─ emit Sync(reserve0: 245939062942536726349 [2.459e20], reserve1: 25029555780025902812937 [2.502e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [190248] Handler::swap(3907204865 [3.907e9], false)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 245939062942536726349 [2.459e20], 25029555780025902812937 [2.502e22], 223984 [2.239e5]
+    ├─ [36173] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 3907204865 [3.907e9])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 3907204865 [3.907e9])
+    │   └─ ← [Stop]
+    ├─ [716] Router::getAmountOut(3907204865 [3.907e9], 245939062942536726349 [2.459e20], 25029555780025902812937 [2.502e22]) [staticcall]
+    │   └─ ← [Return] 396448673659 [3.964e11]
+    ├─ [95101] Router::swapExactTokensForTokens(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 3907204865 [3.907e9], 396448673659 [3.964e11], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 223984 [2.239e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 245939062942536726349 [2.459e20], 25029555780025902812937 [2.502e22], 223984 [2.239e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 245939062942536726349 [2.459e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 362557826821469154281180 [3.625e23]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 3907204865 [3.907e9])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 3907204865 [3.907e9])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 245939062946443931214 [2.459e20]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [27735] Pair::swap(0, 396448673659 [3.964e11], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x)
+    │   │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 396448673659 [3.964e11])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 396448673659 [3.964e11])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 245939062946443931214 [2.459e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 25029555779629454139278 [2.502e22]
+    │   │   ├─ emit Sync(reserve0: 245939062946443931214 [2.459e20], reserve1: 25029555779629454139278 [2.502e22])
+    │   │   ├─ emit Swap(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0In: 3907204865 [3.907e9], amount1In: 0, amount0Out: 0, amount1Out: 396448673659 [3.964e11], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 362557826821865602954839 [3.625e23]
+    │   └─ ← [Return] 396448673659 [3.964e11]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 245939062946443931214 [2.459e20], 25029555779629454139278 [2.502e22], 223984 [2.239e5]
+    └─ ← [Return]
+
+  [190584] Handler::swap(79228162514264337593543950334 [7.922e28], true)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 245939062946443931214 [2.459e20], 25029555779629454139278 [2.502e22], 223984 [2.239e5]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 14265129874376668709 [1.426e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 14265129874376668709 [1.426e19])
+    │   └─ ← [Stop]
+    ├─ [716] Router::getAmountOut(14265129874376668709 [1.426e19], 25029555779629454139278 [2.502e22], 245939062946443931214 [2.459e20]) [staticcall]
+    │   └─ ← [Return] 139668527653975266 [1.396e17]
+    ├─ [95212] Router::swapExactTokensForTokens(MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], 14265129874376668709 [1.426e19], 139668527653975266 [1.396e17], Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 223984 [2.239e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 245939062946443931214 [2.459e20], 25029555779629454139278 [2.502e22], 223984 [2.239e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25029555779629454139278 [2.502e22]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 359400429998699422127 [3.594e20]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 14265129874376668709 [1.426e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 14265129874376668709 [1.426e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25043820909503830807987 [2.504e22]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [27733] Pair::swap(139668527653975266 [1.396e17], 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x)
+    │   │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 139668527653975266 [1.396e17])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 139668527653975266 [1.396e17])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 245799394418789955948 [2.457e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 25043820909503830807987 [2.504e22]
+    │   │   ├─ emit Sync(reserve0: 245799394418789955948 [2.457e20], reserve1: 25043820909503830807987 [2.504e22])
+    │   │   ├─ emit Swap(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0In: 0, amount1In: 14265129874376668709 [1.426e19], amount0Out: 139668527653975266 [1.396e17], amount1Out: 0, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 359540098526353397393 [3.595e20]
+    │   └─ ← [Return] 139668527653975266 [1.396e17]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 245799394418789955948 [2.457e20], 25043820909503830807987 [2.504e22], 223984 [2.239e5]
+    └─ ← [Return]
+
+  [222222] Handler::deposit(13993 [1.399e4])
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 245799394418789955948 [2.457e20], 25043820909503830807987 [2.504e22], 223984 [2.239e5]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 99999999999999013994 [9.999e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 99999999999999013994 [9.999e19])
+    │   └─ ← [Stop]
+    ├─ [36245] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 10188723600691315290799 [1.018e22])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 10188723600691315290799 [1.018e22])
+    │   └─ ← [Stop]
+    ├─ [107882] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 99999999999999013994 [9.999e19], 10188723600691315290799 [1.018e22], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 223984 [2.239e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 245799394418789955948 [2.457e20], 25043820909503830807987 [2.504e22], 223984 [2.239e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 245799394418789955948 [2.457e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25043820909503830807987 [2.504e22]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 99999999999999013994 [9.999e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 99999999999999013994 [9.999e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 10188723600691315290798 [1.018e22])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 10188723600691315290798 [1.018e22])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 345799394418788969942 [3.457e20]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35232544510195146098785 [3.523e22]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 345799394418788969942 [3.457e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 35232544510195146098785 [3.523e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1006556699767218090597 [1.006e21])
+    │   │   ├─ emit Sync(reserve0: 345799394418788969942 [3.457e20], reserve1: 35232544510195146098785 [3.523e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 99999999999999013994 [9.999e19], amount1: 10188723600691315290798 [1.018e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 1006556699767218090597 [1.006e21]
+    │   └─ ← [Return] 99999999999999013994 [9.999e19], 10188723600691315290798 [1.018e22], 1006556699767218090597 [1.006e21]
+    └─ ← [Return]
+
+  [111506] Handler::donate(9, false)
+    ├─ [36137] MockToken::mint(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 9)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 9)
+    │   └─ ← [Stop]
+    ├─ [59098] Pair::skim(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 345799394418788969951 [3.457e20]
+    │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 9)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 9)
+    │   │   └─ ← [Return] true
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35232544510195146098785 [3.523e22]
+    │   ├─ [7311] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 0)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [60465] Handler::advance(1684632696 [1.684e9])
+    ├─ [0] VM::warp(229480 [2.294e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 345799394418788969942 [3.457e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35232544510195146098785 [3.523e22]
+    │   ├─ emit Sync(reserve0: 345799394418788969942 [3.457e20], reserve1: 35232544510195146098785 [3.523e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [190222] Handler::swap(0, true)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 345799394418788969942 [3.457e20], 35232544510195146098785 [3.523e22], 229480 [2.294e5]
+    ├─ [36161] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 1000000 [1e6])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1000000 [1e6])
+    │   └─ ← [Stop]
+    ├─ [716] Router::getAmountOut(1000000 [1e6], 35232544510195146098785 [3.523e22], 345799394418788969942 [3.457e20]) [staticcall]
+    │   └─ ← [Return] 9785
+    ├─ [95080] Router::swapExactTokensForTokens(MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], 1000000 [1e6], 9785, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 229480 [2.294e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 345799394418788969942 [3.457e20], 35232544510195146098785 [3.523e22], 229480 [2.294e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35232544510195146098785 [3.523e22]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 359540098526353397402 [3.595e20]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 1000000 [1e6])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 1000000 [1e6])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35232544510195147098785 [3.523e22]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [27733] Pair::swap(9785, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0x)
+    │   │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 9785)
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 9785)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 345799394418788960157 [3.457e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 35232544510195147098785 [3.523e22]
+    │   │   ├─ emit Sync(reserve0: 345799394418788960157 [3.457e20], reserve1: 35232544510195147098785 [3.523e22])
+    │   │   ├─ emit Swap(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0In: 0, amount1In: 1000000 [1e6], amount0Out: 9785, amount1Out: 0, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 359540098526353407187 [3.595e20]
+    │   └─ ← [Return] 9785
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 345799394418788960157 [3.457e20], 35232544510195147098785 [3.523e22], 229480 [2.294e5]
+    └─ ← [Return]
+
+  [111748] Handler::donate(1000000000000000200 [1e18], false)
+    ├─ [36137] MockToken::mint(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 200)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 200)
+    │   └─ ← [Stop]
+    ├─ [59098] Pair::skim(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 345799394418788960357 [3.457e20]
+    │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 200)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 200)
+    │   │   └─ ← [Return] true
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35232544510195147098785 [3.523e22]
+    │   ├─ [7311] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 0)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [60223] Handler::advance(112)
+    ├─ [0] VM::warp(229592 [2.295e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 345799394418788960157 [3.457e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35232544510195147098785 [3.523e22]
+    │   ├─ emit Sync(reserve0: 345799394418788960157 [3.457e20], reserve1: 35232544510195147098785 [3.523e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [99091] Handler::donate(2, true)
+    ├─ [36137] MockToken::mint(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 2)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 2)
+    │   └─ ← [Stop]
+    ├─ [41644] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 345799394418788960159 [3.457e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 35232544510195147098785 [3.523e22]
+    │   ├─ emit Sync(reserve0: 345799394418788960159 [3.457e20], reserve1: 35232544510195147098785 [3.523e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [21426] Handler::exit(5)
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 3479666972276822322367 [3.479e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 345799394418788960159 [3.457e20], 35232544510195147098785 [3.523e22], 229592 [2.295e5]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 3480666972276822322367 [3.48e21]
+    └─ ← [Return]
+
+  [162150] Handler::exit(105338034751071568826434922608364484231518647258820996035512574053697007386623 [1.053e77])
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 3479666972276822322367 [3.479e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 345799394418788960159 [3.457e20], 35232544510195147098785 [3.523e22], 229592 [2.295e5]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 3480666972276822322367 [3.48e21]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 3480666972276822322367 [3.48e21]
+    ├─ [110404] Router::removeLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 2007247342493130545497 [2.007e21], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 229592 [2.295e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 359540098526353407387 [3.595e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 362557826821865602954840 [3.625e23]
+    │   ├─ [31977] Pair::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 2007247342493130545497 [2.007e21])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 2007247342493130545497 [2.007e21])
+    │   │   └─ ← [Return] true
+    │   ├─ [53292] Pair::burn(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 345799394418788960159 [3.457e20]
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 35232544510195147098785 [3.523e22]
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: 0x0000000000000000000000000000000000000000, amount: 2007247342493130545497 [2.007e21])
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 199417215439261186072 [1.994e20])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 199417215439261186072 [1.994e20])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 20318068893301651322658 [2.031e22])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 20318068893301651322658 [2.031e22])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 146382178979527774087 [1.463e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 14914475616893495776127 [1.491e22]
+    │   │   ├─ emit Sync(reserve0: 146382178979527774087 [1.463e20], reserve1: 14914475616893495776127 [1.491e22])
+    │   │   ├─ emit Burn(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 199417215439261186072 [1.994e20], amount1: 20318068893301651322658 [2.031e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 199417215439261186072 [1.994e20], 20318068893301651322658 [2.031e22]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 558957313965614593459 [5.589e20]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 382875895715167254277498 [3.828e23]
+    │   └─ ← [Return] 199417215439261186072 [1.994e20], 20318068893301651322658 [2.031e22]
+    └─ ← [Return]
+
+  [222222] Handler::deposit(2883)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 146382178979527774087 [1.463e20], 14914475616893495776127 [1.491e22], 229592 [2.295e5]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 99999999999999002884 [9.999e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 99999999999999002884 [9.999e19])
+    │   └─ ← [Stop]
+    ├─ [36245] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 10188723600691314736263 [1.018e22])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 10188723600691314736263 [1.018e22])
+    │   └─ ← [Stop]
+    ├─ [107882] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 99999999999999002884 [9.999e19], 10188723600691314736263 [1.018e22], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 229592 [2.295e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 146382178979527774087 [1.463e20], 14914475616893495776127 [1.491e22], 229592 [2.295e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 146382178979527774087 [1.463e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 14914475616893495776127 [1.491e22]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 99999999999999002884 [9.999e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 99999999999999002884 [9.999e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 10188723600691314736262 [1.018e22])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 10188723600691314736262 [1.018e22])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 246382178979526776971 [2.463e20]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25103199217584810512389 [2.51e22]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 246382178979526776971 [2.463e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 25103199217584810512389 [2.51e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1006556699767218007245 [1.006e21])
+    │   │   ├─ emit Sync(reserve0: 246382178979526776971 [2.463e20], reserve1: 25103199217584810512389 [2.51e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 99999999999999002884 [9.999e19], amount1: 10188723600691314736262 [1.018e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 1006556699767218007245 [1.006e21]
+    │   └─ ← [Return] 99999999999999002884 [9.999e19], 10188723600691314736262 [1.018e22], 1006556699767218007245 [1.006e21]
+    └─ ← [Return]
+
+  [60465] Handler::advance(3660917678 [3.66e9])
+    ├─ [0] VM::warp(292870 [2.928e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 246382178979526776971 [2.463e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25103199217584810512389 [2.51e22]
+    │   ├─ emit Sync(reserve0: 246382178979526776971 [2.463e20], reserve1: 25103199217584810512389 [2.51e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [111518] Handler::donate(2054, false)
+    ├─ [36149] MockToken::mint(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 2054)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 2054)
+    │   └─ ← [Stop]
+    ├─ [59098] Pair::skim(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 246382178979526779025 [2.463e20]
+    │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 2054)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 2054)
+    │   │   └─ ← [Return] true
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25103199217584810512389 [2.51e22]
+    │   ├─ [7311] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 0)
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 0)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [161738] Handler::exit(1000000 [1e6])
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 2478976329550909784115 [2.478e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 246382178979526776971 [2.463e20], 25103199217584810512389 [2.51e22], 292870 [2.928e5]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2479976329550909784115 [2.479e21]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2479976329550909784115 [2.479e21]
+    ├─ [110332] Router::removeLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 1000000 [1e6], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 292870 [2.928e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 558957313965614595513 [5.589e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 382875895715167254277499 [3.828e23]
+    │   ├─ [31977] Pair::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 1000000 [1e6])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 1000000 [1e6])
+    │   │   └─ ← [Return] true
+    │   ├─ [53292] Pair::burn(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 246382178979526776971 [2.463e20]
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 25103199217584810512389 [2.51e22]
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: 0x0000000000000000000000000000000000000000, amount: 1000000 [1e6])
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 99348 [9.934e4])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 99348 [9.934e4])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 10122354 [1.012e7])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 10122354 [1.012e7])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 246382178979526677623 [2.463e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 25103199217584800390035 [2.51e22]
+    │   │   ├─ emit Sync(reserve0: 246382178979526677623 [2.463e20], reserve1: 25103199217584800390035 [2.51e22])
+    │   │   ├─ emit Burn(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 99348 [9.934e4], amount1: 10122354 [1.012e7], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 99348 [9.934e4], 10122354 [1.012e7]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 558957313965614694861 [5.589e20]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 382875895715167264399853 [3.828e23]
+    │   └─ ← [Return] 99348 [9.934e4], 10122354 [1.012e7]
+    └─ ← [Return]
+
+  [60223] Handler::advance(5)
+    ├─ [0] VM::warp(292875 [2.928e5])
+    │   └─ ← [Return]
+    ├─ [51921] Pair::sync()
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 246382178979526677623 [2.463e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 25103199217584800390035 [2.51e22]
+    │   ├─ emit Sync(reserve0: 246382178979526677623 [2.463e20], reserve1: 25103199217584800390035 [2.51e22])
+    │   └─ ← [Return]
+    └─ ← [Return]
+
+  [161726] Handler::exit(6066)
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 2478976329550908784115 [2.478e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 246382178979526677623 [2.463e20], 25103199217584800390035 [2.51e22], 292875 [2.928e5]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2479976329550908784115 [2.479e21]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2479976329550908784115 [2.479e21]
+    ├─ [110320] Router::removeLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 6066, 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 292875 [2.928e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 558957313965614694861 [5.589e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 382875895715167264399853 [3.828e23]
+    │   ├─ [31977] Pair::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 6066)
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 6066)
+    │   │   └─ ← [Return] true
+    │   ├─ [53292] Pair::burn(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 246382178979526677623 [2.463e20]
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 25103199217584800390035 [2.51e22]
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: 0x0000000000000000000000000000000000000000, amount: 6066)
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 602)
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 602)
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 61402 [6.14e4])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 61402 [6.14e4])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 246382178979526677021 [2.463e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 25103199217584800328633 [2.51e22]
+    │   │   ├─ emit Sync(reserve0: 246382178979526677021 [2.463e20], reserve1: 25103199217584800328633 [2.51e22])
+    │   │   ├─ emit Burn(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 602, amount1: 61402 [6.14e4], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 602, 61402 [6.14e4]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 558957313965614695463 [5.589e20]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 382875895715167264461255 [3.828e23]
+    │   └─ ← [Return] 602, 61402 [6.14e4]
+    └─ ← [Return]
+
+  [162150] Handler::exit(78583339473448286744190784159550 [7.858e31])
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 2478976329550908778049 [2.478e21]
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 246382178979526677021 [2.463e20], 25103199217584800328633 [2.51e22], 292875 [2.928e5]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2479976329550908778049 [2.479e21]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 2479976329550908778049 [2.479e21]
+    ├─ [110404] Router::removeLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 1734626794736413487917 [1.734e21], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 292875 [2.928e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 558957313965614695463 [5.589e20]
+    │   ├─ [2559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 382875895715167264461255 [3.828e23]
+    │   ├─ [31977] Pair::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 1734626794736413487917 [1.734e21])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 1734626794736413487917 [1.734e21])
+    │   │   └─ ← [Return] true
+    │   ├─ [53292] Pair::burn(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 246382178979526677021 [2.463e20]
+    │   │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 25103199217584800328633 [2.51e22]
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: 0x0000000000000000000000000000000000000000, amount: 1734626794736413487917 [1.734e21])
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 172332745401978427107 [1.723e20])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 172332745401978427107 [1.723e20])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [10911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 17558507102490827612526 [1.755e22])
+    │   │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 17558507102490827612526 [1.755e22])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 74049433577548249914 [7.404e19]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 7544692115093972716107 [7.544e21]
+    │   │   ├─ emit Sync(reserve0: 74049433577548249914 [7.404e19], reserve1: 7544692115093972716107 [7.544e21])
+    │   │   ├─ emit Burn(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 172332745401978427107 [1.723e20], amount1: 17558507102490827612526 [1.755e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 172332745401978427107 [1.723e20], 17558507102490827612526 [1.755e22]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 731290059367593122570 [7.312e20]
+    │   ├─ [559] MockToken::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   │   └─ ← [Return] 400434402817658092073781 [4.004e23]
+    │   └─ ← [Return] 172332745401978427107 [1.723e20], 17558507102490827612526 [1.755e22]
+    └─ ← [Return]
+
+  [222222] Handler::deposit(3123)
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 74049433577548249914 [7.404e19], 7544692115093972716107 [7.544e21], 292875 [2.928e5]
+    ├─ [36221] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 99999999999999003124 [9.999e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 99999999999999003124 [9.999e19])
+    │   └─ ← [Stop]
+    ├─ [36245] MockToken::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 10188723600691314760661 [1.018e22])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 10188723600691314760661 [1.018e22])
+    │   └─ ← [Stop]
+    ├─ [107882] Router::addLiquidity(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a], 99999999999999003124 [9.999e19], 10188723600691314760661 [1.018e22], 0, 0, Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 292875 [2.928e5])
+    │   ├─ [2633] Factory::getPair(MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9], MockToken: [0xF62849F9A0B5Bf2913b396098F7c7019b51A820a]) [staticcall]
+    │   │   └─ ← [Return] Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]
+    │   ├─ [4527] Pair::getReserves() [staticcall]
+    │   │   └─ ← [Return] 74049433577548249914 [7.404e19], 7544692115093972716107 [7.544e21], 292875 [2.928e5]
+    │   ├─ [256] Pair::token0() [staticcall]
+    │   │   └─ ← [Return] MockToken: [0x5991A2dF15A8F6A256D3Ec51E99254Cd3fb576A9]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 74049433577548249914 [7.404e19]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 7544692115093972716107 [7.544e21]
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 99999999999999003124 [9.999e19])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 99999999999999003124 [9.999e19])
+    │   │   └─ ← [Return] true
+    │   ├─ [15104] MockToken::transferFrom(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 10188723600691314760660 [1.018e22])
+    │   │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 10188723600691314760660 [1.018e22])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 174049433577547253038 [1.74e20]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 17733415715785287476767 [1.773e22]
+    │   ├─ [25428] Pair::mint(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 174049433577547253038 [1.74e20]
+    │   │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   │   └─ ← [Return] 17733415715785287476767 [1.773e22]
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 1006556699767218009655 [1.006e21])
+    │   │   ├─ emit Sync(reserve0: 174049433577547253038 [1.74e20], reserve1: 17733415715785287476767 [1.773e22])
+    │   │   ├─ emit Mint(sender: Router: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount0: 99999999999999003124 [9.999e19], amount1: 10188723600691314760660 [1.018e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   │   └─ ← [Return] 1006556699767218009655 [1.006e21]
+    │   └─ ← [Return] 99999999999999003124 [9.999e19], 10188723600691314760660 [1.018e22], 1006556699767218009655 [1.006e21]
+    └─ ← [Return]
+
+  [29379] AMMInvariant::invariant_claimsAreSolvent()
+    ├─ [4527] Pair::getReserves() [staticcall]
+    │   └─ ← [Return] 174049433577547253038 [1.74e20], 17733415715785287476767 [1.773e22], 292875 [2.928e5]
+    ├─ [2363] Pair::totalSupply() [staticcall]
+    │   └─ ← [Return] 1751906234581713299787 [1.751e21]
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 1750906234581713299787 [1.75e21]
+    ├─ [2690] Pair::balanceOf(AMMInvariant: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496]) [staticcall]
+    │   └─ ← [Return] 999999999999999000 [9.999e17]
+    └─ ← [Return]
+
+  [152318] AMMInvariant::afterInvariant()
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 1750906234581713299787 [1.75e21]
+    ├─ [0] VM::prank(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   └─ ← [Return]
+    ├─ [46714] Pair::transfer(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], 1750906234581713299787 [1.75e21])
+    │   ├─ emit Transfer(from: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], to: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], amount: 1750906234581713299787 [1.75e21])
+    │   └─ ← [Return] true
+    ├─ [80924] Pair::burn(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 174049433577547253038 [1.74e20]
+    │   ├─ [2559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 17733415715785287476767 [1.773e22]
+    │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: 0x0000000000000000000000000000000000000000, amount: 1750906234581713299787 [1.75e21])
+    │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 173950084976496636050 [1.739e20])
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 173950084976496636050 [1.739e20])
+    │   │   └─ ← [Return] true
+    │   ├─ [12911] MockToken::transfer(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], 17723293361423086503333 [1.772e22])
+    │   │   ├─ emit Transfer(from: Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9], amount: 17723293361423086503333 [1.772e22])
+    │   │   └─ ← [Return] true
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 99348601050616988 [9.934e16]
+    │   ├─ [559] MockToken::balanceOf(Pair: [0x1230fAe33160ED120252e0283334Fa474F4B330d]) [staticcall]
+    │   │   └─ ← [Return] 10122354362200973434 [1.012e19]
+    │   ├─ emit Sync(reserve0: 99348601050616988 [9.934e16], reserve1: 10122354362200973434 [1.012e19])
+    │   ├─ emit Burn(sender: AMMInvariant: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], amount0: 173950084976496636050 [1.739e20], amount1: 17723293361423086503333 [1.772e22], to: Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9])
+    │   └─ ← [Return] 173950084976496636050 [1.739e20], 17723293361423086503333 [1.772e22]
+    ├─ [2690] Pair::balanceOf(Handler: [0x15cF58144EF33af1e14b5208015d11F9143E27b9]) [staticcall]
+    │   └─ ← [Return] 0
+    └─ ← [Return]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 11.73s (11.72s CPU time)
+
+Ran 1 test suite in 11.76s (11.73s CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

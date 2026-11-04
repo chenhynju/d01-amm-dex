@@ -1,0 +1,8 @@
+{
+  "protocol_commit": "271b387b90432c72126d0db1f28c36fe83d39126",
+  "files": {
+    "src/Factory.sol": "77a186c4e3d431b8a74d4c904b2a0f16462356af70223704bd9cf3c5760ca931",
+    "src/Pair.sol": "757e690ceb2986244f15da487a8a4cd57e745fa137b573fe0d82cc481b2c02d9",
+    "src/Router.sol": "a76911ae3d2f39757d870ca939b2b2ea741251f3b09c7db4bd096c72faceb648"
+  }
+}

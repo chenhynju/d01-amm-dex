@@ -1,0 +1,27 @@
+Compiling 44 files with Solc 0.8.28
+Solc 0.8.28 finished in 31.20s
+Compiler run successful!
+Script ran successfully.
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 31337
+
+Estimated max fee per gas: 2.000000001 gwei
+Estimated base fee per gas: 1 gwei
+Estimated max priority fee per gas: 0.000000001 gwei
+
+Estimated total gas used for script: 9307902
+
+Estimated amount required: 0.018615804009307902 ETH
+
+==========================
+
+Transactions saved to: /tmp/b2-checks-cayimju9/broadcast/LocalDemo.s.sol/31337/run-latest.json
+
+Sensitive values saved to: /tmp/b2-checks-cayimju9/cache/LocalDemo.s.sol/31337/run-latest.json
+
+Error: Transaction Failure: 0xb13cad42103d600b8c1f85e3f02e1dffbe80955dec53c6cc17b6b3b2cd669494
+Transaction Failure: 0x196ab0c96cf79aeddfb1b416149e94904722561b72fe4c0f624dc48b25e214ec
