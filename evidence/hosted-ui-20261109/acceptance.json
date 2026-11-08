@@ -1,0 +1,12 @@
+{
+  "project": "d01-amm-dex",
+  "status": "PASS",
+  "scope": "Authenticated hosted UI render; no wallet signing or public workflow claim",
+  "httpStatus": 200,
+  "title": "B2 AMM \u2014 Testnet Exchange",
+  "h1": "A pool.A formula.Your move.",
+  "mobileOverflow": false,
+  "pageErrors": [],
+  "url": "https://d01-amm-9ci5ddppp-purelamp.vercel.app",
+  "sourceCommit": "01aadcd17f27ef7dbd5c722ebd21f4c51da5e1c9"
+}

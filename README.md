@@ -104,3 +104,7 @@ Minimum LP is permanent; dust may not redeem until both outputs are positive. Sl
 Protocol-specific contracts, tests, mathematical model and documents were authored with AI assistance. OZ supplies ERC20, signatures, math and guard primitives; Foundry supplies execution/testing. The constant-product design follows [Uniswap V2 mechanics](https://docs.uniswap.org/whitepaper.pdf); this project does not claim to invent that model or reimplement the underlying signature libraries.
 
 Remaining release work: current end-to-end browser and chain settlement, reachable archive-fork execution, funded Base Sepolia deployment, source verification and hosted acceptance. Lending is maintained separately as D02. Personal mastery requires independent explanation and exercises.
+
+## Hosted UI evidence
+
+[Protected Vercel deployment](https://d01-amm-9ci5ddppp-purelamp.vercel.app). Authenticated Chromium desktop and 390px mobile rendering passed with no page errors or horizontal overflow. [Evidence](evidence/hosted-ui-20261109/acceptance.json). This check does not establish hosted wallet transaction acceptance. Access protection remains enabled.
