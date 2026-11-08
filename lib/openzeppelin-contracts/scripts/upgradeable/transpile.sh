@@ -38,10 +38,7 @@ npx @openzeppelin/upgrade-safe-transpiler -D \
   -x '!contracts/proxy/ERC1967/ERC1967Utils.sol' \
   -x '!contracts/proxy/utils/UUPSUpgradeable.sol' \
   -x '!contracts/proxy/beacon/IBeacon.sol' \
-  -p 'contracts/access/manager/AccessManager.sol' \
-  -p 'contracts/finance/VestingWallet.sol' \
-  -p 'contracts/governance/TimelockController.sol' \
-  -p 'contracts/metatx/ERC2771Forwarder.sol' \
+  -p 'contracts/**/presets/**/*' \
   -n \
   -N 'contracts/mocks/**/*' \
   -q '@openzeppelin/'

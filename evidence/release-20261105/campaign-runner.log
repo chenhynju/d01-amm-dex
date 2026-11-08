@@ -1,0 +1,580 @@
+Compiling 10 files with Solc 0.8.38
+Solc 0.8.38 finished in 64.71s
+Compiler run successful with warnings:
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1312:9:
+     |
+1312 |         string calldata error
+     |         ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1326:9:
+     |
+1326 |         string calldata error
+     |         ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1334:79:
+     |
+1334 |     function assertApproxEqAbs(uint256 left, uint256 right, uint256 maxDelta, string calldata error) external pure;
+     |                                                                               ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1341:77:
+     |
+1341 |     function assertApproxEqAbs(int256 left, int256 right, uint256 maxDelta, string calldata error) external pure;
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1358:9:
+     |
+1358 |         string calldata error
+     |         ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1376:9:
+     |
+1376 |         string calldata error
+     |         ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1386:86:
+     |
+1386 |     function assertApproxEqRel(uint256 left, uint256 right, uint256 maxPercentDelta, string calldata error)
+     |                                                                                      ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1397:84:
+     |
+1397 |     function assertApproxEqRel(int256 left, int256 right, uint256 maxPercentDelta, string calldata error) external pure;
+     |                                                                                    ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1404:77:
+     |
+1404 |     function assertEqDecimal(uint256 left, uint256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1411:75:
+     |
+1411 |     function assertEqDecimal(int256 left, int256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                           ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1417:46:
+     |
+1417 |     function assertEq(bool left, bool right, string calldata error) external pure;
+     |                                              ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1423:68:
+     |
+1423 |     function assertEq(string calldata left, string calldata right, string calldata error) external pure;
+     |                                                                    ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1429:66:
+     |
+1429 |     function assertEq(bytes calldata left, bytes calldata right, string calldata error) external pure;
+     |                                                                  ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1435:68:
+     |
+1435 |     function assertEq(bool[] calldata left, bool[] calldata right, string calldata error) external pure;
+     |                                                                    ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1441:74:
+     |
+1441 |     function assertEq(uint256[] calldata left, uint256[] calldata right, string calldata error) external pure;
+     |                                                                          ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1447:72:
+     |
+1447 |     function assertEq(int256[] calldata left, int256[] calldata right, string calldata error) external pure;
+     |                                                                        ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1456:74:
+     |
+1456 |     function assertEq(address[] calldata left, address[] calldata right, string calldata error) external pure;
+     |                                                                          ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1462:74:
+     |
+1462 |     function assertEq(bytes32[] calldata left, bytes32[] calldata right, string calldata error) external pure;
+     |                                                                          ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1468:72:
+     |
+1468 |     function assertEq(string[] calldata left, string[] calldata right, string calldata error) external pure;
+     |                                                                        ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1474:70:
+     |
+1474 |     function assertEq(bytes[] calldata left, bytes[] calldata right, string calldata error) external pure;
+     |                                                                      ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1477:52:
+     |
+1477 |     function assertEq(uint256 left, uint256 right, string calldata error) external pure;
+     |                                                    ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1483:50:
+     |
+1483 |     function assertEq(int256 left, int256 right, string calldata error) external pure;
+     |                                                  ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1489:52:
+     |
+1489 |     function assertEq(address left, address right, string calldata error) external pure;
+     |                                                    ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1495:52:
+     |
+1495 |     function assertEq(bytes32 left, bytes32 right, string calldata error) external pure;
+     |                                                    ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1501:42:
+     |
+1501 |     function assertFalse(bool condition, string calldata error) external pure;
+     |                                          ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1509:77:
+     |
+1509 |     function assertGeDecimal(uint256 left, uint256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1517:75:
+     |
+1517 |     function assertGeDecimal(int256 left, int256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                           ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1524:52:
+     |
+1524 |     function assertGe(uint256 left, uint256 right, string calldata error) external pure;
+     |                                                    ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1531:50:
+     |
+1531 |     function assertGe(int256 left, int256 right, string calldata error) external pure;
+     |                                                  ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1539:77:
+     |
+1539 |     function assertGtDecimal(uint256 left, uint256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1547:75:
+     |
+1547 |     function assertGtDecimal(int256 left, int256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                           ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1554:52:
+     |
+1554 |     function assertGt(uint256 left, uint256 right, string calldata error) external pure;
+     |                                                    ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1561:50:
+     |
+1561 |     function assertGt(int256 left, int256 right, string calldata error) external pure;
+     |                                                  ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1569:77:
+     |
+1569 |     function assertLeDecimal(uint256 left, uint256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1577:75:
+     |
+1577 |     function assertLeDecimal(int256 left, int256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                           ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1584:52:
+     |
+1584 |     function assertLe(uint256 left, uint256 right, string calldata error) external pure;
+     |                                                    ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1591:50:
+     |
+1591 |     function assertLe(int256 left, int256 right, string calldata error) external pure;
+     |                                                  ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1599:77:
+     |
+1599 |     function assertLtDecimal(uint256 left, uint256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1607:75:
+     |
+1607 |     function assertLtDecimal(int256 left, int256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                           ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1614:52:
+     |
+1614 |     function assertLt(uint256 left, uint256 right, string calldata error) external pure;
+     |                                                    ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1621:50:
+     |
+1621 |     function assertLt(int256 left, int256 right, string calldata error) external pure;
+     |                                                  ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1628:80:
+     |
+1628 |     function assertNotEqDecimal(uint256 left, uint256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                                ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1635:78:
+     |
+1635 |     function assertNotEqDecimal(int256 left, int256 right, uint256 decimals, string calldata error) external pure;
+     |                                                                              ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1641:49:
+     |
+1641 |     function assertNotEq(bool left, bool right, string calldata error) external pure;
+     |                                                 ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1647:71:
+     |
+1647 |     function assertNotEq(string calldata left, string calldata right, string calldata error) external pure;
+     |                                                                       ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1653:69:
+     |
+1653 |     function assertNotEq(bytes calldata left, bytes calldata right, string calldata error) external pure;
+     |                                                                     ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1659:71:
+     |
+1659 |     function assertNotEq(bool[] calldata left, bool[] calldata right, string calldata error) external pure;
+     |                                                                       ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1665:77:
+     |
+1665 |     function assertNotEq(uint256[] calldata left, uint256[] calldata right, string calldata error) external pure;
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1671:75:
+     |
+1671 |     function assertNotEq(int256[] calldata left, int256[] calldata right, string calldata error) external pure;
+     |                                                                           ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1680:77:
+     |
+1680 |     function assertNotEq(address[] calldata left, address[] calldata right, string calldata error) external pure;
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1686:77:
+     |
+1686 |     function assertNotEq(bytes32[] calldata left, bytes32[] calldata right, string calldata error) external pure;
+     |                                                                             ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1692:75:
+     |
+1692 |     function assertNotEq(string[] calldata left, string[] calldata right, string calldata error) external pure;
+     |                                                                           ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1698:73:
+     |
+1698 |     function assertNotEq(bytes[] calldata left, bytes[] calldata right, string calldata error) external pure;
+     |                                                                         ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1701:55:
+     |
+1701 |     function assertNotEq(uint256 left, uint256 right, string calldata error) external pure;
+     |                                                       ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1707:53:
+     |
+1707 |     function assertNotEq(int256 left, int256 right, string calldata error) external pure;
+     |                                                     ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1713:55:
+     |
+1713 |     function assertNotEq(address left, address right, string calldata error) external pure;
+     |                                                       ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1719:55:
+     |
+1719 |     function assertNotEq(bytes32 left, bytes32 right, string calldata error) external pure;
+     |                                                       ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+    --> lib/forge-std/src/Vm.sol:1725:41:
+     |
+1725 |     function assertTrue(bool condition, string calldata error) external pure;
+     |                                         ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+  --> lib/openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol:90:29:
+   |
+90 |         (address recovered, RecoverError error, bytes32 errorArg) = tryRecover(hash, signature);
+   |                             ^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+   --> lib/openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol:113:29:
+    |
+113 |         (address recovered, RecoverError error, bytes32 errorArg) = tryRecover(hash, r, vs);
+    |                             ^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+   --> lib/openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol:155:29:
+    |
+155 |         (address recovered, RecoverError error, bytes32 errorArg) = tryRecover(hash, v, r, s);
+    |                             ^^^^^^^^^^^^^^^^^^
+
+Warning (6335): "error" will be promoted to keyword in the future and will not be allowed as an identifier anymore.
+   --> lib/openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol:163:26:
+    |
+163 |     function _throwError(RecoverError error, bytes32 errorArg) private pure {
+    |                          ^^^^^^^^^^^^^^^^^^
+
+warning[block-timestamp]: usage of `block.timestamp` in a comparison may be manipulated by validators
+   ╭▸ src/TestnetToken.sol:26:13
+   │
+26 │         if (block.timestamp < next) revert ClaimNotReady(next);
+   │             ━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/block-timestamp
+
+warning[missing-zero-check]: address parameter is used in a state write or value transfer without a zero-address check
+   ╭▸ src/Pair.sol:51:28
+   │
+51 │     constructor(address a, address b) ERC20("B2 Liquidity", "B2-LP") ERC20Permit("B2 Liquidity") {
+   │                            ━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/missing-zero-check
+
+warning[divide-before-multiply]: division before multiplication may lose precision
+   ╭▸ src/Pair.sol:72:23
+   │
+72 │                 p0 += ((uint256(reserve1) << 112) / reserve0) * elapsed;
+   │                       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/divide-before-multiply
+
+warning[divide-before-multiply]: division before multiplication may lose precision
+   ╭▸ src/Pair.sol:73:23
+   │
+73 │                 p1 += ((uint256(reserve0) << 112) / reserve1) * elapsed;
+   │                       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/divide-before-multiply
+
+warning[unsafe-typecast]: typecast can truncate values
+   ╭▸ src/Pair.sol:68:17
+   │
+68 │         now32 = uint32(block.timestamp);
+   │                 ━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ├ note: consider disabling this lint if you're certain the cast is safe
+   │       
+   │       // casting to 'uint32' is safe because [explain why]
+   │       // forge-lint: disable-next-line(unsafe-typecast)
+   │       
+   │       
+   ╰ help: https://getfoundry.sh/forge/linting/unsafe-typecast
+
+warning[reentrancy-events]: event emitted after an external call; reentrancy can reorder or fabricate logs that off-chain consumers rely on
+   ╭▸ src/Factory.sol:25:9
+   │
+25 │         emit PairCreated(t0, t1, pair, allPairs.length);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-events
+
+warning[reentrancy-events]: event emitted after an external call; reentrancy can reorder or fabricate logs that off-chain consumers rely on
+    ╭▸ src/Pair.sol:176:9
+    │
+176 │         emit Sync(reserve0, reserve1);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-events
+
+warning[reentrancy-events]: event emitted after an external call; reentrancy can reorder or fabricate logs that off-chain consumers rely on
+   ╭▸ src/Pair.sol:96:9
+   │
+96 │         emit Mint(msg.sender, a0, a1, to);
+   │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-events
+
+warning[block-timestamp]: usage of `block.timestamp` in a comparison may be manipulated by validators
+   ╭▸ src/Router.sol:27:13
+   │
+27 │         if (block.timestamp > deadline) revert Expired();
+   │             ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/block-timestamp
+
+warning[reentrancy-events]: event emitted after an external call; reentrancy can reorder or fabricate logs that off-chain consumers rely on
+    ╭▸ src/Pair.sol:113:9
+    │
+113 │         emit Burn(msg.sender, a0, a1, to);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-events
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+   ╭▸ src/Router.sol:54:40
+   │
+54 │         if (pair == address(0)) pair = factory.createPair(a, b);
+   │                                        ━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+   ╭▸ src/Router.sol:72:21
+   │
+72 │         liquidity = Pair(pair).mint(to);
+   │                     ━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[reentrancy-no-eth]: external call can be reentered before `reserve0` is updated
+    ╭▸ src/Pair.sol:123:31
+    │
+123 │         if (data.length != 0) IFlashCallee(to).ammCall(msg.sender, a0Out, a1Out, data);
+    │                               ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[incorrect-strict-equality]: dangerous strict equality check on an externally-influenced value
+   ╭▸ src/Router.sol:69:13
+   │
+69 │         if (IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB) {
+   │             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/incorrect-strict-equality
+
+warning[reentrancy-events]: event emitted after an external call; reentrancy can reorder or fabricate logs that off-chain consumers rely on
+    ╭▸ src/Pair.sol:132:9
+    │
+132 │         emit Swap(msg.sender, a0In, a1In, a0Out, a1Out, to);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-events
+
+warning[incorrect-strict-equality]: dangerous strict equality check on an externally-influenced value
+   ╭▸ src/Router.sol:69:63
+   │
+69 │         if (IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB) {
+   │                                                               ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/incorrect-strict-equality
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+   ╭▸ src/Router.sol:90:9
+   │
+90 │         pair.burn(to);
+   │         ━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[unused-return]: return value of an external call is not used
+   ╭▸ src/Router.sol:90:9
+   │
+90 │         pair.burn(to);
+   │         ━━━━━━━━━━━━━
+   │
+   ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+    ╭▸ src/Router.sol:115:37
+    │
+115 │         if (input == pair.token0()) pair.swap(0, out, to, "");
+    │                                     ━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[reentrancy-no-eth]: external call can be reentered before `_status` is updated
+    ╭▸ src/Router.sol:116:14
+    │
+116 │         else pair.swap(out, 0, to, "");
+    │              ━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/reentrancy-no-eth
+
+warning[unused-return]: return value of an external call is not used
+    ╭▸ src/Router.sol:128:37
+    │
+128 │         (uint112 r0, uint112 r1,) = pair.getReserves();
+    │                                     ━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/unused-return
+
+warning[divide-before-multiply]: division before multiplication may lose precision
+    ╭▸ src/Pair.sol:169:41
+    │
+169 │                 price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed;
+    │                                         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/divide-before-multiply
+
+warning[divide-before-multiply]: division before multiplication may lose precision
+    ╭▸ src/Pair.sol:170:41
+    │
+170 │                 price1CumulativeLast += ((uint256(reserve0) << 112) / reserve1) * elapsed;
+    │                                         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://getfoundry.sh/forge/linting/divide-before-multiply
+
+warning[unsafe-typecast]: typecast can truncate values
+    ╭▸ src/Pair.sol:165:24
+    │
+165 │         uint32 now32 = uint32(block.timestamp);
+    │                        ━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ├ note: consider disabling this lint if you're certain the cast is safe
+    │       
+    │       // casting to 'uint32' is safe because [explain why]
+    │       // forge-lint: disable-next-line(unsafe-typecast)
+    │       
+    │       
+    ╰ help: https://getfoundry.sh/forge/linting/unsafe-typecast
+
+{"status": "PASS", "seconds": 1807.980133165, "rounds": [{"seed": "0x2f2c8f4610", "exit": 0, "seconds": 24.188065557999835, "log": "campaign-000.log"}, {"seed": "0x2f2c8f4611", "exit": 0, "seconds": 14.617958094999722, "log": "campaign-001.log"}, {"seed": "0x2f2c8f4612", "exit": 0, "seconds": 17.63012362499967, "log": "campaign-002.log"}, {"seed": "0x2f2c8f4613", "exit": 0, "seconds": 11.84610806899991, "log": "campaign-003.log"}, {"seed": "0x2f2c8f4614", "exit": 0, "seconds": 23.1762593010003, "log": "campaign-004.log"}, {"seed": "0x2f2c8f4615", "exit": 0, "seconds": 28.730143287000374, "log": "campaign-005.log"}, {"seed": "0x2f2c8f4616", "exit": 0, "seconds": 15.575251157999901, "log": "campaign-006.log"}, {"seed": "0x2f2c8f4617", "exit": 0, "seconds": 20.111027277000176, "log": "campaign-007.log"}, {"seed": "0x2f2c8f4618", "exit": 0, "seconds": 23.568387783000162, "log": "campaign-008.log"}, {"seed": "0x2f2c8f4619", "exit": 0, "seconds": 29.255980625999655, "log": "campaign-009.log"}, {"seed": "0x2f2c8f461a", "exit": 0, "seconds": 22.35797417399999, "log": "campaign-010.log"}, {"seed": "0x2f2c8f461b", "exit": 0, "seconds": 17.258554339000057, "log": "campaign-011.log"}, {"seed": "0x2f2c8f461c", "exit": 0, "seconds": 14.97321011699978, "log": "campaign-012.log"}, {"seed": "0x2f2c8f461d", "exit": 0, "seconds": 23.138777198999833, "log": "campaign-013.log"}, {"seed": "0x2f2c8f461e", "exit": 0, "seconds": 27.884001776000332, "log": "campaign-014.log"}, {"seed": "0x2f2c8f461f", "exit": 0, "seconds": 22.820378236000124, "log": "campaign-015.log"}, {"seed": "0x2f2c8f4620", "exit": 0, "seconds": 18.00310899599981, "log": "campaign-016.log"}, {"seed": "0x2f2c8f4621", "exit": 0, "seconds": 28.826291309000226, "log": "campaign-017.log"}, {"seed": "0x2f2c8f4622", "exit": 0, "seconds": 25.135949892999633, "log": "campaign-018.log"}, {"seed": "0x2f2c8f4623", "exit": 0, "seconds": 32.289778926000054, "log": "campaign-019.log"}, {"seed": "0x2f2c8f4624", "exit": 0, "seconds": 23.195121109999945, "log": "campaign-020.log"}, {"seed": "0x2f2c8f4625", "exit": 0, "seconds": 29.167132193999805, "log": "campaign-021.log"}, {"seed": "0x2f2c8f4626", "exit": 0, "seconds": 29.87834353299968, "log": "campaign-022.log"}, {"seed": "0x2f2c8f4627", "exit": 0, "seconds": 22.59020389499983, "log": "campaign-023.log"}, {"seed": "0x2f2c8f4628", "exit": 0, "seconds": 20.675671960999807, "log": "campaign-024.log"}, {"seed": "0x2f2c8f4629", "exit": 0, "seconds": 17.507298696000362, "log": "campaign-025.log"}, {"seed": "0x2f2c8f462a", "exit": 0, "seconds": 12.739189962000182, "log": "campaign-026.log"}, {"seed": "0x2f2c8f462b", "exit": 0, "seconds": 16.3385310069998, "log": "campaign-027.log"}, {"seed": "0x2f2c8f462c", "exit": 0, "seconds": 13.650652036999873, "log": "campaign-028.log"}, {"seed": "0x2f2c8f462d", "exit": 0, "seconds": 14.45053848500038, "log": "campaign-029.log"}, {"seed": "0x2f2c8f462e", "exit": 0, "seconds": 16.255568941000092, "log": "campaign-030.log"}, {"seed": "0x2f2c8f462f", "exit": 0, "seconds": 12.13954043700005, "log": "campaign-031.log"}, {"seed": "0x2f2c8f4630", "exit": 0, "seconds": 16.360971909, "log": "campaign-032.log"}, {"seed": "0x2f2c8f4631", "exit": 0, "seconds": 14.175869724999757, "log": "campaign-033.log"}, {"seed": "0x2f2c8f4632", "exit": 0, "seconds": 14.394008316000054, "log": "campaign-034.log"}, {"seed": "0x2f2c8f4633", "exit": 0, "seconds": 14.2076447620002, "log": "campaign-035.log"}, {"seed": "0x2f2c8f4634", "exit": 0, "seconds": 15.604250317999686, "log": "campaign-036.log"}, {"seed": "0x2f2c8f4635", "exit": 0, "seconds": 29.121912873999918, "log": "campaign-037.log"}, {"seed": "0x2f2c8f4636", "exit": 0, "seconds": 20.182013403999918, "log": "campaign-038.log"}, {"seed": "0x2f2c8f4637", "exit": 0, "seconds": 10.949351322999973, "log": "campaign-039.log"}, {"seed": "0x2f2c8f4638", "exit": 0, "seconds": 14.434371498000019, "log": "campaign-040.log"}, {"seed": "0x2f2c8f4639", "exit": 0, "seconds": 13.040160682000078, "log": "campaign-041.log"}, {"seed": "0x2f2c8f463a", "exit": 0, "seconds": 14.239252406000105, "log": "campaign-042.log"}, {"seed": "0x2f2c8f463b", "exit": 0, "seconds": 14.9746036370002, "log": "campaign-043.log"}, {"seed": "0x2f2c8f463c", "exit": 0, "seconds": 10.88551442700009, "log": "campaign-044.log"}, {"seed": "0x2f2c8f463d", "exit": 0, "seconds": 12.775048305999917, "log": "campaign-045.log"}, {"seed": "0x2f2c8f463e", "exit": 0, "seconds": 16.770814462999624, "log": "campaign-046.log"}, {"seed": "0x2f2c8f463f", "exit": 0, "seconds": 13.275527308999699, "log": "campaign-047.log"}, {"seed": "0x2f2c8f4640", "exit": 0, "seconds": 14.975526809000257, "log": "campaign-048.log"}, {"seed": "0x2f2c8f4641", "exit": 0, "seconds": 13.046553493999909, "log": "campaign-049.log"}, {"seed": "0x2f2c8f4642", "exit": 0, "seconds": 13.185089015999893, "log": "campaign-050.log"}, {"seed": "0x2f2c8f4643", "exit": 0, "seconds": 14.314125160999993, "log": "campaign-051.log"}, {"seed": "0x2f2c8f4644", "exit": 0, "seconds": 11.61513594600001, "log": "campaign-052.log"}, {"seed": "0x2f2c8f4645", "exit": 0, "seconds": 13.722532356000102, "log": "campaign-053.log"}, {"seed": "0x2f2c8f4646", "exit": 0, "seconds": 10.445378833000177, "log": "campaign-054.log"}, {"seed": "0x2f2c8f4647", "exit": 0, "seconds": 11.800385890000143, "log": "campaign-055.log"}, {"seed": "0x2f2c8f4648", "exit": 0, "seconds": 14.597549481999977, "log": "campaign-056.log"}, {"seed": "0x2f2c8f4649", "exit": 0, "seconds": 13.439098079999894, "log": "campaign-057.log"}, {"seed": "0x2f2c8f464a", "exit": 0, "seconds": 15.885760777000087, "log": "campaign-058.log"}, {"seed": "0x2f2c8f464b", "exit": 0, "seconds": 14.176572315000158, "log": "campaign-059.log"}, {"seed": "0x2f2c8f464c", "exit": 0, "seconds": 16.500953800999923, "log": "campaign-060.log"}, {"seed": "0x2f2c8f464d", "exit": 0, "seconds": 22.593828937000126, "log": "campaign-061.log"}, {"seed": "0x2f2c8f464e", "exit": 0, "seconds": 17.600426420000076, "log": "campaign-062.log"}, {"seed": "0x2f2c8f464f", "exit": 0, "seconds": 12.042096645000129, "log": "campaign-063.log"}, {"seed": "0x2f2c8f4650", "exit": 0, "seconds": 13.305437802000142, "log": "campaign-064.log"}, {"seed": "0x2f2c8f4651", "exit": 0, "seconds": 13.731269991000318, "log": "campaign-065.log"}, {"seed": "0x2f2c8f4652", "exit": 0, "seconds": 11.840596964999804, "log": "campaign-066.log"}, {"seed": "0x2f2c8f4653", "exit": 0, "seconds": 13.397173289999955, "log": "campaign-067.log"}, {"seed": "0x2f2c8f4654", "exit": 0, "seconds": 14.729400519999672, "log": "campaign-068.log"}, {"seed": "0x2f2c8f4655", "exit": 0, "seconds": 13.315727874999993, "log": "campaign-069.log"}, {"seed": "0x2f2c8f4656", "exit": 0, "seconds": 10.511784926000018, "log": "campaign-070.log"}, {"seed": "0x2f2c8f4657", "exit": 0, "seconds": 8.98749779300033, "log": "campaign-071.log"}, {"seed": "0x2f2c8f4658", "exit": 0, "seconds": 12.146995816000071, "log": "campaign-072.log"}, {"seed": "0x2f2c8f4659", "exit": 0, "seconds": 11.052504229000078, "log": "campaign-073.log"}, {"seed": "0x2f2c8f465a", "exit": 0, "seconds": 10.840358533000199, "log": "campaign-074.log"}, {"seed": "0x2f2c8f465b", "exit": 0, "seconds": 12.287682390999635, "log": "campaign-075.log"}, {"seed": "0x2f2c8f465c", "exit": 0, "seconds": 13.61612928600016, "log": "campaign-076.log"}, {"seed": "0x2f2c8f465d", "exit": 0, "seconds": 15.072861271999955, "log": "campaign-077.log"}, {"seed": "0x2f2c8f465e", "exit": 0, "seconds": 13.058251269000266, "log": "campaign-078.log"}, {"seed": "0x2f2c8f465f", "exit": 0, "seconds": 12.45125060800001, "log": "campaign-079.log"}, {"seed": "0x2f2c8f4660", "exit": 0, "seconds": 14.303385723000247, "log": "campaign-080.log"}, {"seed": "0x2f2c8f4661", "exit": 0, "seconds": 13.853971546000139, "log": "campaign-081.log"}, {"seed": "0x2f2c8f4662", "exit": 0, "seconds": 10.968603471999813, "log": "campaign-082.log"}, {"seed": "0x2f2c8f4663", "exit": 0, "seconds": 18.198590764000073, "log": "campaign-083.log"}, {"seed": "0x2f2c8f4664", "exit": 0, "seconds": 12.16488718599976, "log": "campaign-084.log"}, {"seed": "0x2f2c8f4665", "exit": 0, "seconds": 19.23319672800062, "log": "campaign-085.log"}, {"seed": "0x2f2c8f4666", "exit": 0, "seconds": 22.230926811000245, "log": "campaign-086.log"}, {"seed": "0x2f2c8f4667", "exit": 0, "seconds": 15.260723059999691, "log": "campaign-087.log"}, {"seed": "0x2f2c8f4668", "exit": 0, "seconds": 11.780013091, "log": "campaign-088.log"}, {"seed": "0x2f2c8f4669", "exit": 0, "seconds": 12.104720098000143, "log": "campaign-089.log"}, {"seed": "0x2f2c8f466a", "exit": 0, "seconds": 9.906608377999873, "log": "campaign-090.log"}, {"seed": "0x2f2c8f466b", "exit": 0, "seconds": 12.225029651000114, "log": "campaign-091.log"}, {"seed": "0x2f2c8f466c", "exit": 0, "seconds": 11.17916901999979, "log": "campaign-092.log"}, {"seed": "0x2f2c8f466d", "exit": 0, "seconds": 11.223847770000248, "log": "campaign-093.log"}, {"seed": "0x2f2c8f466e", "exit": 0, "seconds": 12.55161247199976, "log": "campaign-094.log"}, {"seed": "0x2f2c8f466f", "exit": 0, "seconds": 10.653027768000356, "log": "campaign-095.log"}, {"seed": "0x2f2c8f4670", "exit": 0, "seconds": 18.828846073999557, "log": "campaign-096.log"}, {"seed": "0x2f2c8f4671", "exit": 0, "seconds": 20.152033777000725, "log": "campaign-097.log"}, {"seed": "0x2f2c8f4672", "exit": 0, "seconds": 13.374331699000322, "log": "campaign-098.log"}, {"seed": "0x2f2c8f4673", "exit": 0, "seconds": 18.26573100799942, "log": "campaign-099.log"}, {"seed": "0x2f2c8f4674", "exit": 0, "seconds": 12.926412828999673, "log": "campaign-100.log"}, {"seed": "0x2f2c8f4675", "exit": 0, "seconds": 12.301004043999455, "log": "campaign-101.log"}, {"seed": "0x2f2c8f4676", "exit": 0, "seconds": 11.955757026000356, "log": "campaign-102.log"}, {"seed": "0x2f2c8f4677", "exit": 0, "seconds": 11.163982404999842, "log": "campaign-103.log"}, {"seed": "0x2f2c8f4678", "exit": 0, "seconds": 9.875881601999936, "log": "campaign-104.log"}, {"seed": "0x2f2c8f4679", "exit": 0, "seconds": 13.64589135999995, "log": "campaign-105.log"}, {"seed": "0x2f2c8f467a", "exit": 0, "seconds": 12.140952050000124, "log": "campaign-106.log"}, {"seed": "0x2f2c8f467b", "exit": 0, "seconds": 10.990655390000029, "log": "campaign-107.log"}, {"seed": "0x2f2c8f467c", "exit": 0, "seconds": 15.916764270000385, "log": "campaign-108.log"}, {"seed": "0x2f2c8f467d", "exit": 0, "seconds": 15.19598667900027, "log": "campaign-109.log"}, {"seed": "0x2f2c8f467e", "exit": 0, "seconds": 19.771283080000103, "log": "campaign-110.log"}, {"seed": "0x2f2c8f467f", "exit": 0, "seconds": 17.230277098999977, "log": "campaign-111.log"}, {"seed": "0x2f2c8f4680", "exit": 0, "seconds": 10.420928448000268, "log": "campaign-112.log"}]}

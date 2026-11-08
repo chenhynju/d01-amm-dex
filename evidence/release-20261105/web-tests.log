@@ -1,0 +1,50 @@
+
+> b2-amm-web@1.0.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+TAP version 13
+# Subtest: strict decimal parsing preserves all raw units
+ok 1 - strict decimal parsing preserves all raw units
+  ---
+  duration_ms: 3.339647
+  type: 'test'
+  ...
+# Subtest: display formatting truncates without modifying accounting
+ok 2 - display formatting truncates without modifying accounting
+  ---
+  duration_ms: 0.538467
+  type: 'test'
+  ...
+# Subtest: quote matches all Python rational vectors used by the contract suite
+ok 3 - quote matches all Python rational vectors used by the contract suite
+  ---
+  duration_ms: 67.354611
+  type: 'test'
+  ...
+# Subtest: slippage never raises the permitted minimum
+ok 4 - slippage never raises the permitted minimum
+  ---
+  duration_ms: 0.59056
+  type: 'test'
+  ...
+# Subtest: unbalanced deposit selects proportional amounts
+ok 5 - unbalanced deposit selects proportional amounts
+  ---
+  duration_ms: 2.422845
+  type: 'test'
+  ...
+# Subtest: redemption respects share bounds and rejects sub-unit dust
+ok 6 - redemption respects share bounds and rejects sub-unit dust
+  ---
+  duration_ms: 0.660288
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 784.730349

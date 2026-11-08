@@ -12,3 +12,11 @@ broadcast/
 __pycache__/
 .ci-tools/
 .audit-venv/
+.tools/
+apps/web/node_modules/
+apps/web/.next/
+apps/web/out/
+.runtime/
+.publish/
+
+node_modules/

@@ -1,0 +1,14 @@
+Compiling 2 files with Solc 0.8.28
+Solc 0.8.28 finished in 4.86s
+Compiler run successful!
+
+Ran 6 tests for test/TestnetToken.t.sol:TestnetTokenTest
+[PASS] testBaseSepoliaAllowed() (gas: 99813)
+[PASS] testCapRollsBackClaimTimestamp() (gas: 442256)
+[PASS] testClaimAndCooldownBoundary() (gas: 216926)
+[PASS] testFuzzClaimBounded(uint32) (runs: 1024, μ: 138926, ~: 139017)
+[PASS] testMainnetRejected() (gas: 5508)
+[PASS] testSeparateClaimersAndTransfer() (gas: 220812)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 69.77ms (65.45ms CPU time)
+
+Ran 1 test suite in 362.29ms (69.77ms CPU time): 6 tests passed, 0 failed, 0 skipped (6 total tests)

@@ -1,0 +1,11 @@
+{
+  "network": "Base Sepolia",
+  "chainId": 84532,
+  "address": "0x568Fa7993b0C425B34e39078d46b7e32891b99C2",
+  "purpose": "B2 AMM dedicated testnet deployer; no mainnet use",
+  "storage": "encrypted Foundry-compatible keystore in WSL; password protected by Windows current-user DPAPI",
+  "linux_keystore": "/home/chenhy/.foundry/keystores/b2-amm-base-sepolia.json",
+  "windows_backup_directory": "%LOCALAPPDATA%/B2AMM",
+  "funding_status": "NOT CHECKED",
+  "private_key_exported": false
+}

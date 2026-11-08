@@ -1,0 +1,10 @@
+{
+  "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('Test tokens claimed', { exact: true })\nExpected: visible\nTimeout: 120000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"to.be.visible\" with timeout 120000ms\n  - waiting for getByText('Test tokens claimed', { exact: true })\n",
+  "checkpoints": [
+    {
+      "name": "connect injected test wallet and verify contract runtime hashes",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

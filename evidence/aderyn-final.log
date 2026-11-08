@@ -2,8 +2,8 @@
 ------------------------------------
 # Configuration
 ------------------------------------
-Root - /tmp/b2-checks-cayimju9
-Source - /tmp/b2-checks-cayimju9/src
+Root - /tmp/b2-checks-l_ec8shs
+Source - /tmp/b2-checks-l_ec8shs/src
 Remappings - [
     "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
     "forge-std/=lib/forge-std/src/",
@@ -19,7 +19,7 @@ Auto Excluding - No Files.
 ------------------------------------
 # Compiling Abstract Syntax Trees
 ------------------------------------
-Ingesting 3 compiled files [solc : v0.8.28]
+Ingesting 4 compiled files [solc : v0.8.38]
 ------------------------------------
 # Scanning Contracts
 ------------------------------------
@@ -27,6 +27,6 @@ Running 88 detectors
 Detectors run, printing report.
 Report printed to /home/chenhy/projects/b2-amm/evidence/aderyn-final.json
 
-✔  Done! Fast, clean, effective.
-⭐ Support the project with a star:
+🌱 Aderyn is growing with community support.
+Help others discover it — drop a star on GitHub:
 https://github.com/Cyfrin/aderyn

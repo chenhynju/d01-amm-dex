@@ -1,0 +1,257 @@
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 386 packages, and audited 387 packages in 6m
+
+166 packages are looking for funding
+  run `npm fund` for details
+
+6 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+> b2-amm-web@1.0.0 typecheck
+> tsc --noEmit
+
+
+> b2-amm-web@1.0.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+TAP version 13
+# Subtest: strict decimal parsing preserves all raw units
+ok 1 - strict decimal parsing preserves all raw units
+  ---
+  duration_ms: 17.442683
+  type: 'test'
+  ...
+# Subtest: display formatting truncates without modifying accounting
+ok 2 - display formatting truncates without modifying accounting
+  ---
+  duration_ms: 1.456909
+  type: 'test'
+  ...
+# Subtest: quote matches all Python rational vectors used by the contract suite
+ok 3 - quote matches all Python rational vectors used by the contract suite
+  ---
+  duration_ms: 14.56362
+  type: 'test'
+  ...
+# Subtest: slippage never raises the permitted minimum
+ok 4 - slippage never raises the permitted minimum
+  ---
+  duration_ms: 1.078951
+  type: 'test'
+  ...
+# Subtest: unbalanced deposit selects proportional amounts
+ok 5 - unbalanced deposit selects proportional amounts
+  ---
+  duration_ms: 15.690703
+  type: 'test'
+  ...
+# Subtest: redemption respects share bounds and rejects sub-unit dust
+ok 6 - redemption respects share bounds and rejects sub-unit dust
+  ---
+  duration_ms: 1.078749
+  type: 'test'
+  ...
+# Subtest: wallet context is checked before and after simulation
+ok 7 - wallet context is checked before and after simulation
+  ---
+  duration_ms: 20.186369
+  type: 'test'
+  ...
+# Subtest: chain switch during simulation rejects the stale request
+ok 8 - chain switch during simulation rejects the stale request
+  ---
+  duration_ms: 4.094707
+  type: 'test'
+  ...
+# Subtest: account switch during simulation rejects the stale request
+ok 9 - account switch during simulation rejects the stale request
+  ---
+  duration_ms: 11.974865
+  type: 'test'
+  ...
+# Subtest: wrong initial chain never starts simulation
+ok 10 - wrong initial chain never starts simulation
+  ---
+  duration_ms: 2.224679
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2326.816514
+
+> b2-amm-web@1.0.0 build
+> next build
+
+   ▲ Next.js 15.5.29
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 82s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/4) ...
+   Generating static pages (1/4) 
+   Generating static pages (2/4) 
+   Generating static pages (3/4) 
+ ✓ Generating static pages (4/4)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    91.1 kB         222 kB
+└ ○ /_not-found                            993 B         104 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/255-0e5ac6cd71b0e266.js       46.7 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          1.93 kB
+
+
+○  (Static)  prerendered as static content
+
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@typescript-eslint/eslint-plugin": {
+      "name": "@typescript-eslint/eslint-plugin",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@typescript-eslint/parser",
+        "@typescript-eslint/type-utils",
+        "@typescript-eslint/utils"
+      ],
+      "effects": [],
+      "range": ">=6.16.0",
+      "nodes": [
+        "node_modules/@typescript-eslint/eslint-plugin"
+      ],
+      "fixAvailable": true
+    },
+    "@typescript-eslint/parser": {
+      "name": "@typescript-eslint/parser",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@typescript-eslint/typescript-estree"
+      ],
+      "effects": [
+        "@typescript-eslint/eslint-plugin"
+      ],
+      "range": ">=6.16.0",
+      "nodes": [
+        "node_modules/@typescript-eslint/parser"
+      ],
+      "fixAvailable": true
+    },
+    "@typescript-eslint/type-utils": {
+      "name": "@typescript-eslint/type-utils",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@typescript-eslint/typescript-estree",
+        "@typescript-eslint/utils"
+      ],
+      "effects": [],
+      "range": ">=6.16.0",
+      "nodes": [
+        "node_modules/@typescript-eslint/type-utils"
+      ],
+      "fixAvailable": true
+    },
+    "@typescript-eslint/typescript-estree": {
+      "name": "@typescript-eslint/typescript-estree",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "minimatch"
+      ],
+      "effects": [
+        "@typescript-eslint/parser",
+        "@typescript-eslint/type-utils",
+        "@typescript-eslint/utils"
+      ],
+      "range": ">=6.16.0",
+      "nodes": [
+        "node_modules/@typescript-eslint/typescript-estree"
+      ],
+      "fixAvailable": true
+    },
+    "@typescript-eslint/utils": {
+      "name": "@typescript-eslint/utils",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@typescript-eslint/typescript-estree"
+      ],
+      "effects": [
+        "@typescript-eslint/eslint-plugin"
+      ],
+      "range": ">=6.16.0",
+      "nodes": [
+        "node_modules/@typescript-eslint/utils"
+      ],
+      "fixAvailable": true
+    },
+    "minimatch": {
+      "name": "minimatch",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1244623,
+          "name": "minimatch",
+          "dependency": "minimatch",
+          "title": "minimatch has potential denial of service via globparts amplification",
+          "url": "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-405"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=7.0.0 <11.0.1"
+        }
+      ],
+      "effects": [
+        "@typescript-eslint/typescript-estree"
+      ],
+      "range": "7.0.0 - 11.0.0",
+      "nodes": [
+        "node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch"
+      ],
+      "fixAvailable": true
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 6,
+      "high": 0,
+      "critical": 0,
+      "total": 6
+    },
+    "dependencies": {
+      "prod": 40,
+      "dev": 352,
+      "optional": 64,
+      "peer": 4,
+      "peerOptional": 0,
+      "total": 433
+    }
+  }
+}

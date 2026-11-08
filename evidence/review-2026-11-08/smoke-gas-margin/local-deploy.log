@@ -1,0 +1,34 @@
+No files changed, compilation skipped
+Warning: Detected artifacts built from source files that no longer exist. Run `forge clean` to make sure builds are in sync with project files.
+ - /home/chenhy/workspace/web3-portfolio/d01-amm-dex/foundry-pp/DeployHelper49.sol
+ - /home/chenhy/workspace/web3-portfolio/d01-amm-dex/foundry-pp/DeployHelper47.sol
+ - /home/chenhy/workspace/web3-portfolio/d01-amm-dex/foundry-pp/DeployHelper52.sol
+ - /home/chenhy/workspace/web3-portfolio/d01-amm-dex/foundry-pp/DeployHelper48.sol
+ - /home/chenhy/workspace/web3-portfolio/d01-amm-dex/foundry-pp/DeployHelper50.sol
+Script ran successfully.
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 31337
+
+Estimated max fee per gas: 2.000000001 gwei
+Estimated base fee per gas: 1 gwei
+Estimated max priority fee per gas: 0.000000001 gwei
+
+Estimated total gas used for script: 14755926
+
+Estimated amount required: 0.029511852014755926 ETH
+
+==========================
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /home/chenhy/workspace/web3-portfolio/d01-amm-dex/broadcast/LocalDemo.s.sol/31337/run-latest.json
+
+Sensitive values saved to: /home/chenhy/workspace/web3-portfolio/d01-amm-dex/cache/LocalDemo.s.sol/31337/run-latest.json
+

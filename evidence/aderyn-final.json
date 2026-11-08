@@ -1,7 +1,7 @@
 {
   "files_summary": {
-    "total_source_units": 3,
-    "total_sloc": 290
+    "total_source_units": 4,
+    "total_sloc": 314
   },
   "files_details": {
     "files_details": [
@@ -16,6 +16,10 @@
       {
         "file_path": "src/Router.sol",
         "n_sloc": 117
+      },
+      {
+        "file_path": "src/TestnetToken.sol",
+        "n_sloc": 24
       }
     ]
   },
@@ -38,6 +42,12 @@
             "line_no": 130,
             "src": "5896:9",
             "src_char": "5896:9"
+          },
+          {
+            "contract_path": "src/TestnetToken.sol",
+            "line_no": 13,
+            "src": "587:19",
+            "src_char": "587:19"
           }
         ]
       },

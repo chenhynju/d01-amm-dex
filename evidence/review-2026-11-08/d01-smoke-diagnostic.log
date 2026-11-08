@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/chenhy/workspace/web3-portfolio/d01-amm-dex/scripts/local_smoke.py", line 17, in <module>
+    if anvil.poll() is not None:raise RuntimeError("Owned Anvil exited before ready; port may be busy")
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Owned Anvil exited before ready; port may be busy

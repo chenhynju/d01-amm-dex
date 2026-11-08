@@ -1,0 +1,21 @@
+{
+  "status": "verified",
+  "chainId": 31337,
+  "rpcUrl": "http://127.0.0.1:18565",
+  "explorerUrl": "",
+  "auditedCommit": null,
+  "contracts": {
+    "factory": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+    "router": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512",
+    "pair": "0x71Ea046EBe6414B17034747fac3612686caCb604",
+    "tokenA": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+    "tokenB": "0xcf7ed3acca5a467e9e704c703e8d87f634fb0fc9"
+  },
+  "runtimeHashes": {
+    "factory": "0x6cb5f8812f00cbb238b05996108220a5931dde17b6239955d5963e39c6d332b1",
+    "router": "0x90e1fcba8fc35e06ab0c0e5b377acbfeb79e75c02ac7720fc4f3c7b538c6a2eb",
+    "pair": "0xa94277a29ba154fa043bd91df4f33ec1a572f5dbd36b1297a27459c41898091f",
+    "tokenA": "0xe4442afe40104a0609edda4f19ee83997fe73ca437a7a07b968ae596ae7d434d",
+    "tokenB": "0xe4442afe40104a0609edda4f19ee83997fe73ca437a7a07b968ae596ae7d434d"
+  }
+}

@@ -1,5 +1,53 @@
 
 Detector: reentrancy-balance
+Reentrancy in Router.addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256) (src/Router.sol#42-73):
+	External call allowing reentrancy:
+	- IERC20(a).safeTransferFrom(msg.sender,pair,amountA) (src/Router.sol#67)
+	Balance read before the call:
+	- beforeB = IERC20(b).balanceOf(pair) (src/Router.sol#66)
+	Possible stale balance used after the call in a condition:
+	- IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB (src/Router.sol#69)
+		- stale variable `beforeB`
+Reentrancy in Router.addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256) (src/Router.sol#42-73):
+	External call allowing reentrancy:
+	- IERC20(a).safeTransferFrom(msg.sender,pair,amountA) (src/Router.sol#67)
+	Balance read before the call:
+	- beforeA = IERC20(a).balanceOf(pair) (src/Router.sol#65)
+	Possible stale balance used after the call in a condition:
+	- IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB (src/Router.sol#69)
+		- stale variable `beforeA`
+Reentrancy in Router.addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256) (src/Router.sol#42-73):
+	External call allowing reentrancy:
+	- IERC20(b).safeTransferFrom(msg.sender,pair,amountB) (src/Router.sol#68)
+	Balance read before the call:
+	- beforeB = IERC20(b).balanceOf(pair) (src/Router.sol#66)
+	Possible stale balance used after the call in a condition:
+	- IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB (src/Router.sol#69)
+		- stale variable `beforeB`
+Reentrancy in Router.addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256) (src/Router.sol#42-73):
+	External call allowing reentrancy:
+	- IERC20(b).safeTransferFrom(msg.sender,pair,amountB) (src/Router.sol#68)
+	Balance read before the call:
+	- beforeA = IERC20(a).balanceOf(pair) (src/Router.sol#65)
+	Possible stale balance used after the call in a condition:
+	- IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB (src/Router.sol#69)
+		- stale variable `beforeA`
+Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):
+	External call allowing reentrancy:
+	- IERC20(address(pair)).safeTransferFrom(msg.sender,address(pair),liquidity) (src/Router.sol#89)
+	Balance read before the call:
+	- beforeB = IERC20(b).balanceOf(to) (src/Router.sol#88)
+	Possible stale balance used after the call in a condition:
+	- amountA < minA || amountB < minB (src/Router.sol#93)
+		- stale variable `amountB`
+Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):
+	External call allowing reentrancy:
+	- IERC20(address(pair)).safeTransferFrom(msg.sender,address(pair),liquidity) (src/Router.sol#89)
+	Balance read before the call:
+	- beforeA = IERC20(a).balanceOf(to) (src/Router.sol#87)
+	Possible stale balance used after the call in a condition:
+	- amountA < minA || amountB < minB (src/Router.sol#93)
+		- stale variable `amountA`
 Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):
 	External call allowing reentrancy:
 	- pair.burn(to) (src/Router.sol#90)
@@ -16,6 +64,14 @@ Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,add
 	Possible stale balance used after the call in a condition:
 	- amountA < minA || amountB < minB (src/Router.sol#93)
 		- stale variable `amountA`
+Reentrancy in Router.swapExactTokensForTokens(address,address,uint256,uint256,address,uint256) (src/Router.sol#98-119):
+	External call allowing reentrancy:
+	- IERC20(input).safeTransferFrom(msg.sender,address(pair),amountIn) (src/Router.sol#112)
+	Balance read before the call:
+	- beforeOut = IERC20(output).balanceOf(to) (src/Router.sol#111)
+	Possible stale balance used after the call in a condition:
+	- received < minOut (src/Router.sol#118)
+		- stale variable `received`
 Reentrancy in Router.swapExactTokensForTokens(address,address,uint256,uint256,address,uint256) (src/Router.sol#98-119):
 	External call allowing reentrancy:
 	- pair.swap(0,out,to,) (src/Router.sol#115)
@@ -61,6 +117,8 @@ Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangero
 Detector: reentrancy-no-eth
 Reentrancy in Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133):
 	External calls:
+	- IERC20(token0).safeTransfer(to,a0Out) (src/Pair.sol#121)
+	- IERC20(token1).safeTransfer(to,a1Out) (src/Pair.sol#122)
 	- IFlashCallee(to).ammCall(msg.sender,a0Out,a1Out,data) (src/Pair.sol#123)
 	State variables written after the call(s):
 	- _updateReserves(b0,b1) (src/Pair.sol#131)
@@ -81,8 +139,25 @@ Router._reserves(Pair,address) (src/Router.sol#127-130) ignores return value by 
 Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-return
 
 Detector: reentrancy-benign
+Reentrancy in Pair.burn(address) (src/Pair.sol#100-114):
+	External calls:
+	- IERC20(token0).safeTransfer(to,a0) (src/Pair.sol#109)
+	- IERC20(token1).safeTransfer(to,a1) (src/Pair.sol#110)
+	State variables written after the call(s):
+	- _updateReserves(b0,b1) (src/Pair.sol#112)
+		- price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#169)
+	- _updateReserves(b0,b1) (src/Pair.sol#112)
+		- price1CumulativeLast += ((uint256(reserve0) << 112) / reserve1) * elapsed (src/Pair.sol#170)
+	- _updateReserves(b0,b1) (src/Pair.sol#112)
+		- reserve0 = SafeCast.toUint112(b0) (src/Pair.sol#173)
+	- _updateReserves(b0,b1) (src/Pair.sol#112)
+		- reserve1 = SafeCast.toUint112(b1) (src/Pair.sol#174)
+	- _updateReserves(b0,b1) (src/Pair.sol#112)
+		- timestampLast = now32 (src/Pair.sol#175)
 Reentrancy in Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133):
 	External calls:
+	- IERC20(token0).safeTransfer(to,a0Out) (src/Pair.sol#121)
+	- IERC20(token1).safeTransfer(to,a1Out) (src/Pair.sol#122)
 	- IFlashCallee(to).ammCall(msg.sender,a0Out,a1Out,data) (src/Pair.sol#123)
 	State variables written after the call(s):
 	- _updateReserves(b0,b1) (src/Pair.sol#131)
@@ -97,8 +172,12 @@ Detector: timestamp
 Pair._updateReserves(uint256,uint256) (src/Pair.sol#164-177) uses timestamp for comparisons
 	Dangerous comparisons:
 	- elapsed != 0 && reserve0 != 0 && reserve1 != 0 (src/Pair.sol#168)
+TestnetToken.claim() (src/TestnetToken.sol#24-32) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp < next (src/TestnetToken.sol#26)
 Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
-. analyzed (29 contracts with 102 detectors), 18 result(s) found
-'forge clean' running (wd: /tmp/b2-checks-cayimju9)
+. analyzed (28 contracts with 102 detectors), 27 result(s) found
+INFO:Slither:/home/chenhy/projects/b2-amm/evidence/slither-final.json exists already, the overwrite is prevented
+'forge clean' running (wd: /tmp/b2-checks-l_ec8shs)
 'forge config --json' running
-'forge build --build-info --deny never --skip ./test/** ./script/** --force' running (wd: /tmp/b2-checks-cayimju9)
+'forge build --build-info --deny never --skip ./test/** ./script/** --force' running (wd: /tmp/b2-checks-l_ec8shs)

@@ -1,0 +1,42 @@
+PASS connect injected test wallet and verify contract runtime hashes
+Je [Error]: expect(locator).toBeVisible() failed
+
+Locator: getByText('Test tokens claimed', { exact: true })
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "to.be.visible" with timeout 5000ms
+  - waiting for getByText('Test tokens claimed', { exact: true })
+
+    at Proxy.<anonymous> (/home/chenhy/workspace/web3-portfolio/d01-amm-dex/node_modules/playwright/lib/matchers/expect.js:221:24)
+    at /home/chenhy/workspace/web3-portfolio/d01-amm-dex/scripts/browser_smoke.cjs:33:119 {
+  matcherResult: {
+    message: 'expect(locator).toBeVisible() failed\n' +
+      '\n' +
+      "Locator: getByText('Test tokens claimed', { exact: true })\n" +
+      'Expected: visible\n' +
+      'Timeout: 5000ms\n' +
+      'Error: element(s) not found\n' +
+      '\n' +
+      'Call log:\n' +
+      '  - Expect "to.be.visible" with timeout 5000ms\n' +
+      "  - waiting for getByText('Test tokens claimed', { exact: true })\n",
+    pass: false,
+    actual: undefined,
+    name: 'toBeVisible',
+    expected: 'visible',
+    log: [
+      '  - Expect "to.be.visible" with timeout 5000ms',
+      "  - waiting for getByText('Test tokens claimed', { exact: true })"
+    ],
+    timeout: 5000
+  }
+}
+Traceback (most recent call last):
+  File "/home/chenhy/workspace/web3-portfolio/d01-amm-dex/scripts/browser_smoke.py", line 50, in <module>
+    subprocess.run(['node',str(root/'scripts/browser_smoke.cjs')],cwd=root,env=env,check=True)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['node', '/home/chenhy/workspace/web3-portfolio/d01-amm-dex/scripts/browser_smoke.cjs']' returned non-zero exit status 1.

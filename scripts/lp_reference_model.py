@@ -17,7 +17,7 @@ for i in range(10000):
     if i<16:rows.extend([a0,a1,d0,d1,supply,lp,b0,b1])
 encoded="".join(v.to_bytes(32,"big").hex() for v in rows)
 source='''// SPDX-License-Identifier: MIT
-pragma solidity 0.8.28;
+pragma solidity 0.8.38;
 import {Test} from "forge-std/Test.sol";
 import {MockToken} from "./AMM.t.sol";
 import {Pair} from "../src/Pair.sol";

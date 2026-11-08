@@ -1,0 +1,18 @@
+{
+  "solc_manifest": {
+    "status": "BLOCKED",
+    "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+  },
+  "next15": {
+    "status": "BLOCKED",
+    "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+  },
+  "base_chain": {
+    "status": "BLOCKED",
+    "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+  },
+  "wallet_balance": {
+    "status": "BLOCKED",
+    "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+  }
+}

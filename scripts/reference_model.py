@@ -23,7 +23,7 @@ def main():
         if i<128: rows.extend([n,x,y,out])
     encoded="".join(v.to_bytes(32,"big").hex() for v in rows)
     source='''// SPDX-License-Identifier: MIT
-pragma solidity 0.8.28;
+pragma solidity 0.8.38;
 import {Test} from "forge-std/Test.sol";
 import {Router} from "../src/Router.sol";
 import {Factory} from "../src/Factory.sol";

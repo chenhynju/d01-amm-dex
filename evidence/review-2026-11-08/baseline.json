@@ -1,0 +1,58 @@
+[
+  {
+    "project": "W02",
+    "command": [
+      "forge",
+      "--version"
+    ],
+    "cwd": "/home/chenhy/projects/b2-amm",
+    "startedAt": "2026-11-08T06:52:07.820484+00:00",
+    "seconds": 0.07,
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "/home/chenhy/workspace/web3-portfolio/portfolio-ops/evidence/2026-11-08/W02-0.log"
+  },
+  {
+    "project": "W02",
+    "command": [
+      "forge",
+      "test",
+      "--fuzz-seed",
+      "0x20261108",
+      "-vv"
+    ],
+    "cwd": "/home/chenhy/projects/b2-amm",
+    "startedAt": "2026-11-08T06:52:07.888526+00:00",
+    "seconds": 35.14,
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "/home/chenhy/workspace/web3-portfolio/portfolio-ops/evidence/2026-11-08/W02-1.log"
+  },
+  {
+    "project": "W02",
+    "command": [
+      "python3",
+      "scripts/dependencies.py"
+    ],
+    "cwd": "/home/chenhy/projects/b2-amm",
+    "startedAt": "2026-11-08T06:52:42.467753+00:00",
+    "seconds": 2.1,
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "/home/chenhy/workspace/web3-portfolio/portfolio-ops/evidence/2026-11-08/W02-2.log"
+  },
+  {
+    "project": "W02",
+    "command": [
+      "python3",
+      "scripts/reference_model.py",
+      "--check"
+    ],
+    "cwd": "/home/chenhy/projects/b2-amm",
+    "startedAt": "2026-11-08T06:52:44.569795+00:00",
+    "seconds": 1.8,
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "/home/chenhy/workspace/web3-portfolio/portfolio-ops/evidence/2026-11-08/W02-3.log"
+  }
+]

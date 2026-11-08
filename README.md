@@ -1,12 +1,13 @@
 # B2 AMM
 A reviewable constant-product exchange demonstrating how assets, LP shares and adversarial callbacks move through a protocol state machine.
+[Current self-assessment and release gates](docs/audit/review-2026-11-08.md) · [WSL source policy](docs/deployment/workspace-workflow.md)
 
 This milestone implements the AMM portion of B2: factory, pair, ERC20 router, permit-enabled LP token, skim/sync, flash swaps and cumulative prices. Lending is separate. Security review is an **AI-Assisted Self-Assessment**, not an independent audit or production assurance.
 
-**Public release gate: BLOCKED.** The pinned compiler has a known optimized-IR risk; see [compiler review](docs/audit/compiler-review.md). This delivery is a locally verified educational baseline.
+**Release acceptance: PARTIAL.** The current WSL implementation uses Solidity 0.8.38 and an authenticated OZ 5.0.2 dependency snapshot, and includes a Next.js wallet UI. Historical compiler warnings and measurements below belong to the earlier baseline; the dated review distinguishes current results from unexecuted deployment gates. See [workspace workflow](docs/deployment/workspace-workflow.md).
 
 ## Quick start
-Use Ubuntu/WSL2, Python 3 and the recorded Foundry 1.8.1 / Solidity 0.8.28 toolchain. Vendored dependencies make source checkout self-contained; the exact compiler must already be installed or downloadable. Run from this directory, the Foundry root.
+Use Ubuntu/WSL2, Python 3 and the recorded Foundry 1.8.1 / Solidity 0.8.38 toolchain. Vendored dependencies make source checkout self-contained; the exact compiler must already be installed or downloadable. Run from this directory, the Foundry root.
 
 ~~~bash
 forge --version
@@ -18,7 +19,7 @@ python3 scripts/reference_model.py --check
 
 The latest measured aggregate is [evidence/summary.json](evidence/summary.json); the security release gate remains separate.
 
-No public Git repository was created in this session. After cloning your published copy, the commands above require no secrets. The optional fork test explicitly skips unless MAINNET_RPC_URL is set.
+The repository archive is `chenhynju/d01-amm-dex`; visibility and remote CI status are tracked separately. The commands above require no signing secrets. The optional fork test explicitly skips unless MAINNET_RPC_URL is set.
 
 ~~~bash
 python3 scripts/campaign.py
@@ -93,11 +94,11 @@ Seven stateful properties cover fee-adjusted k, ghost assets, reconciled reserve
 - [Source walkthrough](docs/code-walkthrough/README.md), [interview defense](docs/learning/interview-defense.md), [ADRs](docs/adr/0001-mechanics.md)
 
 ## Limitations
-No frontend or authorized Base Sepolia deployment is included. Fork execution requires reachable archive RPC. Requested OZ 5.0.2 downloads failed; actual dependencies are cached OZ 5.4.0 and forge-std 1.14.0 with content hashes. Authenticating those against upstream and machine advisory audits remain blocked by CLI network access; a limited primary-source advisory review is recorded in docs/audit/dependency-review.md. Remote CI execution is not claimed.
+The current WSL source includes a static-exported Next.js wallet UI and a chain-locked Base Sepolia deployment script with synthetic faucet assets. This does not imply that a public deployment or browser business acceptance has completed. Archive-fork execution requires reachable historical RPC. Vendored OpenZeppelin 5.0.2 and forge-std are locked by file hashes; run the dependency checker from this checkout. Historical tool outputs are preserved and must not be interpreted as acceptance of later source changes.
 
 Minimum LP is permanent; dust may not redeem until both outputs are positive. Slippage limits bound accepted execution but do not prevent MEV or attest a fair initial price. Cumulative prices are not a complete oracle. No upgrade/rescue authority exists to recover unsupported/frozen token assets.
 
 ## Engineering contributions
 Protocol-specific contracts, tests, mathematical model and documents were authored with AI assistance. OZ supplies ERC20, signatures, math and guard primitives; Foundry supplies execution/testing. The constant-product design follows [Uniswap V2 mechanics](https://docs.uniswap.org/whitepaper.pdf); this project does not claim to invent that model or reimplement the underlying signature libraries.
 
-Future work: authenticated baseline dependencies, archive-fork execution, authorized Base Sepolia deployment and wallet UI, then a separately scoped lending vault. Personal mastery requires independent explanation and exercises.
+Remaining release work: current end-to-end browser and chain settlement, reachable archive-fork execution, funded Base Sepolia deployment, source verification and hosted acceptance. Lending is maintained separately as D02. Personal mastery requires independent explanation and exercises.

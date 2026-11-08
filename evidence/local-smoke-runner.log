@@ -1,6 +1,6 @@
 Traceback (most recent call last):
-  File "/tmp/b2-checks-cayimju9/scripts/local_smoke.py", line 20, in <module>
-    subprocess.run(["forge","script","script/LocalDemo.s.sol:LocalDemo","--rpc-url",url,"--broadcast","--unlocked","--sender","0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"],cwd=root,stdout=out,stderr=subprocess.STDOUT,check=True)
+  File "/tmp/b2-checks-l_ec8shs/scripts/local_smoke.py", line 21, in <module>
+    subprocess.run(["forge","script","script/LocalDemo.s.sol:LocalDemo","--rpc-url",url,"--broadcast","--slow","--unlocked","--sender","0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"],cwd=root,stdout=out,stderr=subprocess.STDOUT,check=True)
   File "/usr/lib/python3.12/subprocess.py", line 571, in run
     raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['forge', 'script', 'script/LocalDemo.s.sol:LocalDemo', '--rpc-url', 'http://127.0.0.1:18545', '--broadcast', '--unlocked', '--sender', '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266']' returned non-zero exit status 1.
+subprocess.CalledProcessError: Command '['forge', 'script', 'script/LocalDemo.s.sol:LocalDemo', '--rpc-url', 'http://127.0.0.1:18545', '--broadcast', '--slow', '--unlocked', '--sender', '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266']' returned non-zero exit status 1.

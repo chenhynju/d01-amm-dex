@@ -1,0 +1,52 @@
+Cloning into '/tmp/b2-auth-dependencies-l3lj0_re/openzeppelin-contracts'...
+Note: switching to 'dbb6104ce834628e473d2173bbc9d47f81a9eec3'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Cloning into '/tmp/b2-auth-dependencies-l3lj0_re/forge-std'...
+Note: switching to '1801b0541f4fda118a10798fd3486bb7051c5dd6'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+{
+  "openzeppelin-contracts": {
+    "upstream": "https://github.com/OpenZeppelin/openzeppelin-contracts",
+    "tag": "v5.0.2",
+    "commit": "dbb6104ce834628e473d2173bbc9d47f81a9eec3",
+    "package_version": "5.0.2",
+    "acquisition": "official HTTPS git clone"
+  },
+  "forge-std": {
+    "upstream": "https://github.com/foundry-rs/forge-std",
+    "tag": "v1.14.0",
+    "commit": "1801b0541f4fda118a10798fd3486bb7051c5dd6",
+    "package_version": "1.14.0",
+    "acquisition": "official HTTPS git clone"
+  }
+}

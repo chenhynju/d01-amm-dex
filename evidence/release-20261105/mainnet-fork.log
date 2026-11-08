@@ -1,0 +1,18 @@
+No files changed, compilation skipped
+[2m2026-11-04T23:28:44.333659Z[0m [31mERROR[0m [2msharedbackend[0m[2m:[0m Failed to send/recv `basic` [3merr[0m[2m=[0mfailed to get account for 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f: server returned an error response: error code 4444: pruned history unavailable: requested 21000000, earliest available 26334663 [3maddress[0m[2m=[0m0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+[2m2026-11-04T23:28:44.708033Z[0m [31mERROR[0m [2msharedbackend[0m[2m:[0m Failed to send/recv `basic` [3merr[0m[2m=[0mfailed to get account for 0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5: server returned an error response: error code 4444: pruned history unavailable: requested 21000000, earliest available 26334657 [3maddress[0m[2m=[0m0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5
+
+Ran 1 test for test/fork/MainnetFork.t.sol:MainnetForkTest
+[FAIL: EVM error; database error: failed to get account for 0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5: server returned an error response: error code 4444: pruned history unavailable: requested 21000000, earliest available 26334657] testForkRealWETHUSDC() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 3.51s (3.51s CPU time)
+
+Ran 1 test suite in 3.54s (3.51s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/fork/MainnetFork.t.sol:MainnetForkTest
+[FAIL: EVM error; database error: failed to get account for 0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5: server returned an error response: error code 4444: pruned history unavailable: requested 21000000, earliest available 26334657] testForkRealWETHUSDC() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+Tip: Run `forge test --debug --match-test <TEST_NAME>` to inspect one failing test in the debugger

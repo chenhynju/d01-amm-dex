@@ -1,0 +1,16 @@
+{
+  "openzeppelin-contracts": {
+    "upstream": "https://github.com/OpenZeppelin/openzeppelin-contracts",
+    "tag": "v5.0.2",
+    "commit": "dbb6104ce834628e473d2173bbc9d47f81a9eec3",
+    "package_version": "5.0.2",
+    "acquisition": "official HTTPS git clone"
+  },
+  "forge-std": {
+    "upstream": "https://github.com/foundry-rs/forge-std",
+    "tag": "v1.14.0",
+    "commit": "1801b0541f4fda118a10798fd3486bb7051c5dd6",
+    "package_version": "1.14.0",
+    "acquisition": "official HTTPS git clone"
+  }
+}

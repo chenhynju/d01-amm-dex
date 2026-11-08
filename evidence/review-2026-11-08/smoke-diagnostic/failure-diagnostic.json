@@ -1,0 +1,65 @@
+{
+  "status": "FAIL",
+  "transactions": [
+    {
+      "hash": "0xd339c48a56d326c4d1c29ca1402e1193abb23eb788ac3fa369b4688a355ddb8f",
+      "function": null,
+      "gasLimit": "0x31964c",
+      "receipt": null
+    },
+    {
+      "hash": "0x675135899a61b7e4f59cb00e40661949373e5fb9bbaaadaa908cc1b9c1e8c7ae",
+      "function": null,
+      "gasLimit": "0x15b34d",
+      "receipt": null
+    },
+    {
+      "hash": "0x1d7cea47f2f18b89219159795a883d2644fdf42602480744fb3442a8f47124e0",
+      "function": null,
+      "gasLimit": "0xa73b7",
+      "receipt": null
+    },
+    {
+      "hash": "0xd8c0c662721e3573c54b278a47ebf38b35a36bb3a8db6a567568327dd4fe975d",
+      "function": null,
+      "gasLimit": "0xa73b7",
+      "receipt": null
+    },
+    {
+      "hash": "0x2e62fcc3b152b71ada689645a4ede2f4449166d4053a7117267c44c3bd458cb7",
+      "function": "approve(address,uint256)",
+      "gasLimit": "0xf9a4",
+      "receipt": null
+    },
+    {
+      "hash": "0xa1b3ee42aab3e5a608e8927a644489a1cf2575ca24298741ab211fd6344baebf",
+      "function": "approve(address,uint256)",
+      "gasLimit": "0xf9a4",
+      "receipt": null
+    },
+    {
+      "hash": "0x676906a3ba5e6b0a7d53d88cc00f4aac0bf1f750120bb5e2eed3086a65e83953",
+      "function": "addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256)",
+      "gasLimit": "0x2da04f",
+      "receipt": null
+    },
+    {
+      "hash": "0x1c6dba785d1b012c1c41d0e22fad4b1bdac26752329f1a7bf377e2d538a89929",
+      "function": "swapExactTokensForTokens(address,address,uint256,uint256,address,uint256)",
+      "gasLimit": "0x24260",
+      "receipt": null
+    },
+    {
+      "hash": "0x48bfd2d7ce2a2c28f7fe4d7276ce0c16d1861e9650bb95a98870207ea754009a",
+      "function": "approve(address,uint256)",
+      "gasLimit": "0xf88f",
+      "receipt": null
+    },
+    {
+      "hash": "0x3a29a9b88fcf3db64ee773fc256628e8bf3b8b67846b5b8d1f96c65a5bf8d271",
+      "function": "removeLiquidity(address,address,uint256,uint256,uint256,address,uint256)",
+      "gasLimit": "0x264b6",
+      "receipt": null
+    }
+  ]
+}

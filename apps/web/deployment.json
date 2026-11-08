@@ -1,0 +1,9 @@
+{
+  "status": "pending",
+  "chainId": 84532,
+  "rpcUrl": "https://sepolia.base.org",
+  "explorerUrl": "https://sepolia.basescan.org",
+  "auditedCommit": null,
+  "contracts": null,
+  "runtimeHashes": null
+}

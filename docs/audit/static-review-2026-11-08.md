@@ -1,0 +1,9 @@
+# Current static-warning review
+
+AI-Assisted Self-Assessment, 2026-11-08. Raw output remains in evidence/review-2026-11-08. The previous baseline is retained as static-baseline-before-20261108.json.
+
+The current Slither output includes eleven High reentrancy-balance alerts in Router add/remove/swap, not eleven demonstrated exploits. Before/after balance deltas are intentionally used to reject unsupported transfer semantics and enforce actual receipt minima. Router entrypoints use the storage guard; Pair asset transitions use its separate guard. A callback that changes pair state must still satisfy exact-deposit checks, actual-receipt minima and the pair product/LP invariants. Callback, taxed/no-return token and flash tests remain executable. Arbitrary dishonest balances, sender-extra fees and rebases remain outside the supported asset model. These alerts are retained as reviewed warnings, not silently suppressed or represented as a zero-alert scan.
+
+Divide-before-multiply alerts concern documented cumulative-price fixed-point rounding; they are not an independent price oracle. Equality alerts concern explicit zero/amount/lock boundaries. Reentrancy-no-eth/benign and unused-return alerts are reviewed against guarded transitions and checked SafeERC20 semantics. Timestamp alerts cover cumulative-price elapsed time and testnet faucet cooldown, not randomness. Aderyn reports no High issue in this run; low literal/event/return observations are retained in the exact baseline. The faucet provides synthetic test assets and permits Sybil claims by design; it makes no scarce-asset or economic-value claim.
+
+The gate compares exact detector semantics/locations and Aderyn instances. Any change requires review. It is not an independent audit or a proof covering arbitrary token issuers or external compositions.

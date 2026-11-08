@@ -1,0 +1,57 @@
+
+> b2-amm-web@1.0.0 typecheck
+> tsc --noEmit
+
+
+> b2-amm-web@1.0.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+✔ strict decimal parsing preserves all raw units (15.5409ms)
+✔ display formatting truncates without modifying accounting (1.023921ms)
+✔ quote matches all Python rational vectors used by the contract suite (19.840497ms)
+✔ slippage never raises the permitted minimum (0.775329ms)
+✔ unbalanced deposit selects proportional amounts (6.933684ms)
+✔ redemption respects share bounds and rejects sub-unit dust (0.954665ms)
+✔ wallet context is checked before and after simulation (15.233206ms)
+✔ chain switch during simulation rejects the stale request (12.528237ms)
+✔ account switch during simulation rejects the stale request (0.615084ms)
+✔ wrong initial chain never starts simulation (0.90785ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1707.612316
+
+> b2-amm-web@1.0.0 build
+> next build
+
+   ▲ Next.js 15.5.29
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 2.8min
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/4) ...
+   Generating static pages (1/4) 
+   Generating static pages (2/4) 
+   Generating static pages (3/4) 
+ ✓ Generating static pages (4/4)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                      91 kB         222 kB
+└ ○ /_not-found                            993 B         104 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/255-0e5ac6cd71b0e266.js       46.7 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          1.93 kB
+
+
+○  (Static)  prerendered as static content
+

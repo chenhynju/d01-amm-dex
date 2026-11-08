@@ -1,0 +1,33 @@
+
+up to date, audited 5 packages in 40s
+
+found 0 vulnerabilities
+
+added 3 packages, and audited 4 packages in 13s
+
+found 0 vulnerabilities
+Traceback (most recent call last):
+  File "/home/chenhy/workspace/web3-portfolio/d01-amm-dex/scripts/browser_smoke.py", line 27, in <module>
+    accounts=rpc('eth_accounts',[]);deployer=accounts[0];actor=accounts[1]
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chenhy/workspace/web3-portfolio/d01-amm-dex/scripts/browser_smoke.py", line 9, in rpc
+    value=json.load(urllib.request.urlopen(request,timeout=10))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 501: Unsupported method ('POST')

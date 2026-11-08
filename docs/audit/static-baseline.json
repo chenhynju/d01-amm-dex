@@ -1,18 +1,14 @@
 {
+  "reviewDate": "2026-11-08",
+  "assessment": "AI-Assisted Self-Assessment",
   "slither": {
-    "reentrancy-balance|High": 4,
+    "reentrancy-balance|High": 11,
     "divide-before-multiply|Medium": 4,
     "incorrect-equality|Medium": 5,
     "reentrancy-no-eth|Medium": 1,
     "unused-return|Medium": 2,
-    "reentrancy-benign|Low": 1,
-    "timestamp|Low": 1
-  },
-  "aderyn": {
-    "large-numeric-literal": 1,
-    "literal-instead-of-constant": 8,
-    "state-change-without-event": 4,
-    "unchecked-return": 1
+    "reentrancy-benign|Low": 2,
+    "timestamp|Low": 2
   },
   "slither_fingerprints": [
     "divide-before-multiply|Medium|Pair._updateReserves(uint256,uint256) (src/Pair.sol#164-177) performs a multiplication on the result of a division:\n\t- price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#169)\n",
@@ -24,16 +20,31 @@
     "incorrect-equality|Medium|Pair.mint(address) (src/Pair.sol#79-97) uses a dangerous strict equality:\n\t- supply == 0 (src/Pair.sol#85)\n",
     "incorrect-equality|Medium|Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133) uses a dangerous strict equality:\n\t- a0In == 0 && a1In == 0 (src/Pair.sol#127)\n",
     "incorrect-equality|Medium|Router.getAmountOut(uint256,uint256,uint256) (src/Router.sol#32-39) uses a dangerous strict equality:\n\t- input == 0 || input > type()(uint112).max || rIn == 0 || rOut == 0 || rIn > type()(uint112).max || rOut > type()(uint112).max (src/Router.sol#34-35)\n",
+    "reentrancy-balance|High|Reentrancy in Router.addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256) (src/Router.sol#42-73):\n\tExternal call allowing reentrancy:\n\t- IERC20(a).safeTransferFrom(msg.sender,pair,amountA) (src/Router.sol#67)\n\tBalance read before the call:\n\t- beforeA = IERC20(a).balanceOf(pair) (src/Router.sol#65)\n\tPossible stale balance used after the call in a condition:\n\t- IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB (src/Router.sol#69)\n\t\t- stale variable `beforeA`\n",
+    "reentrancy-balance|High|Reentrancy in Router.addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256) (src/Router.sol#42-73):\n\tExternal call allowing reentrancy:\n\t- IERC20(a).safeTransferFrom(msg.sender,pair,amountA) (src/Router.sol#67)\n\tBalance read before the call:\n\t- beforeB = IERC20(b).balanceOf(pair) (src/Router.sol#66)\n\tPossible stale balance used after the call in a condition:\n\t- IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB (src/Router.sol#69)\n\t\t- stale variable `beforeB`\n",
+    "reentrancy-balance|High|Reentrancy in Router.addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256) (src/Router.sol#42-73):\n\tExternal call allowing reentrancy:\n\t- IERC20(b).safeTransferFrom(msg.sender,pair,amountB) (src/Router.sol#68)\n\tBalance read before the call:\n\t- beforeA = IERC20(a).balanceOf(pair) (src/Router.sol#65)\n\tPossible stale balance used after the call in a condition:\n\t- IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB (src/Router.sol#69)\n\t\t- stale variable `beforeA`\n",
+    "reentrancy-balance|High|Reentrancy in Router.addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256) (src/Router.sol#42-73):\n\tExternal call allowing reentrancy:\n\t- IERC20(b).safeTransferFrom(msg.sender,pair,amountB) (src/Router.sol#68)\n\tBalance read before the call:\n\t- beforeB = IERC20(b).balanceOf(pair) (src/Router.sol#66)\n\tPossible stale balance used after the call in a condition:\n\t- IERC20(a).balanceOf(pair) - beforeA != amountA || IERC20(b).balanceOf(pair) - beforeB != amountB (src/Router.sol#69)\n\t\t- stale variable `beforeB`\n",
+    "reentrancy-balance|High|Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):\n\tExternal call allowing reentrancy:\n\t- IERC20(address(pair)).safeTransferFrom(msg.sender,address(pair),liquidity) (src/Router.sol#89)\n\tBalance read before the call:\n\t- beforeA = IERC20(a).balanceOf(to) (src/Router.sol#87)\n\tPossible stale balance used after the call in a condition:\n\t- amountA < minA || amountB < minB (src/Router.sol#93)\n\t\t- stale variable `amountA`\n",
+    "reentrancy-balance|High|Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):\n\tExternal call allowing reentrancy:\n\t- IERC20(address(pair)).safeTransferFrom(msg.sender,address(pair),liquidity) (src/Router.sol#89)\n\tBalance read before the call:\n\t- beforeB = IERC20(b).balanceOf(to) (src/Router.sol#88)\n\tPossible stale balance used after the call in a condition:\n\t- amountA < minA || amountB < minB (src/Router.sol#93)\n\t\t- stale variable `amountB`\n",
     "reentrancy-balance|High|Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):\n\tExternal call allowing reentrancy:\n\t- pair.burn(to) (src/Router.sol#90)\n\tBalance read before the call:\n\t- beforeA = IERC20(a).balanceOf(to) (src/Router.sol#87)\n\tPossible stale balance used after the call in a condition:\n\t- amountA < minA || amountB < minB (src/Router.sol#93)\n\t\t- stale variable `amountA`\n",
     "reentrancy-balance|High|Reentrancy in Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94):\n\tExternal call allowing reentrancy:\n\t- pair.burn(to) (src/Router.sol#90)\n\tBalance read before the call:\n\t- beforeB = IERC20(b).balanceOf(to) (src/Router.sol#88)\n\tPossible stale balance used after the call in a condition:\n\t- amountA < minA || amountB < minB (src/Router.sol#93)\n\t\t- stale variable `amountB`\n",
+    "reentrancy-balance|High|Reentrancy in Router.swapExactTokensForTokens(address,address,uint256,uint256,address,uint256) (src/Router.sol#98-119):\n\tExternal call allowing reentrancy:\n\t- IERC20(input).safeTransferFrom(msg.sender,address(pair),amountIn) (src/Router.sol#112)\n\tBalance read before the call:\n\t- beforeOut = IERC20(output).balanceOf(to) (src/Router.sol#111)\n\tPossible stale balance used after the call in a condition:\n\t- received < minOut (src/Router.sol#118)\n\t\t- stale variable `received`\n",
     "reentrancy-balance|High|Reentrancy in Router.swapExactTokensForTokens(address,address,uint256,uint256,address,uint256) (src/Router.sol#98-119):\n\tExternal call allowing reentrancy:\n\t- pair.swap(0,out,to,) (src/Router.sol#115)\n\tBalance read before the call:\n\t- beforeOut = IERC20(output).balanceOf(to) (src/Router.sol#111)\n\tPossible stale balance used after the call in a condition:\n\t- received < minOut (src/Router.sol#118)\n\t\t- stale variable `received`\n",
     "reentrancy-balance|High|Reentrancy in Router.swapExactTokensForTokens(address,address,uint256,uint256,address,uint256) (src/Router.sol#98-119):\n\tExternal call allowing reentrancy:\n\t- pair.swap(out,0,to,) (src/Router.sol#116)\n\tBalance read before the call:\n\t- beforeOut = IERC20(output).balanceOf(to) (src/Router.sol#111)\n\tPossible stale balance used after the call in a condition:\n\t- received < minOut (src/Router.sol#118)\n\t\t- stale variable `received`\n",
-    "reentrancy-benign|Low|Reentrancy in Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133):\n\tExternal calls:\n\t- IFlashCallee(to).ammCall(msg.sender,a0Out,a1Out,data) (src/Pair.sol#123)\n\tState variables written after the call(s):\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#169)\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- price1CumulativeLast += ((uint256(reserve0) << 112) / reserve1) * elapsed (src/Pair.sol#170)\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- timestampLast = now32 (src/Pair.sol#175)\n",
-    "reentrancy-no-eth|Medium|Reentrancy in Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133):\n\tExternal calls:\n\t- IFlashCallee(to).ammCall(msg.sender,a0Out,a1Out,data) (src/Pair.sol#123)\n\tState variables written after the call(s):\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- reserve0 = SafeCast.toUint112(b0) (src/Pair.sol#173)\n\tPair.reserve0 (src/Pair.sol#33) can be used in cross function reentrancies:\n\t- Pair.currentCumulativePrices() (src/Pair.sol#64-76)\n\t- Pair.getReserves() (src/Pair.sol#58-61)\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- reserve1 = SafeCast.toUint112(b1) (src/Pair.sol#174)\n\tPair.reserve1 (src/Pair.sol#34) can be used in cross function reentrancies:\n\t- Pair.currentCumulativePrices() (src/Pair.sol#64-76)\n\t- Pair.getReserves() (src/Pair.sol#58-61)\n",
+    "reentrancy-benign|Low|Reentrancy in Pair.burn(address) (src/Pair.sol#100-114):\n\tExternal calls:\n\t- IERC20(token0).safeTransfer(to,a0) (src/Pair.sol#109)\n\t- IERC20(token1).safeTransfer(to,a1) (src/Pair.sol#110)\n\tState variables written after the call(s):\n\t- _updateReserves(b0,b1) (src/Pair.sol#112)\n\t\t- price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#169)\n\t- _updateReserves(b0,b1) (src/Pair.sol#112)\n\t\t- price1CumulativeLast += ((uint256(reserve0) << 112) / reserve1) * elapsed (src/Pair.sol#170)\n\t- _updateReserves(b0,b1) (src/Pair.sol#112)\n\t\t- reserve0 = SafeCast.toUint112(b0) (src/Pair.sol#173)\n\t- _updateReserves(b0,b1) (src/Pair.sol#112)\n\t\t- reserve1 = SafeCast.toUint112(b1) (src/Pair.sol#174)\n\t- _updateReserves(b0,b1) (src/Pair.sol#112)\n\t\t- timestampLast = now32 (src/Pair.sol#175)\n",
+    "reentrancy-benign|Low|Reentrancy in Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133):\n\tExternal calls:\n\t- IERC20(token0).safeTransfer(to,a0Out) (src/Pair.sol#121)\n\t- IERC20(token1).safeTransfer(to,a1Out) (src/Pair.sol#122)\n\t- IFlashCallee(to).ammCall(msg.sender,a0Out,a1Out,data) (src/Pair.sol#123)\n\tState variables written after the call(s):\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- price0CumulativeLast += ((uint256(reserve1) << 112) / reserve0) * elapsed (src/Pair.sol#169)\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- price1CumulativeLast += ((uint256(reserve0) << 112) / reserve1) * elapsed (src/Pair.sol#170)\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- timestampLast = now32 (src/Pair.sol#175)\n",
+    "reentrancy-no-eth|Medium|Reentrancy in Pair.swap(uint256,uint256,address,bytes) (src/Pair.sol#117-133):\n\tExternal calls:\n\t- IERC20(token0).safeTransfer(to,a0Out) (src/Pair.sol#121)\n\t- IERC20(token1).safeTransfer(to,a1Out) (src/Pair.sol#122)\n\t- IFlashCallee(to).ammCall(msg.sender,a0Out,a1Out,data) (src/Pair.sol#123)\n\tState variables written after the call(s):\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- reserve0 = SafeCast.toUint112(b0) (src/Pair.sol#173)\n\tPair.reserve0 (src/Pair.sol#33) can be used in cross function reentrancies:\n\t- Pair.currentCumulativePrices() (src/Pair.sol#64-76)\n\t- Pair.getReserves() (src/Pair.sol#58-61)\n\t- _updateReserves(b0,b1) (src/Pair.sol#131)\n\t\t- reserve1 = SafeCast.toUint112(b1) (src/Pair.sol#174)\n\tPair.reserve1 (src/Pair.sol#34) can be used in cross function reentrancies:\n\t- Pair.currentCumulativePrices() (src/Pair.sol#64-76)\n\t- Pair.getReserves() (src/Pair.sol#58-61)\n",
     "timestamp|Low|Pair._updateReserves(uint256,uint256) (src/Pair.sol#164-177) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- elapsed != 0 && reserve0 != 0 && reserve1 != 0 (src/Pair.sol#168)\n",
+    "timestamp|Low|TestnetToken.claim() (src/TestnetToken.sol#24-32) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- block.timestamp < next (src/TestnetToken.sol#26)\n",
     "unused-return|Medium|Router._reserves(Pair,address) (src/Router.sol#127-130) ignores return value by (r0,r1,None) = pair.getReserves() (src/Router.sol#128)\n",
     "unused-return|Medium|Router.removeLiquidity(address,address,uint256,uint256,uint256,address,uint256) (src/Router.sol#76-94) ignores return value by pair.burn(to) (src/Router.sol#90)\n"
   ],
+  "aderyn": {
+    "large-numeric-literal": 2,
+    "literal-instead-of-constant": 8,
+    "state-change-without-event": 4,
+    "unchecked-return": 1
+  },
   "aderyn_instances": {
     "large-numeric-literal": [
       {
@@ -41,6 +52,12 @@
         "line_no": 130,
         "src": "5896:9",
         "src_char": "5896:9"
+      },
+      {
+        "contract_path": "src/TestnetToken.sol",
+        "line_no": 13,
+        "src": "587:19",
+        "src_char": "587:19"
       }
     ],
     "literal-instead-of-constant": [
