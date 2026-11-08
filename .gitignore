@@ -20,3 +20,11 @@ apps/web/out/
 .publish/
 
 node_modules/
+
+.vercel/
+
+*.tsbuildinfo
+
+*.py[cod]
+.vercel
+.env*
