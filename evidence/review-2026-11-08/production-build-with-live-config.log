@@ -1,0 +1,116 @@
+
+> b2-amm-web@1.0.0 typecheck
+> tsc --noEmit
+
+
+> b2-amm-web@1.0.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+TAP version 13
+# Subtest: strict decimal parsing preserves all raw units
+ok 1 - strict decimal parsing preserves all raw units
+  ---
+  duration_ms: 6.496256
+  type: 'test'
+  ...
+# Subtest: display formatting truncates without modifying accounting
+ok 2 - display formatting truncates without modifying accounting
+  ---
+  duration_ms: 1.452147
+  type: 'test'
+  ...
+# Subtest: quote matches all Python rational vectors used by the contract suite
+ok 3 - quote matches all Python rational vectors used by the contract suite
+  ---
+  duration_ms: 28.932988
+  type: 'test'
+  ...
+# Subtest: slippage never raises the permitted minimum
+ok 4 - slippage never raises the permitted minimum
+  ---
+  duration_ms: 0.941931
+  type: 'test'
+  ...
+# Subtest: unbalanced deposit selects proportional amounts
+ok 5 - unbalanced deposit selects proportional amounts
+  ---
+  duration_ms: 3.744997
+  type: 'test'
+  ...
+# Subtest: redemption respects share bounds and rejects sub-unit dust
+ok 6 - redemption respects share bounds and rejects sub-unit dust
+  ---
+  duration_ms: 11.478734
+  type: 'test'
+  ...
+# Subtest: wallet context is checked before and after simulation
+ok 7 - wallet context is checked before and after simulation
+  ---
+  duration_ms: 9.384474
+  type: 'test'
+  ...
+# Subtest: chain switch during simulation rejects the stale request
+ok 8 - chain switch during simulation rejects the stale request
+  ---
+  duration_ms: 2.04047
+  type: 'test'
+  ...
+# Subtest: account switch during simulation rejects the stale request
+ok 9 - account switch during simulation rejects the stale request
+  ---
+  duration_ms: 0.734807
+  type: 'test'
+  ...
+# Subtest: wrong initial chain never starts simulation
+ok 10 - wrong initial chain never starts simulation
+  ---
+  duration_ms: 1.173568
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1452.480579
+
+> b2-amm-web@1.0.0 build
+> next build
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/chenhy/workspace/web3-portfolio/d01-amm-dex/package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /home/chenhy/workspace/web3-portfolio/d01-amm-dex/apps/web/package-lock.json
+
+   ▲ Next.js 15.5.29
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 79s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/4) ...
+   Generating static pages (1/4) 
+   Generating static pages (2/4) 
+   Generating static pages (3/4) 
+ ✓ Generating static pages (4/4)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    91.6 kB         223 kB
+└ ○ /_not-found                            993 B         104 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/255-0e5ac6cd71b0e266.js       46.7 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          1.93 kB
+
+
+○  (Static)  prerendered as static content
+

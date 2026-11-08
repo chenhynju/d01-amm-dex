@@ -1,1 +1,35 @@
 No files changed, compilation skipped
+Script ran successfully.
+
+== Return ==
+f: contract Factory 0x5FbDB2315678afecb367f032d93F642f64180aa3
+r: contract Router 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+a: contract TestnetToken 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+b: contract TestnetToken 0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9
+pair: contract Pair 0x71Ea046EBe6414B17034747fac3612686caCb604
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 31337
+
+Estimated max fee per gas: 2.000000001 gwei
+Estimated base fee per gas: 1 gwei
+Estimated max priority fee per gas: 0.000000001 gwei
+
+Estimated total gas used for script: 14870892
+
+Estimated amount required: 0.029741784014870892 ETH
+
+==========================
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /home/chenhy/workspace/web3-portfolio/d01-amm-dex/broadcast/DeployTestnet.s.sol/31337/run-latest.json
+
+Sensitive values saved to: /home/chenhy/workspace/web3-portfolio/d01-amm-dex/cache/DeployTestnet.s.sol/31337/run-latest.json
+

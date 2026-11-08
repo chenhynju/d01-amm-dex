@@ -1,0 +1,13 @@
+Start verifying contract `0xa0e202125CC44b23F89aBEF73e95090666AaD667` deployed on base-sepolia
+Constructor args: 0x0000000000000000000000001d1c95fd030c031ed44ba0035981b9a24107f8d000000000000000000000000069a5710dda216036847e60aa68f3aca5a3499943
+
+Verifying on sourcify...
+Submitting verification for [Pair] 0xa0e202125CC44b23F89aBEF73e95090666AaD667.
+Submitted contract for verification:
+	Verification Job ID: `9887b32b-0843-4aec-a6b3-6e50ade025c0`
+	URL: https://sourcify.dev/server/verify-ui/jobs/9887b32b-0843-4aec-a6b3-6e50ade025c0
+9887b32b-0843-4aec-a6b3-6e50ade025c0	https://sourcify.dev/server/verify-ui/jobs/9887b32b-0843-4aec-a6b3-6e50ade025c0
+
+Waiting for sourcify verification result...
+Contract successfully verified:
+Status: `exact_match`

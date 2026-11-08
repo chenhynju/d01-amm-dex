@@ -1,9 +1,21 @@
 {
-  "status": "pending",
+  "status": "verified",
   "chainId": 84532,
-  "rpcUrl": "https://sepolia.base.org",
+  "rpcUrl": "https://base-sepolia.gateway.tenderly.co",
   "explorerUrl": "https://sepolia.basescan.org",
-  "auditedCommit": null,
-  "contracts": null,
-  "runtimeHashes": null
+  "auditedCommit": "63568588356b0f5d51e10a5cbc8aed65fce900b7",
+  "contracts": {
+    "factory": "0x9d34415229ed2934e0cace40d8c79658bc49ad94",
+    "router": "0xa03c15d8b3c248b33b2954e1b32f076ca4a2b147",
+    "pair": "0xa0e202125cc44b23f89abef73e95090666aad667",
+    "tokenA": "0x1d1c95fd030c031ed44ba0035981b9a24107f8d0",
+    "tokenB": "0x69a5710dda216036847e60aa68f3aca5a3499943"
+  },
+  "runtimeHashes": {
+    "factory": "0x6cb5f8812f00cbb238b05996108220a5931dde17b6239955d5963e39c6d332b1",
+    "router": "0x138fc41578b81298f1d6a273fa7249908a6ac6ce053f43eff0727f4b67d57d61",
+    "pair": "0x5a5e739048bbaa2db3533319ce94e04e223ea6f7a13cb60f16a0a1f572ed9061",
+    "tokenA": "0xe4442afe40104a0609edda4f19ee83997fe73ca437a7a07b968ae596ae7d434d",
+    "tokenB": "0xe4442afe40104a0609edda4f19ee83997fe73ca437a7a07b968ae596ae7d434d"
+  }
 }

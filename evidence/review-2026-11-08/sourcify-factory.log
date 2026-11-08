@@ -1,0 +1,13 @@
+Start verifying contract `0x9D34415229ED2934E0caCe40d8c79658Bc49AD94` deployed on base-sepolia
+
+Verifying on sourcify...
+Submitting verification for [Factory] 0x9D34415229ED2934E0caCe40d8c79658Bc49AD94.
+Submitted contract for verification:
+	Verification Job ID: `b1c652b1-854c-4995-98ca-65ddf2c49b9e`
+	URL: https://sourcify.dev/server/verify-ui/jobs/b1c652b1-854c-4995-98ca-65ddf2c49b9e
+b1c652b1-854c-4995-98ca-65ddf2c49b9e	https://sourcify.dev/server/verify-ui/jobs/b1c652b1-854c-4995-98ca-65ddf2c49b9e
+
+Waiting for sourcify verification result...
+Warning: Verification is still pending...; waiting 5 seconds before trying again (1 tries remaining)
+Contract successfully verified:
+Status: `exact_match`

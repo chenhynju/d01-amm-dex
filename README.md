@@ -1,5 +1,7 @@
 # B2 AMM
 A reviewable constant-product exchange demonstrating how assets, LP shares and adversarial callbacks move through a protocol state machine.
+Current testnet release: Base Sepolia contracts are deployed and Sourcify exact-match verified. [Addresses, receipts and runtime checks](deployments/base-sepolia-20261108.json). Hosted acceptance remains pending.
+
 [Current self-assessment and release gates](docs/audit/review-2026-11-08.md) · [WSL source policy](docs/deployment/workspace-workflow.md)
 
 This milestone implements the AMM portion of B2: factory, pair, ERC20 router, permit-enabled LP token, skim/sync, flash swaps and cumulative prices. Lending is separate. Security review is an **AI-Assisted Self-Assessment**, not an independent audit or production assurance.

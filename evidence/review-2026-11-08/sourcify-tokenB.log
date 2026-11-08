@@ -1,0 +1,15 @@
+Start verifying contract `0x69A5710dDA216036847e60AA68f3aCa5A3499943` deployed on base-sepolia
+Constructor args: 0x00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000f4232205465737420546f6b656e2042000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000034232420000000000000000000000000000000000000000000000000000000000
+
+Verifying on sourcify...
+Submitting verification for [TestnetToken] 0x69A5710dDA216036847e60AA68f3aCa5A3499943.
+Submitted contract for verification:
+	Verification Job ID: `82107482-a924-4a98-9db1-27dc54cd42d8`
+	URL: https://sourcify.dev/server/verify-ui/jobs/82107482-a924-4a98-9db1-27dc54cd42d8
+82107482-a924-4a98-9db1-27dc54cd42d8	https://sourcify.dev/server/verify-ui/jobs/82107482-a924-4a98-9db1-27dc54cd42d8
+
+Waiting for sourcify verification result...
+Warning: Verification is still pending...; waiting 5 seconds before trying again (1 tries remaining)
+Warning: Verification is still pending...; waiting 5 seconds before trying again (0 tries remaining)
+Contract successfully verified:
+Status: `exact_match`

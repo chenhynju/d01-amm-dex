@@ -1,0 +1,37 @@
+[
+  {
+    "contract": "factory",
+    "address": "0x9d34415229ed2934e0cace40d8c79658bc49ad94",
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "sourcify-factory.log"
+  },
+  {
+    "contract": "router",
+    "address": "0xa03c15d8b3c248b33b2954e1b32f076ca4a2b147",
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "sourcify-router.log"
+  },
+  {
+    "contract": "pair",
+    "address": "0xa0e202125cc44b23f89abef73e95090666aad667",
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "sourcify-pair.log"
+  },
+  {
+    "contract": "tokenA",
+    "address": "0x1d1c95fd030c031ed44ba0035981b9a24107f8d0",
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "sourcify-tokenA.log"
+  },
+  {
+    "contract": "tokenB",
+    "address": "0x69a5710dda216036847e60aa68f3aca5a3499943",
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "sourcify-tokenB.log"
+  }
+]
